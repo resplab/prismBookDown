@@ -1,5 +1,15 @@
 
-<!-- # Using the Package in R {#packageinR} -->
+# Using the PRISM API {#using-prism}
+
+## Using the PRISM API in Excel {#api-in-excel}
+
+## Using the PRISM API in R {#api-in-R}
+
+## Using the PRISM API in Python {#api-in-python}
+
+## Using the PRISM API in Bash/Shell {#api-in-bash}
+
+## Using the PRISM API in Javascript {#api-in-js}
 
 <!-- ## Installation -->
 

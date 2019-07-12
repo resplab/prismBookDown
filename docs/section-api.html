@@ -30,7 +30,7 @@
   
   
 <link rel="prev" href="section-introduction.html">
-
+<link rel="next" href="section-using-prism.html">
 <script src="book_assets/jquery-2.2.3/jquery.min.js"></script>
 <link href="book_assets/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="book_assets/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -66,6 +66,14 @@
 <li class="chapter" data-level="1" data-path="section-introduction.html"><a href="section-introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
 <li class="chapter" data-level="2" data-path="section-api.html"><a href="section-api.html"><i class="fa fa-check"></i><b>2</b> Application Programming Interface (API)</a><ul>
 <li class="chapter" data-level="" data-path="section-api.html"><a href="section-api.html#section-what-is-an-api"><i class="fa fa-check"></i>What is an API?</a></li>
+<li class="chapter" data-level="" data-path="section-api.html"><a href="section-api.html#section-diving-in"><i class="fa fa-check"></i>Diving in</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="section-using-prism.html"><a href="section-using-prism.html"><i class="fa fa-check"></i><b>3</b> Using the PRISM API</a><ul>
+<li class="chapter" data-level="3.1" data-path="section-using-prism.html"><a href="section-using-prism.html#section-api-in-excel"><i class="fa fa-check"></i><b>3.1</b> Using the PRISM API in Excel</a></li>
+<li class="chapter" data-level="3.2" data-path="section-using-prism.html"><a href="section-using-prism.html#section-api-in-R"><i class="fa fa-check"></i><b>3.2</b> Using the PRISM API in R</a></li>
+<li class="chapter" data-level="3.3" data-path="section-using-prism.html"><a href="section-using-prism.html#section-api-in-python"><i class="fa fa-check"></i><b>3.3</b> Using the PRISM API in Python</a></li>
+<li class="chapter" data-level="3.4" data-path="section-using-prism.html"><a href="section-using-prism.html#section-api-in-bash"><i class="fa fa-check"></i><b>3.4</b> Using the PRISM API in Bash/Shell</a></li>
+<li class="chapter" data-level="3.5" data-path="section-using-prism.html"><a href="section-using-prism.html#section-api-in-js"><i class="fa fa-check"></i><b>3.5</b> Using the PRISM API in Javascript</a></li>
 </ul></li>
 </ul>
 
@@ -169,268 +177,34 @@
 
 
 <br>
+</div>
+<div id="section-diving-in" class="section level2 unnumbered">
+<h2>Diving in</h2>
+<p>I have found it is often easiest to learn by example, so I’m going to walk through an example of how to use our PRISM API. If you don’t have much programming experience, or if you want to use Excel, I would recommend doing the <a href="section-using-prism.html#section-api-in-excel">API in Excel</a>. Otherwise, you can choose your favourite programming language to get started:</p>
+<head>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="js/list-group.js"></script>
 
-<!-- # Using the Package in R {#packageinR} -->
-<!-- ## Installation -->
-<!-- If you do not have R installed on your computer, please go to [Appendix 1](#appendix1). Once you have R installed, you can install this package in the R console: -->
-<!-- ```{r chunk-label, eval = FALSE, echo = TRUE} -->
-<!-- install.packages("devtools") -->
-<!-- devtools::install_github("resplab/accept") -->
-<!-- ``` -->
-<!-- ## ACCEPT Prediction Functions -->
-<!-- ### Sample Data {-} -->
-<!-- To get started, there is an R data frame with the package of sample patient data. I have printed columns 1-13 and 14-19 separately because there isn't enough space: -->
-<!-- ```{r sample-patients, eval = TRUE, echo = TRUE} -->
-<!-- library(accept) -->
-<!-- samplePatients = accept::samplePatients -->
-<!-- print(samplePatients[,1:13]) -->
-<!-- print(samplePatients[,14:19]) -->
-<!-- ``` -->
-<!-- ```{r, eval=TRUE, echo=FALSE} -->
-<!-- library(htmltools) -->
-<!-- rawHTML <- paste(readLines("predictACCEPT-inputs.html"), collapse="\n") -->
-<!-- HTML(rawHTML) -->
-<!-- ``` -->
-<!-- ### Exacerbation Rate {-} -->
-<!-- To get a prediction for exacerbation rate, you will need to pass in a patient vector: -->
-<!-- ```{r exacerbation-rate, eval = TRUE, echo = TRUE} -->
-<!-- results <- predictACCEPT(samplePatients[1,]) -->
-<!-- print(t(results)) -->
-<!-- ``` -->
-<!-- The **predictACCEPT()** function returns a data frame with the original patient data, along with the predictions for different treatment options. Here is a summary of the results:  -->
-<!-- ```{r, eval=TRUE, echo=FALSE} -->
-<!-- library(htmltools) -->
-<!-- rawHTML <- paste(readLines("predictACCEPT-outputs.html"), collapse="\n") -->
-<!-- HTML(rawHTML) -->
-<!-- ``` -->
-<!-- To visualize the data, there is a graphing function called **plotExacerbations()**, which creates a Plotly bar graph. You have the option of selecting **probability** or **rate** for which prediction you want to see, and either **CI** or **PI** to select the confidence interval or prediction interval respectively. -->
-<!-- ```{r exacerbation-rate-2, eval = TRUE, echo = TRUE} -->
-<!-- plotExacerbations(results, type="probability", interval = "CI") -->
-<!-- ``` -->
-<!-- ```{r exacerbation-rate-3, eval = TRUE, echo = TRUE} -->
-<!-- plotExacerbations(results, type="probability", interval = "PI") -->
-<!-- ``` -->
-<!-- ```{r exacerbation-rate-4, eval = TRUE, echo = TRUE} -->
-<!-- plotExacerbations(results, type="rate", interval = "CI") -->
-<!-- ``` -->
-<!-- ### Probability of N Exacerbations (Poisson) {-} -->
-<!-- We can also calculate the predicted number of exacerbations in a year: -->
-<!-- ```{r n-exacerbations-1, eval = TRUE, echo = TRUE} -->
-<!-- patientResults = predictACCEPT(samplePatients[1,]) -->
-<!-- exacerbationsMatrix = predictCountProb(patientResults, n = 10, shortened = TRUE) -->
-<!-- print(exacerbationsMatrix) -->
-<!-- ``` -->
-<!-- The shortened parameter groups the probabilities from 3-10 exacerbations into one category, "3 or more exacerbations." To see all n exacerbation probabilities: -->
-<!-- ```{r n-exacerbations-2, eval = TRUE, echo = TRUE} -->
-<!-- exacerbationsMatrix = predictCountProb(patientResults, n = 10, shortened = FALSE) -->
-<!-- print(exacerbationsMatrix) -->
-<!-- ``` -->
-<!-- To visualize the matrix as a heatmap, we can use the function **plotHeatMap**: -->
-<!-- ```{r n-exacerbations-3, eval = TRUE, echo = TRUE} -->
-<!-- plotHeatMap(patientResults, shortened = FALSE) -->
-<!-- ``` -->
-
-<!-- # Using the Web Application {#webapp} -->
-<!-- We have created a web application which can be found here: -->
-<!-- ```{r, eval=TRUE, echo=FALSE} -->
-<!-- library(htmltools) -->
-<!-- rawHTML <- paste(readLines("webapp.html"), collapse="\n") -->
-<!-- HTML(rawHTML) -->
-<!-- ``` -->
-
-<!-- # Using the Package as an API (PRISM) -->
-<!-- PRISM (Programmable Interface for Simulation/Statistical Models) is a package which provides a user-friendly API interface in R for clinical prediction and decision analytics models hosted on UBC PRISM cloud. -->
-<!-- For more information, the PRISM package can be found on GitHub at [PRISM on  GitHub](https://github.com/resplab/prism). -->
-<!-- ## R API -->
-<!-- To install PRISM in R, you will need to install it from GitHub. In an R Console: -->
-<!-- ```{r prism-r, eval = FALSE, echo = TRUE} -->
-<!-- devtools::install_github("resplab/prism") -->
-<!-- ``` -->
-<!-- To use PRISM in R: -->
-<!-- ```{r prism-api-r, eval = TRUE, echo = FALSE} -->
-<!-- your_api_key = 123456 -->
-<!-- ``` -->
-<!-- ```{r prism-accept, eval = TRUE, echo = TRUE} -->
-<!-- library(prism) -->
-<!-- connect_to_model("acceptPrism", api_key = your_api_key) -->
-<!-- patient1 <- accept::samplePatients[1,] -->
-<!-- model_run(patient1) -->
-<!-- res <- as.data.frame(model_run(patient1)) -->
-<!-- ``` -->
-<!-- ## Shell/Bash API -->
-<!-- ### Linux -->
-<!-- You will need curl installed to use the API. To check if you have curl: -->
-<!-- ```{bash prism-curl, eval = FALSE, echo = TRUE} -->
-<!-- dpkg -l curl -->
-<!-- ``` -->
-<!-- If you do not have curl, you can install it by: -->
-<!-- ```{bash prism-curl-install, eval = FALSE, echo = TRUE} -->
-<!-- sudo apt install curl -->
-<!-- ``` -->
-<!-- ```{bash prism-linux, eval = FALSE, echo = TRUE} -->
-<!-- curl -X POST -H "Content-Type: application/json" -d '{"api_key":["YOUR_API_KEY"],"func":["prism_model_run"],"model_input":[{"ID":"10001","male":1,"age":70,"smoker":1,"FEV1":2.5,"height":1.68,"weight":65}]}' http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json -->
-<!-- ``` -->
-<!-- ```{bash prism-linux2, eval = TRUE, echo = FALSE} -->
-<!-- curl -X POST -H "Content-Type: application/json" -d '{"api_key":[123456],"func":["prism_model_run"],"model_input":[{"ID":"10001","male":1,"age":70,"smoker":1,"FEV1":2.5,"height":1.68,"weight":65}]}' http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json -->
-<!-- ``` -->
-<!-- ### Mac OS -->
-<!-- You will need curl installed to use the API. To check if you have curl: -->
-<!-- ```{bash prism-curl-mac, eval = FALSE, echo = TRUE} -->
-<!-- brew list curl -->
-<!-- ``` -->
-<!-- If you do not have curl, you can install it using HomeBrew: -->
-<!-- ```{bash prism-curl-install-mac, eval = FALSE, echo = TRUE} -->
-<!-- brew install curl -->
-<!-- ``` -->
-<!-- ```{bash prism-mac, eval = FALSE, echo = TRUE} -->
-<!-- curl -X POST -H "Content-Type: application/json" -d '{"api_key":["YOUR_API_KEY"],"func":["prism_model_run"],"model_input":[{"ID":"10001","male":1,"age":70,"smoker":1,"FEV1":2.5,"height":1.68,"weight":65}]}' http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json -->
-<!-- ``` -->
-<!-- ```{bash prism-mac2, eval = TRUE, echo = FALSE} -->
-<!-- curl -X POST -H "Content-Type: application/json" -d '{"api_key":[123456],"func":["prism_model_run"], -->
-<!-- "model_input":[{"ID":"10001","male":1,"age":70,"smoker":1,"FEV1":2.5,"height":1.68,"weight":65}]}' http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json -->
-<!-- ``` -->
-<!-- ### Windows PowerShell -->
-<!-- In PowerShell: -->
-<!-- ```{bash prism-windows, eval=FALSE, echo = TRUE} -->
-<!-- curl -Body '{"api_key":["YOUR_API_KEY"],"func":["prism_model_run"],"model_input":[{"ID":"10001","male":1,"age":70,"smoker":1,"FEV1":2.5,"height":1.68,"weight":65}]}' -Method POST -uri http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json -Headers @{"Content-type"="application/json"} -->
-<!-- ``` -->
-<!-- ```{bash prism-windows2, eval = TRUE, echo = FALSE} -->
-<!-- curl -X POST -H "Content-Type: application/json" -d '{"api_key":[123456],"func":["prism_model_run"], -->
-<!-- "model_input":[{"ID":"10001","male":1,"age":70,"smoker":1,"FEV1":2.5,"height":1.68,"weight":65}]}' http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json -->
-<!-- ``` -->
-<!-- ## Python API -->
-<!-- For this, we are assuming the use of Python 3. -->
-<!-- ```{r eval = TRUE, echo = FALSE} -->
-<!-- pythonEngine = as.character(Sys.which("python3")) -->
-<!-- if(pythonEngine == "") { -->
-<!--   print("Error: Please install Python 3") -->
-<!-- } -->
-<!-- ``` -->
-<!-- To get started, you will need to import the **json** and **requests** libraries. To install, open a terminal: -->
-<!-- ```{bash prism-python, eval = FALSE, echo = TRUE, engine.path = pythonEngine} -->
-<!-- pip3 install requests -->
-<!-- ``` -->
-<!-- We will start with the GET request. If everything is working, this should return 200 as a response. -->
-<!-- ```{python prism-python-get, eval = TRUE, echo = TRUE, engine.path = pythonEngine} -->
-<!-- import json -->
-<!-- import requests -->
-<!-- response = requests.get("http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json") -->
-<!-- print(response) -->
-<!-- ``` -->
-<!-- For the POST request, we will send some patient data to the API, and should get a prediction back from the API. -->
-<!-- ```{python prism-python2, eval = FALSE, echo = TRUE, engine.path = pythonEngine} -->
-<!-- api_key = 'YOUR_API_KEY' -->
-<!-- patientInput = [{ -->
-<!-- "ID":"10001", -->
-<!-- "male":1, -->
-<!-- "age":70, -->
-<!-- "smoker":1, -->
-<!-- "FEV1":2.5, -->
-<!-- "height":1.68, -->
-<!-- "weight":65 -->
-<!-- }] -->
-<!-- response = requests.post("http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json",  -->
-<!--   json = {"api_key":[api_key], -->
-<!--   "func": ["prism_model_run"], -->
-<!--   "model_input": patientInput}) -->
-<!-- print(response) -->
-<!-- results = json.loads(response.text) -->
-<!-- print(results) -->
-<!-- ``` -->
-<!-- ```{python prism-python3, eval = TRUE, echo = FALSE, engine.path = pythonEngine} -->
-<!-- response = requests.post("http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json", json = {"api_key":[123456],"func":["prism_model_run"],"model_input":[{"ID":"10001","male":1,"age":70,"smoker":1,"FEV1":2.5,"height":1.68,"weight":65}]}) -->
-<!-- print(response) -->
-<!-- results = json.loads(response.text) -->
-<!-- print(results) -->
-<!-- ``` -->
-<!-- We will put the results in a dictionary: -->
-<!-- ```{python prism-python4, eval = TRUE, echo = TRUE, engine.path = pythonEngine} -->
-<!-- resultsDict = json.loads(results[0]) -->
-<!-- print(resultsDict) -->
-<!-- columnNames = list(resultsDict.keys()) -->
-<!-- print(columnNames) -->
-<!-- ``` -->
-<!-- To visualize the results using the package PrettyTable: -->
-<!-- ```{python prism-python5, eval = TRUE, echo = TRUE, engine.path = pythonEngine} -->
-<!-- from prettytable import PrettyTable -->
-<!-- table = PrettyTable() -->
-<!-- table = PrettyTable() -->
-<!-- table.align["Year"] = "l" # Left align year -->
-<!-- table.padding_width = 1 # One space between column edges and contents (default) -->
-<!-- print(columnNames) -->
-<!-- for col in columnNames: -->
-<!--     table.add_column(col, resultsDict[col]) -->
-<!-- print(table) -->
-<!-- ``` -->
-<!-- ## Javascript API -->
-<!-- To use the PRISM API in Javascript, you will need to use the XMLHttpRequest module. We will start by sending a GET request: -->
-<!-- ```{js, eval=FALSE, echo=TRUE} -->
-<!-- request = new XMLHttpRequest(); -->
-<!-- request.open('GET', 'http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json'); -->
-<!-- request.send(); -->
-<!-- ``` -->
-<!-- The **onreadystatechange** is an XMLHttpRequest event which updates when the ready state changes. The ready state can be either 1, 2, 3, or 4. -->
-<!-- ```{r javascript1, eval = TRUE, echo = FALSE} -->
-<!-- dev.off() -->
-<!-- readyState = c(0, 1, 2, 3, 4) -->
-<!-- values = c("Unsent", "Opened: open() has been called", -->
-<!--            "Headers Received: send() has been called and headers are available", -->
-<!--            "Loading: downloading; responseText holds partial data", -->
-<!--            "Done: the operation is complete") -->
-<!-- metadata = data.frame("readyState"=readyState, Description = values) -->
-<!-- names(metadata) = c("Ready State", "Description") -->
-<!-- ``` -->
-<!-- ```{r javascript2, eval = TRUE, echo = FALSE} -->
-<!-- knitr::kable( -->
-<!--   metadata, booktabs = TRUE -->
-<!-- ) -->
-<!-- ``` -->
-<!-- ```{js, eval=FALSE, echo=TRUE} -->
-<!-- request.onreadystatechange = function() { -->
-<!--             if(request.readyState === 4) { // -->
-<!--                 if(request.status === 200) { -->
-<!--                     console.log(request.responseText); -->
-<!--                 } else { -->
-<!--                        console.log(request.status); -->
-<!--                 } -->
-<!--             } -->
-<!--         } -->
-<!-- ``` -->
-<!-- To get a prediction, we can send a POST request. We will first create an example patient using json: -->
-<!-- ```{js, eval=FALSE} -->
-<!-- let patient = JSON.stringify({ -->
-<!--   api_key: 123456, -->
-<!--   func: ["prism_model_run"], -->
-<!--   model_input: [{ -->
-<!--     ID: 10001, -->
-<!--     male: 1, -->
-<!--     age: 70, -->
-<!--     smoker: 1, -->
-<!--     FEV1: 2.5, -->
-<!--     height: 1.68, -->
-<!--     weight: 65 -->
-<!--   }] -->
-<!-- }); -->
-<!-- ``` -->
-<!-- We need to set the request header to json, and then send our patient json to the PRISM server using the **request.send()** function. -->
-<!-- ```{js, eval=FALSE} -->
-<!-- request.open('POST', 'http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json'); -->
-<!-- request.setRequestHeader('Content-Type', 'application/json'); -->
-<!-- request.send(patient); // Send request -->
-<!-- let results = request.response; -->
-<!-- ``` -->
-
-<!-- # Appendix 1: Installing R {#appendix1} -->
-<!-- This is a guide to installing R, geared mainly at beginner audiences. All the information below can be found at https://www.r-project.org/; I've just simplified it a bit. -->
-<!-- ## Step 1: Mirrors -->
-<!-- When you go the the R home page, you will see a link to [download R](https://cran.r-project.org/mirrors.html), which will take you to a list of mirrors. They are organized by country, so click on one that is close to your location. Since our group is based out of Vancouver, I will select one of the mirrors in Canada: [SFU Mirror](https://mirror.its.sfu.ca/mirror/CRAN/). -->
-<!-- Once you have clicked on the closest mirror, you will be asked to choose what type of computer you have. -->
-<!-- ## Mac OS X -->
-<!-- If you are using a Mac (Apple) computer, click on the link for Mac OS X. You will be redirected to a page that says "R for Mac OS X." To install R, you want to click on one of the files ending in ".pkg". If your operating system is fairly up-to-date, scroll to "Latest Release" and click on the file that looks like "R-3.X.Y.pkg," with X and Y being numbers for the latest release. R should begin downloading, and your Mac package manager will pop up with the rest of the instructions. -->
-<!-- If your operating system is older, you might want to scroll down to "Legacy Releases," and download one of those ".pkg" files instead. It should tell you on the page what version your computer should use. -->
-<!-- ## Windows -->
-<!-- If you are using Windows, click on the link for Windows. You will be redirected to a page that says "R for Windows." To install R, click on the link "base," and on the next page, "Download R 3.X.Y for Windows," where X and Y are the version numbers for the latest release. R should begin downloading. -->
-
+</head>
+<div class="row">
+<div class="col-6">
+<button type="button" class="btn btn-primary btn-lg btn-block">
+  <a href="./section-using-prism.html#section-api-in-R">API in R</a>
+</button>
+<button type="button" class="btn btn-primary btn-lg btn-block">
+  <a href="./section-using-prism.html#section-api-in-python">API in Python</a>
+</button>
+<button type="button" class="btn btn-primary btn-lg btn-block">
+  <a href="./section-using-prism.html#section-api-in-bash">API in Bash/Shell</a>
+</button>
+<button type="button" class="btn btn-primary btn-lg btn-block">
+  <a href="./section-using-prism.html#section-api-in-js">API in Javascript</a>
+</button>
+</div>
 
 </div>
 </div>
@@ -439,8 +213,8 @@
           </div>
         </div>
       </div>
-<a href="section-introduction.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="section-introduction.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="section-using-prism.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="book_assets/gitbook-2.6.7/js/app.min.js"></script>
