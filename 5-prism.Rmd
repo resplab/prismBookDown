@@ -17,13 +17,13 @@
 <!-- your_api_key = 123456 -->
 <!-- ``` -->
 
-<!-- <!-- ```{r prism-accept, eval = TRUE, echo = TRUE} --> -->
-<!-- <!-- library(prism) --> -->
-<!-- <!-- connect_to_model("acceptPrism", api_key = your_api_key) --> -->
-<!-- <!-- patient1 <- accept::samplePatients[1,] --> -->
-<!-- <!-- model_run(patient1) --> -->
-<!-- <!-- res <- as.data.frame(model_run(patient1)) --> -->
-<!-- <!-- ``` --> -->
+<!-- ```{r prism-accept, eval = TRUE, echo = TRUE} -->
+<!-- library(prism) -->
+<!-- connect_to_model("acceptPrism", api_key = your_api_key) -->
+<!-- patient1 <- accept::samplePatients[1,] -->
+<!-- model_run(patient1) -->
+<!-- res <- as.data.frame(model_run(patient1)) -->
+<!-- ``` -->
 
 <!-- ## Shell/Bash API -->
 
@@ -39,15 +39,15 @@
 <!-- sudo apt install curl -->
 <!-- ``` -->
 
-<!-- <!-- ```{bash prism-linux, eval = FALSE, echo = TRUE} --> -->
+<!-- ```{bash prism-linux, eval = FALSE, echo = TRUE} -->
 
-<!-- <!-- curl -X POST -H "Content-Type: application/json" -d '{"api_key":["YOUR_API_KEY"],"func":["prism_model_run"],"model_input":[{"ID":"10001","male":1,"age":70,"smoker":1,"FEV1":2.5,"height":1.68,"weight":65}]}' http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json --> -->
-<!-- <!-- ``` --> -->
+<!-- curl -X POST -H "Content-Type: application/json" -d '{"api_key":["YOUR_API_KEY"],"func":["prism_model_run"],"model_input":[{"ID":"10001","male":1,"age":70,"smoker":1,"FEV1":2.5,"height":1.68,"weight":65}]}' http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json -->
+<!-- ``` -->
 
-<!-- <!-- ```{bash prism-linux2, eval = TRUE, echo = FALSE} --> -->
+<!-- ```{bash prism-linux2, eval = TRUE, echo = FALSE} -->
 
-<!-- <!-- curl -X POST -H "Content-Type: application/json" -d '{"api_key":[123456],"func":["prism_model_run"],"model_input":[{"ID":"10001","male":1,"age":70,"smoker":1,"FEV1":2.5,"height":1.68,"weight":65}]}' http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json --> -->
-<!-- <!-- ``` --> -->
+<!-- curl -X POST -H "Content-Type: application/json" -d '{"api_key":[123456],"func":["prism_model_run"],"model_input":[{"ID":"10001","male":1,"age":70,"smoker":1,"FEV1":2.5,"height":1.68,"weight":65}]}' http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json -->
+<!-- ``` -->
 <!-- ### Mac OS -->
 
 <!-- You will need curl installed to use the API. To check if you have curl: -->
@@ -60,30 +60,30 @@
 <!-- brew install curl -->
 <!-- ``` -->
 
-<!-- <!-- ```{bash prism-mac, eval = FALSE, echo = TRUE} --> -->
+<!-- ```{bash prism-mac, eval = FALSE, echo = TRUE} -->
 
-<!-- <!-- curl -X POST -H "Content-Type: application/json" -d '{"api_key":["YOUR_API_KEY"],"func":["prism_model_run"],"model_input":[{"ID":"10001","male":1,"age":70,"smoker":1,"FEV1":2.5,"height":1.68,"weight":65}]}' http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json --> -->
-<!-- <!-- ``` --> -->
+<!-- curl -X POST -H "Content-Type: application/json" -d '{"api_key":["YOUR_API_KEY"],"func":["prism_model_run"],"model_input":[{"ID":"10001","male":1,"age":70,"smoker":1,"FEV1":2.5,"height":1.68,"weight":65}]}' http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json -->
+<!-- ``` -->
 
-<!-- <!-- ```{bash prism-mac2, eval = TRUE, echo = FALSE} --> -->
+<!-- ```{bash prism-mac2, eval = TRUE, echo = FALSE} -->
 
-<!-- <!-- curl -X POST -H "Content-Type: application/json" -d '{"api_key":[123456],"func":["prism_model_run"], --> -->
-<!-- <!-- "model_input":[{"ID":"10001","male":1,"age":70,"smoker":1,"FEV1":2.5,"height":1.68,"weight":65}]}' http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json --> -->
-<!-- <!-- ``` --> -->
+<!-- curl -X POST -H "Content-Type: application/json" -d '{"api_key":[123456],"func":["prism_model_run"], -->
+<!-- "model_input":[{"ID":"10001","male":1,"age":70,"smoker":1,"FEV1":2.5,"height":1.68,"weight":65}]}' http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json -->
+<!-- ``` -->
 
 <!-- ### Windows PowerShell -->
 
 <!-- In PowerShell: -->
 
-<!-- <!-- ```{bash prism-windows, eval=FALSE, echo = TRUE} --> -->
-<!-- <!-- curl -Body '{"api_key":["YOUR_API_KEY"],"func":["prism_model_run"],"model_input":[{"ID":"10001","male":1,"age":70,"smoker":1,"FEV1":2.5,"height":1.68,"weight":65}]}' -Method POST -uri http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json -Headers @{"Content-type"="application/json"} --> -->
-<!-- <!-- ``` --> -->
+<!-- ```{bash prism-windows, eval=FALSE, echo = TRUE} -->
+<!-- curl -Body '{"api_key":["YOUR_API_KEY"],"func":["prism_model_run"],"model_input":[{"ID":"10001","male":1,"age":70,"smoker":1,"FEV1":2.5,"height":1.68,"weight":65}]}' -Method POST -uri http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json -Headers @{"Content-type"="application/json"} -->
+<!-- ``` -->
 
-<!-- <!-- ```{bash prism-windows2, eval = TRUE, echo = FALSE} --> -->
+<!-- ```{bash prism-windows2, eval = TRUE, echo = FALSE} -->
 
-<!-- <!-- curl -X POST -H "Content-Type: application/json" -d '{"api_key":[123456],"func":["prism_model_run"], --> -->
-<!-- <!-- "model_input":[{"ID":"10001","male":1,"age":70,"smoker":1,"FEV1":2.5,"height":1.68,"weight":65}]}' http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json --> -->
-<!-- <!-- ``` --> -->
+<!-- curl -X POST -H "Content-Type: application/json" -d '{"api_key":[123456],"func":["prism_model_run"], -->
+<!-- "model_input":[{"ID":"10001","male":1,"age":70,"smoker":1,"FEV1":2.5,"height":1.68,"weight":65}]}' http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json -->
+<!-- ``` -->
 
 <!-- ## Python API -->
 
@@ -104,74 +104,74 @@
 
 <!-- We will start with the GET request. If everything is working, this should return 200 as a response. -->
 
-<!-- <!-- ```{python prism-python-get, eval = TRUE, echo = TRUE, engine.path = pythonEngine} --> -->
-<!-- <!-- import json --> -->
-<!-- <!-- import requests --> -->
-<!-- <!-- response = requests.get("http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json") --> -->
-<!-- <!-- print(response) --> -->
-<!-- <!-- ``` --> -->
+<!-- ```{python prism-python-get, eval = TRUE, echo = TRUE, engine.path = pythonEngine} -->
+<!-- import json -->
+<!-- import requests -->
+<!-- response = requests.get("http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json") -->
+<!-- print(response) -->
+<!-- ``` -->
 
 <!-- For the POST request, we will send some patient data to the API, and should get a prediction back from the API. -->
 
-<!-- <!-- ```{python prism-python2, eval = FALSE, echo = TRUE, engine.path = pythonEngine} --> -->
-<!-- <!-- api_key = 'YOUR_API_KEY' --> -->
-<!-- <!-- patientInput = [{ --> -->
-<!-- <!-- "ID":"10001", --> -->
-<!-- <!-- "male":1, --> -->
-<!-- <!-- "age":70, --> -->
-<!-- <!-- "smoker":1, --> -->
-<!-- <!-- "FEV1":2.5, --> -->
-<!-- <!-- "height":1.68, --> -->
-<!-- <!-- "weight":65 --> -->
-<!-- <!-- }] --> -->
-<!-- <!-- response = requests.post("http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json",  --> -->
-<!-- <!--   json = {"api_key":[api_key], --> -->
-<!-- <!--   "func": ["prism_model_run"], --> -->
-<!-- <!--   "model_input": patientInput}) --> -->
-<!-- <!-- print(response) --> -->
-<!-- <!-- results = json.loads(response.text) --> -->
-<!-- <!-- print(results) --> -->
-<!-- <!-- ``` --> -->
+<!-- ```{python prism-python2, eval = FALSE, echo = TRUE, engine.path = pythonEngine} -->
+<!-- api_key = 'YOUR_API_KEY' -->
+<!-- patientInput = [{ -->
+<!-- "ID":"10001", -->
+<!-- "male":1, -->
+<!-- "age":70, -->
+<!-- "smoker":1, -->
+<!-- "FEV1":2.5, -->
+<!-- "height":1.68, -->
+<!-- "weight":65 -->
+<!-- }] -->
+<!-- response = requests.post("http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json",  -->
+<!--   json = {"api_key":[api_key], -->
+<!--   "func": ["prism_model_run"], -->
+<!--   "model_input": patientInput}) -->
+<!-- print(response) -->
+<!-- results = json.loads(response.text) -->
+<!-- print(results) -->
+<!-- ``` -->
 
-<!-- <!-- ```{python prism-python3, eval = TRUE, echo = FALSE, engine.path = pythonEngine} --> -->
-<!-- <!-- response = requests.post("http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json", json = {"api_key":[123456],"func":["prism_model_run"],"model_input":[{"ID":"10001","male":1,"age":70,"smoker":1,"FEV1":2.5,"height":1.68,"weight":65}]}) --> -->
-<!-- <!-- print(response) --> -->
-<!-- <!-- results = json.loads(response.text) --> -->
-<!-- <!-- print(results) --> -->
-<!-- <!-- ``` --> -->
+<!-- ```{python prism-python3, eval = TRUE, echo = FALSE, engine.path = pythonEngine} -->
+<!-- response = requests.post("http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json", json = {"api_key":[123456],"func":["prism_model_run"],"model_input":[{"ID":"10001","male":1,"age":70,"smoker":1,"FEV1":2.5,"height":1.68,"weight":65}]}) -->
+<!-- print(response) -->
+<!-- results = json.loads(response.text) -->
+<!-- print(results) -->
+<!-- ``` -->
 
 <!-- We will put the results in a dictionary: -->
 
-<!-- <!-- ```{python prism-python4, eval = TRUE, echo = TRUE, engine.path = pythonEngine} --> -->
-<!-- <!-- resultsDict = json.loads(results[0]) --> -->
-<!-- <!-- print(resultsDict) --> -->
-<!-- <!-- columnNames = list(resultsDict.keys()) --> -->
-<!-- <!-- print(columnNames) --> -->
-<!-- <!-- ``` --> -->
+<!-- ```{python prism-python4, eval = TRUE, echo = TRUE, engine.path = pythonEngine} -->
+<!-- resultsDict = json.loads(results[0]) -->
+<!-- print(resultsDict) -->
+<!-- columnNames = list(resultsDict.keys()) -->
+<!-- print(columnNames) -->
+<!-- ``` -->
 
 <!-- To visualize the results using the package PrettyTable: -->
 
-<!-- <!-- ```{python prism-python5, eval = TRUE, echo = TRUE, engine.path = pythonEngine} --> -->
-<!-- <!-- from prettytable import PrettyTable --> -->
-<!-- <!-- table = PrettyTable() --> -->
-<!-- <!-- table = PrettyTable() --> -->
-<!-- <!-- table.align["Year"] = "l" # Left align year --> -->
-<!-- <!-- table.padding_width = 1 # One space between column edges and contents (default) --> -->
-<!-- <!-- print(columnNames) --> -->
-<!-- <!-- for col in columnNames: --> -->
-<!-- <!--     table.add_column(col, resultsDict[col]) --> -->
-<!-- <!-- print(table) --> -->
-<!-- <!-- ``` --> -->
+<!-- ```{python prism-python5, eval = TRUE, echo = TRUE, engine.path = pythonEngine} -->
+<!-- from prettytable import PrettyTable -->
+<!-- table = PrettyTable() -->
+<!-- table = PrettyTable() -->
+<!-- table.align["Year"] = "l" # Left align year -->
+<!-- table.padding_width = 1 # One space between column edges and contents (default) -->
+<!-- print(columnNames) -->
+<!-- for col in columnNames: -->
+<!--     table.add_column(col, resultsDict[col]) -->
+<!-- print(table) -->
+<!-- ``` -->
 
 <!-- ## Javascript API -->
 
 <!-- To use the PRISM API in Javascript, you will need to use the XMLHttpRequest module. We will start by sending a GET request: -->
 
-<!-- <!-- ```{js, eval=FALSE, echo=TRUE} --> -->
-<!-- <!-- request = new XMLHttpRequest(); --> -->
-<!-- <!-- request.open('GET', 'http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json'); --> -->
-<!-- <!-- request.send(); --> -->
-<!-- <!-- ``` --> -->
+<!-- ```{js, eval=FALSE, echo=TRUE} -->
+<!-- request = new XMLHttpRequest(); -->
+<!-- request.open('GET', 'http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json'); -->
+<!-- request.send(); -->
+<!-- ``` -->
 
 <!-- The **onreadystatechange** is an XMLHttpRequest event which updates when the ready state changes. The ready state can be either 1, 2, 3, or 4. -->
 <!-- ```{r javascript1, eval = TRUE, echo = FALSE} -->
@@ -185,47 +185,47 @@
 <!-- names(metadata) = c("Ready State", "Description") -->
 <!-- ``` -->
 
-<!-- <!-- ```{r javascript2, eval = TRUE, echo = FALSE} --> -->
-<!-- <!-- knitr::kable( --> -->
-<!-- <!--   metadata, booktabs = TRUE --> -->
-<!-- <!-- ) --> -->
-<!-- <!-- ``` --> -->
+<!-- ```{r javascript2, eval = TRUE, echo = FALSE} -->
+<!-- knitr::kable( -->
+<!--   metadata, booktabs = TRUE -->
+<!-- ) -->
+<!-- ``` -->
 
-<!-- <!-- ```{js, eval=FALSE, echo=TRUE} --> -->
-<!-- <!-- request.onreadystatechange = function() { --> -->
-<!-- <!--             if(request.readyState === 4) { // --> -->
-<!-- <!--                 if(request.status === 200) { --> -->
-<!-- <!--                     console.log(request.responseText); --> -->
-<!-- <!--                 } else { --> -->
-<!-- <!--                 		console.log(request.status); --> -->
-<!-- <!--                 } --> -->
-<!-- <!--             } --> -->
-<!-- <!--         } --> -->
-<!-- <!-- ``` --> -->
+<!-- ```{js, eval=FALSE, echo=TRUE} -->
+<!-- request.onreadystatechange = function() { -->
+<!--             if(request.readyState === 4) { // -->
+<!--                 if(request.status === 200) { -->
+<!--                     console.log(request.responseText); -->
+<!--                 } else { -->
+<!--                 		console.log(request.status); -->
+<!--                 } -->
+<!--             } -->
+<!--         } -->
+<!-- ``` -->
 
 <!-- To get a prediction, we can send a POST request. We will first create an example patient using json: -->
 
-<!-- <!-- ```{js, eval=FALSE} --> -->
-<!-- <!-- let patient = JSON.stringify({ --> -->
-<!-- <!--   api_key: 123456, --> -->
-<!-- <!--   func: ["prism_model_run"], --> -->
-<!-- <!--   model_input: [{ --> -->
-<!-- <!--     ID: 10001, --> -->
-<!-- <!--     male: 1, --> -->
-<!-- <!--     age: 70, --> -->
-<!-- <!--     smoker: 1, --> -->
-<!-- <!--     FEV1: 2.5, --> -->
-<!-- <!--     height: 1.68, --> -->
-<!-- <!--     weight: 65 --> -->
-<!-- <!--   }] --> -->
-<!-- <!-- }); --> -->
-<!-- <!-- ``` --> -->
+<!-- ```{js, eval=FALSE} -->
+<!-- let patient = JSON.stringify({ -->
+<!--   api_key: 123456, -->
+<!--   func: ["prism_model_run"], -->
+<!--   model_input: [{ -->
+<!--     ID: 10001, -->
+<!--     male: 1, -->
+<!--     age: 70, -->
+<!--     smoker: 1, -->
+<!--     FEV1: 2.5, -->
+<!--     height: 1.68, -->
+<!--     weight: 65 -->
+<!--   }] -->
+<!-- }); -->
+<!-- ``` -->
 
 <!-- We need to set the request header to json, and then send our patient json to the PRISM server using the **request.send()** function. -->
 
-<!-- <!-- ```{js, eval=FALSE} --> -->
-<!-- <!-- request.open('POST', 'http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json'); --> -->
-<!-- <!-- request.setRequestHeader('Content-Type', 'application/json'); --> -->
-<!-- <!-- request.send(patient); // Send request --> -->
-<!-- <!-- let results = request.response; --> -->
-<!-- <!-- ``` --> -->
+<!-- ```{js, eval=FALSE} -->
+<!-- request.open('POST', 'http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json'); -->
+<!-- request.setRequestHeader('Content-Type', 'application/json'); -->
+<!-- request.send(patient); // Send request -->
+<!-- let results = request.response; -->
+<!-- ``` -->
