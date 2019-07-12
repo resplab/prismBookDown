@@ -1,0 +1,13 @@
+
+# Application Programming Interface (API) {#api}
+
+This section is geared towards people who are less familiar with APIs, or who want a refresher. If you are comfortable with APIs and don't need a review, you can skip to the next section.
+
+## What is an API? {-}
+
+```{r, eval=TRUE, echo=FALSE}
+library(htmltools)
+rawHTML <- paste(readLines("user-server-api.html"), collapse="\n")
+HTML(rawHTML)
+```
+

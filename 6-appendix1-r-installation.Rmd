@@ -1,0 +1,21 @@
+
+<!-- # Appendix 1: Installing R {#appendix1} -->
+
+<!-- This is a guide to installing R, geared mainly at beginner audiences. All the information below can be found at https://www.r-project.org/; I've just simplified it a bit. -->
+
+<!-- ## Step 1: Mirrors -->
+
+<!-- When you go the the R home page, you will see a link to [download R](https://cran.r-project.org/mirrors.html), which will take you to a list of mirrors. They are organized by country, so click on one that is close to your location. Since our group is based out of Vancouver, I will select one of the mirrors in Canada: [SFU Mirror](https://mirror.its.sfu.ca/mirror/CRAN/). -->
+
+<!-- Once you have clicked on the closest mirror, you will be asked to choose what type of computer you have. -->
+
+<!-- ## Mac OS X -->
+
+<!-- If you are using a Mac (Apple) computer, click on the link for Mac OS X. You will be redirected to a page that says "R for Mac OS X." To install R, you want to click on one of the files ending in ".pkg". If your operating system is fairly up-to-date, scroll to "Latest Release" and click on the file that looks like "R-3.X.Y.pkg," with X and Y being numbers for the latest release. R should begin downloading, and your Mac package manager will pop up with the rest of the instructions. -->
+
+<!-- If your operating system is older, you might want to scroll down to "Legacy Releases," and download one of those ".pkg" files instead. It should tell you on the page what version your computer should use. -->
+
+<!-- ## Windows -->
+
+<!-- If you are using Windows, click on the link for Windows. You will be redirected to a page that says "R for Windows." To install R, click on the link "base," and on the next page, "Download R 3.X.Y for Windows," where X and Y are the version numbers for the latest release. R should begin downloading. -->
+

@@ -1,0 +1,401 @@
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url('fonts/open-sans-400.woff') format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Open Sans Bold'), local('OpenSans-Bold'), url('fonts/open-sans-700.woff') format('woff');
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px !important;
+  line-height: 1.5;
+  color: #606c71;
+}
+a {
+  color: #1e6bb8;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+.page-header {
+  color: #fff;
+  text-align: center;
+  background-color: #159957;
+  background-image: linear-gradient(120deg, #155799, #159957);
+  padding: 1.5rem 2rem;
+}
+.project-name {
+  margin-top: 0;
+  margin-bottom: 0.1rem;
+  font-size: 2rem;
+}
+.project-tagline {
+  margin-bottom: 2rem;
+  font-weight: normal;
+  opacity: 0.7;
+  font-size: 1.5rem;
+}
+.project-author, .project-date {
+  font-weight: normal;
+  opacity: 0.7;
+  font-size: 1.2rem;
+}
+@media screen and (max-width: 42em) {
+  .page-header {
+    padding: 1rem 1rem;
+  }
+  .project-name {
+    font-size: 1.75rem;
+  }
+  .project-tagline {
+    font-size: 1.2rem;
+  }
+  .project-author, .project-date {
+    font-size: 1rem;
+  }
+}
+.main-content:first-child {
+  margin-top: 0;
+}
+.main-content img {
+  max-width: 100%;
+}
+.main-content h1, .main-content h2, .main-content h3, .main-content h4, .main-content h5, .main-content h6 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-weight: normal;
+  color: #159957;
+}
+.main-content p {
+  margin-bottom: 1em;
+}
+.main-content code {
+  padding: 2px 4px;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  color: #383e41;
+  background-color: #f3f6fa;
+  border-radius: 0.3rem;
+}
+.main-content pre {
+  padding: 0.8rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font: 1rem Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  color: #567482;
+  word-wrap: normal;
+  background-color: #f3f6fa;
+  border: solid 1px #dce6f0;
+  border-radius: 0.3rem;
+  line-height: 1.45;
+  overflow: auto;
+}
+.main-content pre> code {
+  padding: 0;
+  margin: 0;
+  font-size: 1rem;
+  color: #567482;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+.main-content pre code, .main-content pre tt {
+  display: inline;
+  padding: 0;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+.main-content pre code:before, .main-content pre code:after, .main-content pre tt:before, .main-content pre tt:after {
+  content: normal;
+}
+.main-content ul, .main-content ol {
+  margin-top: 0;
+}
+.main-content blockquote {
+  padding: 0 1rem;
+  margin-left: 0;
+  font-size: 1.2rem;
+  color: #819198;
+  border-left: 0.3rem solid #dce6f0;
+}
+.main-content blockquote>:first-child {
+  margin-top: 0;
+}
+.main-content blockquote>:last-child {
+  margin-bottom: 0;
+}
+.main-content table {
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin: 1rem 0;
+}
+.main-content table th {
+  font-weight: bold;
+  background-color: #4CAF50;
+  color: white;
+}
+.main-content table th, .main-content table td {
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid #e9ebec;
+  text-align: left;
+}
+.main-content table tr:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+.main-content dl {
+  padding: 0;
+}
+.main-content dl dt {
+  padding: 0;
+  margin-top: 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+}
+.main-content dl dd {
+  padding: 0;
+  margin-bottom: 1rem;
+}
+.main-content hr {
+  margin: 1rem 0;
+  border: 0;
+  height: 1px;
+  background: #aaa;
+  background-image: linear-gradient(to right, #eee, #aaa, #eee);
+}
+.main-content, .toc {
+  max-width: 64rem;
+  padding: 2rem 4rem;
+  margin: 0 auto;
+  font-size: 1.1rem;
+}
+.toc {
+  padding-bottom: 0;
+}
+.toc ul {
+  margin-bottom: 0;
+}
+@media screen and (min-width: 42em) and (max-width: 64em) {
+  .toc {
+    padding: 2rem 2rem 0;
+  }
+  .main-content {
+    padding: 2rem 2rem;
+  }
+}
+@media screen and (max-width: 42em) {
+  .toc {
+    padding: 2rem 1rem 0;
+    font-size: 1rem;
+  }
+  .main-content {
+    padding: 2rem 1rem;
+    font-size: 1rem;
+  }
+  .main-content pre, .main-content pre> code {
+    font-size: 0.9rem;
+  }
+  .main-content blockquote {
+    font-size: 1.1rem;
+  }
+}
+.site-footer {
+  padding-top: 2rem;
+  margin-top: 2rem;
+  border-top: solid 1px #eff0f1;
+  font-size: 1rem;
+}
+.site-footer-owner {
+  display: block;
+  font-weight: bold;
+}
+.site-footer-credits {
+  color: #819198;
+}
+
+
+/*
+
+*/
+
+:root {
+  --color-a: #330033; /* purple */
+  --color-b: #8cf2f2; /* cyan */
+  --color-c: #c51672; /* magenta */
+  --color-d: #007bff; /* primary blue */
+}
+
+
+.book .book-body .page-wrapper .page-inner section.normal h1, .book .book-body .page-wrapper .page-inner section.normal h2, .book .book-body .page-wrapper .page-inner section.normal h3, .book .book-body .page-wrapper .page-inner section.normal h4, .book .book-body .page-wrapper .page-inner section.normal h5, .book .book-body .page-wrapper .page-inner section.normal h6 {
+    color: var(--color-a);
+}
+.book .book-summary ul.summary li a:hover, .book .book-summary ul.summary li.active > a {
+    color: var --color-b;
+}
+code span.kw {
+    color: #ff5992;
+}
+
+code span.co {
+    color: #1FA6BA;
+}
+
+/* Cards */
+.book .book-body .page-wrapper .page-inner section.normal .card .card-body h5 {
+  color: white;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal .card .card-body {
+  background-color: #007bff;
+}
+.book .book-body .page-wrapper .page-inner section.normal .card {
+  border: 1px solid rgba(251, 230, 230, 0.85) !important;
+}
+
+.card-body h5::before {
+    padding-right: 0.3em;
+    margin-left: -2.4em;
+    content: unset;
+    color: #9ddcff;
+}
+
+/* List Group */
+.book .book-body .page-wrapper .page-inner section.normal .list-group a:focus {
+    outline: 0;
+    background-color: var(--color-b);
+}
+
+.list-group-item.active, .list-group-item-action.active:hover {
+    z-index: 2;
+    color: #fff !important;
+    background-color: #007bff !important;
+    border-color: #007bff;
+}
+
+.list-group-item-action:hover {
+    z-index: 1;
+    color: #495057 !important;
+    text-decoration: none !important;
+    background-color: #f8f9fa !important;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal a.list-group-item:active, .book .book-body .page-wrapper .page-inner section.normal a.list-group-item:focus, .book .book-body .page-wrapper .page-inner section.normal a.list-group-item:hover,
+.book .book-body .page-wrapper .page-inner section.normal a.list-group-item {
+    text-decoration: none;
+}
+
+.list-group-item h5:before {
+    padding-right: 0.3em;
+    margin-left: 0em;
+    content: "";
+    color: #9ddcff;
+}
+
+.list-group-static .list-group-item.active h5.mb-1 {
+    color: #fff !important;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.list-group-static .list-group-item.active {
+  color: #fff !important;
+}
+
+
+/* Cards with Icons */
+
+.book .book-body .page-wrapper .page-inner section.normal .card.card-icon {
+  padding: 10px;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal .card.card-icon .card-body {
+    background-color: white;
+    color: black;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal .card.card-icon .card-title {
+    background-color: white;
+    color: var(--color-a);
+    font-weight: bold;
+    font-size: 1.5em;
+}
+.fa, .far, .fas {
+    color: var(--color-a);
+}
+
+/* Web App Card */
+
+.book .book-body .page-wrapper .page-inner section.normal #web-app-card.card .card-body {
+    background-color: var(--color-a);
+    padding: 10px;
+    font-size: 2.1rem;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal a:active, .book .book-body .page-wrapper .page-inner section.normal a:focus, .book .book-body .page-wrapper .page-inner section.normal #web-app-card.card a:hover {
+    outline: 0;
+    text-decoration: underline;
+    text-decoration-line: underline;
+    text-decoration-color: white;
+    text-decoration-style: initial;
+}
+
+/* Basic Cards */
+
+.book .book-body .page-wrapper .page-inner section.normal .card .card-body.basic h5 {
+  color: black;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal .card .card-body.basic {
+  background-color: white;
+}
+.book .book-body .page-wrapper .page-inner section.normal .card.basic {
+  border: 1px solid rgba(251, 230, 230, 0.85) !important;
+  min-height: 220px;
+}
+
+.card-body h5::before,
+.card-body h6::before {
+    padding-right: 0.3em;
+    margin-left: -2.4em;
+    content: unset;
+    color: #9ddcff;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal .card h5,
+.book .book-body .page-wrapper .page-inner section.normal .card h6 {
+    margin-top: .8em;
+    margin-bottom: .8em !important;
+}
+
+#api {
+    text-align: center;
+}
+
+
+/* R Code */
+
+code span.er {
+    color: var(--color-b);
+    font-weight: bold;
+}
+
+code span.dt {
+    color: var(--color-d);
+}
+

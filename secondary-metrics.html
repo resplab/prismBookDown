@@ -1,0 +1,72 @@
+<head><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+<div class="row">
+  <div class="col-4">
+
+    <div class="list-group" id="list-tab" role="tablist">
+      <a class="list-group-item list-group-item-action active" id="list-exacerbation-list" data-toggle="list" href="#list-exacerbation" role="tab" aria-controls="exacerbation">Exacerbation History</a>
+      <a class="list-group-item list-group-item-action" id="list-fev1-list" data-toggle="list" href="#list-fev1" role="tab" aria-controls="fev1">FEV1 % Predicted</a>
+      <a class="list-group-item list-group-item-action" id="list-smoking-list" data-toggle="list" href="#list-smoking" role="tab" aria-controls="smoking">Smoking Status</a>
+      <a class="list-group-item list-group-item-action" id="list-age-list" data-toggle="list" href="#list-age" role="tab" aria-controls="age">Age (years)</a>
+      <a class="list-group-item list-group-item-action" id="list-gender-list" data-toggle="list" href="#list-gender" role="tab" aria-controls="gender">Gender (male or female)</a>
+      <a class="list-group-item list-group-item-action" id="list-oco-list" data-toggle="list" href="#list-oco" role="tab" aria-controls="oco">Oxygen Therapy</a>
+      <a class="list-group-item list-group-item-action" id="list-sgrq-list" data-toggle="list" href="#list-sgrq" role="tab" aria-controls="sgrq">SGRQ Score</a>
+      <a class="list-group-item list-group-item-action" id="list-bmi-list" data-toggle="list" href="#list-bmi" role="tab" aria-controls="bmi">BMI</a>
+     <a class="list-group-item list-group-item-action" id="list-lama-list" data-toggle="list" href="#list-lama" role="tab" aria-controls="lama">LAMAs</a>
+    <a class="list-group-item list-group-item-action" id="list-laba-list" data-toggle="list" href="#list-laba" role="tab" aria-controls="laba">LABAs</a>
+    <a class="list-group-item list-group-item-action" id="list-ics-list" data-toggle="list" href="#list-ics" role="tab" aria-controls="ics">ICs</a>
+    <a class="list-group-item list-group-item-action" id="list-statins-list" data-toggle="list" href="#list-statins" role="tab" aria-controls="statins">Statins</a>
+    </div>
+  </div>
+  <div class="col-8">
+    <div class="tab-content" id="nav-tabContent">
+      <div class="tab-pane fade show active" id="list-exacerbation" role="tabpanel" aria-labelledby="list-exacerbation-list">
+        Number of exacerbations (severe and mild/moderate) in the last year.
+      </div>
+      <div class="tab-pane fade" id="list-fev1" role="tabpanel" aria-labelledby="list-fev1-list">
+        Prediction % FEV1 Score.
+      </div>
+      <div class="tab-pane fade" id="list-smoking" role="tabpanel" aria-labelledby="list-smoking-list">
+        Whether or not a patient currently smokes. 1 = smoker, 0 = non-smoker
+      </div>
+      <div class="tab-pane fade" id="list-age" role="tabpanel" aria-labelledby="list-age-list">
+        Patient age at the beginning of the study.
+      </div>
+    <div class="tab-pane fade" id="list-gender" role="tabpanel" aria-labelledby="list-gender-list">
+      For the purpose of this study, we only looked at "Male" and "Female" genders.
+    </div>
+    <div class="tab-pane fade" id="list-oco" role="tabpanel" aria-labelledby="list-oco-list">
+      Domiciliary Oxygen Therapy: At-home oxygen therapy, used to treat COPD. This metric measures whether or not a patient uses oxygen therapy, 1 = Yes, 0 = No.
+    </div>
+        <div class="tab-pane fade" id="list-sgrq" role="tabpanel" aria-labelledby="list-sgrq-list">
+          St. George's Respiratory Questionnaire: This questionnaire is to help doctors/patients determine how much COPD is affecting day-to-day life. The score from the questionnaire is correlated to cough, sputum, and wheezing symptoms.
+          <a href="http://www.healthstatus.sgul.ac.uk/SGRQ_download/Original%20English%20version.pdf">
+            Questionnaire Download
+          </a><br>
+          <a href="https://www.thoracic.org/members/assemblies/assemblies/srn/questionaires/sgrq.php">
+            SGRQ Overview
+            </a>
+    </div>
+        <div class="tab-pane fade" id="list-bmi" role="tabpanel" aria-labelledby="list-bmi-list">
+          Body Mass Index: ratio of weight (kg) to height squared (m^2)
+    </div>
+        <div class="tab-pane fade" id="list-lama" role="tabpanel" aria-labelledby="list-lama-list">
+        Long-Acting Muscarinic receptor Antagonists: used for treatment of COPD. This metric asks whether or not a patient has used LAMAs in the past year.
+    </div>
+    <div class="tab-pane fade" id="list-laba" role="tabpanel" aria-labelledby="list-laba-list">
+      Long-Acting β2 Agonists: used for treatment of COPD. This metric asks whether or not a patient has used LABAs in the past year.
+    </div>
+    <div class="tab-pane fade" id="list-ics" role="tabpanel" aria-labelledby="list-ics-list">
+      Inhaled Glucocorticoids: used for treatment of COPD. This metric asks whether or not a patient has used inhaled glucocorticoids in the past year.
+    </div>
+    <div class="tab-pane fade" id="list-statins" role="tabpanel" aria-labelledby="list-statins-list">
+      Statins: generally used to lower cholesteral in blood, but some studies have recently shown they can be effective in COPD treatment. This metric asks whether or not a patient has used statins in the past year.
+    </div>
+    </div>
+  </div>
+</div>
+<br>
+<br>

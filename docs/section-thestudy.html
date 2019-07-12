@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>2 The Study | Acute COPD Exacerbation Prediction Tool (ACCEPT)</title>
+  <meta name="description" content="2 The Study | Acute COPD Exacerbation Prediction Tool (ACCEPT)" />
+  <meta name="generator" content="bookdown 0.11 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="2 The Study | Acute COPD Exacerbation Prediction Tool (ACCEPT)" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="2 The Study | Acute COPD Exacerbation Prediction Tool (ACCEPT)" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="section-introduction.html">
+<link rel="next" href="section-packageinR.html">
+<script src="book_assets/jquery-2.2.3/jquery.min.js"></script>
+<link href="book_assets/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="book_assets/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="book_assets/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="book_assets/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="book_assets/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+<script src="book_assets/htmlwidgets-1.3/htmlwidgets.js"></script>
+<script src="book_assets/viz-0.3/viz.js"></script>
+<link href="book_assets/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="book_assets/grViz-binding-1.0.1/grViz.js"></script>
+<script src="book_assets/plotly-binding-4.9.0/plotly.js"></script>
+<script src="book_assets/typedarray-0.1/typedarray.min.js"></script>
+<link href="book_assets/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
+<script src="book_assets/crosstalk-1.0.0/js/crosstalk.min.js"></script>
+<link href="book_assets/plotly-htmlwidgets-css-1.46.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="book_assets/plotly-main-1.46.1/plotly-latest.min.js"></script>
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="pretty-styles.css" type="text/css" />
+<link rel="stylesheet" href="cayman.css" type="text/css" />
+<link rel="stylesheet" href="python.css" type="text/css" />
+<link rel="stylesheet" href="index.html" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="section-introduction.html"><a href="section-introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="2" data-path="section-thestudy.html"><a href="section-thestudy.html"><i class="fa fa-check"></i><b>2</b> The Study</a><ul>
+<li class="chapter" data-level="2.1" data-path="section-thestudy.html"><a href="section-thestudy.html#section-background"><i class="fa fa-check"></i><b>2.1</b> Background</a><ul>
+<li class="chapter" data-level="" data-path="section-thestudy.html"><a href="section-thestudy.html#section-exacerbation-causes"><i class="fa fa-check"></i>Exacerbation Causes</a></li>
+<li class="chapter" data-level="" data-path="section-thestudy.html"><a href="section-thestudy.html#section-exacerbation-severity"><i class="fa fa-check"></i>Exacerbation Severity</a></li>
+<li class="chapter" data-level="" data-path="section-thestudy.html"><a href="section-thestudy.html#section-references"><i class="fa fa-check"></i>References</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="section-thestudy.html"><a href="section-thestudy.html#section-studyPopulation"><i class="fa fa-check"></i><b>2.2</b> The Study Population</a><ul>
+<li class="chapter" data-level="" data-path="section-thestudy.html"><a href="section-thestudy.html#section-clinical-trial-1-macro"><i class="fa fa-check"></i>Clinical Trial 1: MACRO</a></li>
+<li class="chapter" data-level="" data-path="section-thestudy.html"><a href="section-thestudy.html#section-clinical-trial-2-statcope"><i class="fa fa-check"></i>Clinical Trial 2: STATCOPE</a></li>
+<li class="chapter" data-level="" data-path="section-thestudy.html"><a href="section-thestudy.html#section-clinical-trial-3-optimal"><i class="fa fa-check"></i>Clinical Trial 3: OPTIMAL</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="section-thestudy.html"><a href="section-thestudy.html#section-data-collection-combined-trials"><i class="fa fa-check"></i><b>2.3</b> Data Collection: Combined Trials</a><ul>
+<li class="chapter" data-level="" data-path="section-thestudy.html"><a href="section-thestudy.html#section-primary-metric"><i class="fa fa-check"></i>Primary Metric</a></li>
+<li class="chapter" data-level="" data-path="section-thestudy.html"><a href="section-thestudy.html#section-secondary-metrics"><i class="fa fa-check"></i>Secondary Metrics</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="section-packageinR.html"><a href="section-packageinR.html"><i class="fa fa-check"></i><b>3</b> Using the Package in R</a><ul>
+<li class="chapter" data-level="3.1" data-path="section-packageinR.html"><a href="section-packageinR.html#section-installation"><i class="fa fa-check"></i><b>3.1</b> Installation</a></li>
+<li class="chapter" data-level="3.2" data-path="section-packageinR.html"><a href="section-packageinR.html#section-accept-prediction-functions"><i class="fa fa-check"></i><b>3.2</b> ACCEPT Prediction Functions</a><ul>
+<li class="chapter" data-level="" data-path="section-packageinR.html"><a href="section-packageinR.html#section-sample-data"><i class="fa fa-check"></i>Sample Data</a></li>
+<li class="chapter" data-level="" data-path="section-packageinR.html"><a href="section-packageinR.html#section-exacerbation-rate"><i class="fa fa-check"></i>Exacerbation Rate</a></li>
+<li class="chapter" data-level="" data-path="section-packageinR.html"><a href="section-packageinR.html#section-probability-of-n-exacerbations-poisson"><i class="fa fa-check"></i>Probability of N Exacerbations (Poisson)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="section-webapp.html"><a href="section-webapp.html"><i class="fa fa-check"></i><b>4</b> Using the Web Application</a></li>
+<li class="chapter" data-level="5" data-path="section-using-the-package-as-an-api-prism.html"><a href="section-using-the-package-as-an-api-prism.html"><i class="fa fa-check"></i><b>5</b> Using the Package as an API (PRISM)</a><ul>
+<li class="chapter" data-level="5.1" data-path="section-using-the-package-as-an-api-prism.html"><a href="section-using-the-package-as-an-api-prism.html#section-r-api"><i class="fa fa-check"></i><b>5.1</b> R API</a></li>
+<li class="chapter" data-level="5.2" data-path="section-using-the-package-as-an-api-prism.html"><a href="section-using-the-package-as-an-api-prism.html#section-shellbash-api"><i class="fa fa-check"></i><b>5.2</b> Shell/Bash API</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="section-using-the-package-as-an-api-prism.html"><a href="section-using-the-package-as-an-api-prism.html#section-linux"><i class="fa fa-check"></i><b>5.2.1</b> Linux</a></li>
+<li class="chapter" data-level="5.2.2" data-path="section-using-the-package-as-an-api-prism.html"><a href="section-using-the-package-as-an-api-prism.html#section-mac-os"><i class="fa fa-check"></i><b>5.2.2</b> Mac OS</a></li>
+<li class="chapter" data-level="5.2.3" data-path="section-using-the-package-as-an-api-prism.html"><a href="section-using-the-package-as-an-api-prism.html#section-windows-powershell"><i class="fa fa-check"></i><b>5.2.3</b> Windows PowerShell</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="section-using-the-package-as-an-api-prism.html"><a href="section-using-the-package-as-an-api-prism.html#section-python-api"><i class="fa fa-check"></i><b>5.3</b> Python API</a></li>
+<li class="chapter" data-level="5.4" data-path="section-using-the-package-as-an-api-prism.html"><a href="section-using-the-package-as-an-api-prism.html#section-javascript-api"><i class="fa fa-check"></i><b>5.4</b> Javascript API</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="section-appendix1.html"><a href="section-appendix1.html"><i class="fa fa-check"></i><b>6</b> Appendix 1: Installing R</a><ul>
+<li class="chapter" data-level="6.1" data-path="section-appendix1.html"><a href="section-appendix1.html#section-step-1-mirrors"><i class="fa fa-check"></i><b>6.1</b> Step 1: Mirrors</a></li>
+<li class="chapter" data-level="6.2" data-path="section-appendix1.html"><a href="section-appendix1.html#section-mac-os-x"><i class="fa fa-check"></i><b>6.2</b> Mac OS X</a></li>
+<li class="chapter" data-level="6.3" data-path="section-appendix1.html"><a href="section-appendix1.html#section-windows"><i class="fa fa-check"></i><b>6.3</b> Windows</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Acute COPD Exacerbation Prediction Tool (ACCEPT)</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="section-thestudy" class="section level1">
+<h1><span class="header-section-number">2</span> The Study</h1>
+<p>The <strong>accept</strong> package and application are based on the paper <a href="https://www.biorxiv.org/content/biorxiv/early/2019/06/04/651901.full.pdf">Development and External Validation of the Acute COPD Exacerbation Prediction Tool (ACCEPT)</a>, published in 2019.</p>
+<div id="section-background" class="section level2">
+<h2><span class="header-section-number">2.1</span> Background</h2>
+<p>Chronic Obstructive Pulmonary Disease (COPD) affects 300 million people worldwide. Patients with COPD often experience what is called an <strong>acute exacerbation</strong>.</p>
+<p><strong>exacerbation</strong>: acute worsening of COPD symptoms; acute means sudden onset, short in duration; COPD symptoms include shortness of breath, wheezing, coughing up mucus, etc.</p>
+<div id="section-exacerbation-causes" class="section level3 unnumbered">
+<h3>Exacerbation Causes</h3>
+<head><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+
+<div class="list-group list-group-static">
+  <a href="#" class="list-group-item list-group-item-action flex-column align-items-start"
+  data-toggle = "list">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">Bacterial Infections</h5>
+      <small>3 days ago</small>
+    </div>
+    <br>
+    <p class="mb-1">Fun fact: Mucopurulent and purlent sputum are sputum types containing pus, which turns them a green-yellow color. A study found that 85% of patients with this type of sputum have bacteria in the sputum. Mucoid sputum is sputum without pus, so white in color. Patients with this type of sputum have a 35% chance of bacteria. This means sputum color is a decent test for whether or not to treat with antibiotics (which only work on bacteria).</p>
+  </a>
+  <a href="#" class="list-group-item list-group-item-action flex-column align-items-start"
+  data-toggle = "list">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">Viral Infections</h5>
+      <small class="text-muted">3 days ago</small>
+    </div>
+    <br>
+    <p class="mb-1"></p>
+  </a>
+  <a href="#" class="list-group-item list-group-item-action flex-column align-items-start"
+  data-toggle = "list">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">Air Pollution</h5>
+      <small class="text-muted">3 days ago</small>
+    </div>
+    <br>
+    <p class="mb-1"></p>
+  </a>
+    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start"
+    data-toggle = "list">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">Cold Weather</h5>
+      <small class="text-muted">3 days ago</small>
+    </div>
+    <br>
+    <p class="mb-1"></p>
+  </a>
+      <a href="#" class="list-group-item list-group-item-action flex-column align-items-start"
+      data-toggle = "list">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">Interruption of Treatment</h5>
+      <small class="text-muted">3 days ago</small>
+    </div>
+    <br>
+    <p class="mb-1"></p>
+  </a>
+</div>
+</div>
+<div id="section-exacerbation-severity" class="section level3 unnumbered">
+<h3>Exacerbation Severity</h3>
+<head><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+<div class="row">
+  <div class="col-4">
+    <div class="list-group" id="list-tab" role="tablist">
+      <a class="list-group-item list-group-item-action active" id="list-mild-list" data-toggle="list" href="#list-mild" role="tab" aria-controls="mild">Mild</a>
+      <a class="list-group-item list-group-item-action" id="list-moderate-list" data-toggle="list" href="#list-moderate" role="tab" aria-controls="moderate">Moderate</a>
+      <a class="list-group-item list-group-item-action" id="list-severe-list" data-toggle="list" href="#list-severe" role="tab" aria-controls="severe">Severe</a>
+    </div>
+  </div>
+  <div class="col-8">
+    <div class="tab-content" id="nav-tabContent">
+      <div class="tab-pane fade show active" id="list-mild" role="tabpanel" aria-labelledby="list-mild-list">
+        Patient has an increased need for medication, but does not need hospital care.
+      </div>
+      <div class="tab-pane fade" id="list-moderate" role="tabpanel" aria-labelledby="list-moderate-list">
+        Patient has an increased need for medication, and seeks medical assistance.
+      </div>
+      <div class="tab-pane fade" id="list-severe" role="tabpanel" aria-labelledby="list-severe-list">
+        Patient (caregiver) recongizes rapid deterioration in condition, requiring hospitalization.
+    </div>
+    </div>
+  </div>
+</div>
+</div>
+<div id="section-references" class="section level3 unnumbered">
+<h3>References</h3>
+<p><a href="https://erj.ersjournals.com/content/erj/21/41_suppl/46s.full.pdf">COPD exacerbations: definitions and classifications</a></p>
+<p><a href="https://www.ncbi.nlm.nih.gov/pubmed/10843984">Toward a consensus definition for COPD exacerbations</a></p>
+</div>
+</div>
+<div id="section-studyPopulation" class="section level2">
+<h2><span class="header-section-number">2.2</span> The Study Population</h2>
+<p>The data for this study was taken from three different studies:</p>
+<p><a href="https://clinicaltrials.gov/ct2/show/NCT00325897">Macrolide Azithromycin to Prevent Rapid Worsening of Symptoms in COPD (MACRO)</a></p>
+<p><a href="https://clinicaltrials.gov/ct2/show/NCT01061671">Simvastatin for the Prevention of Exacerbations in Moderate-to-Severe COPD ( STATCOPE)</a></p>
+<p><a href="https://www.ncbi.nlm.nih.gov/pubmed/15611808">Optimal Therapy of COPD to Prevent Exacerbations and Improve Quality of Life (OPTIMAL)</a></p>
+<div id="section-clinical-trial-1-macro" class="section level3 unnumbered">
+<h3>Clinical Trial 1: MACRO</h3>
+<p>Number of Participants: 1142</p>
+<p>Type of Study: Clinical Randomized</p>
+<p>Masking: Triple (Participant, Investigator, Care-Provider)</p>
+<div id="section-criteria" class="section level4 unnumbered">
+<h4>Criteria</h4>
+<ul>
+<li>Age: &gt; 40 years old</li>
+<li>COPD diagnosis</li>
+<li>Does not have asthma</li>
+<li>10 pack years or more of smoking</li>
+</ul>
+</div>
+<div id="section-study-groups" class="section level4 unnumbered">
+<h4>Study Groups</h4>
+<div id="htmlwidget-723c6a1f06bf4d60077e" style="width:672px;height:480px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-723c6a1f06bf4d60077e">{"x":{"diagram":"digraph {\n\ngraph [layout = \"neato\",\n       outputorder = \"edgesfirst\",\n       bgcolor = \"white\"]\n\nnode [fontname = \"Helvetica\",\n      fontsize = \"10\",\n      shape = \"circle\",\n      fixedsize = \"true\",\n      width = \"0.5\",\n      style = \"filled\",\n      fillcolor = \"aliceblue\",\n      color = \"gray70\",\n      fontcolor = \"gray50\"]\n\nedge [fontname = \"Helvetica\",\n     fontsize = \"8\",\n     len = \"1.5\",\n     color = \"gray80\",\n     arrowsize = \"0.5\"]\n\n  \"1\" [label = \"All \n Participants\", color = \"#330033\", fontcolor = \"white\", shape = \"oval\", fontsize = \"4\", fillcolor = \"#330033\", pos = \"0.5,2!\"] \n  \"2\" [label = \"Placebo\", color = \"#330033\", fontcolor = \"white\", shape = \"oval\", fontsize = \"4\", fillcolor = \"#330033\", pos = \"0,1!\"] \n  \"3\" [label = \"Azithromycin \n Treatment\", color = \"#330033\", fontcolor = \"white\", shape = \"oval\", fontsize = \"4\", fillcolor = \"#330033\", pos = \"1,1!\"] \n\"1\"->\"2\" [color = \"#8cf2f2\"] \n\"1\"->\"3\" [color = \"#8cf2f2\"] \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<head>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+</head>
+<div class="card-deck">
+  <div class="card card-icon">
+    <i class="fas fa-tablets" style="font-size: 2.0em;">  Placebo</i>
+    <div class="card-body">
+      <div class="card-title">Sugar Pill</div>
+      <p class="card-text">The placebo group was given a sugar pill capsule to take once every day for 12 months.</p>
+    </div>
+  </div>
+  <div class="card card-icon">
+    <i class="fas fa-capsules" style="font-size: 2.0em;">
+       Treatment
+    </i>
+
+    <div class="card-body">
+      <div class="card-title">Azithromycin (macrolide antibiotic)</div>
+      <p class="card-text">The treatment group was given a 250 mg capsule of Azithromycin (macrolide antibiotic) to take once every day for 12 months.</p>
+    </div>
+  </div>
+</div>
+</div>
+<div id="section-data-collection-primary-metric" class="section level4 unnumbered">
+<h4>Data Collection: Primary Metric</h4>
+
+<div class="card text-white bg-primary mb-3 border-white" style="max-width: 80rem;">
+  <div class="card-header">Number of COPD Exacerbations</div>
+  <div class="card-body bg-white text-dark">
+    <p class="card-text">The purpose of this study was to investigate the effects of azithromycin treatment on exacerbation rate. The number of COPD exacerbations during the 12 months of the study is the primary metric.</p>
+<p class="card-text">Number of Years: 1 year</p>
+  </div>
+</div>
+</div>
+</div>
+<div id="section-clinical-trial-2-statcope" class="section level3 unnumbered">
+<h3>Clinical Trial 2: STATCOPE</h3>
+<p>Number of Participants: 885</p>
+<p>Type of Study: Clinical Randomized</p>
+<p>Masking: Triple (Participant, Investigator, Care-Provider)</p>
+<div id="section-criteria-1" class="section level4 unnumbered">
+<h4>Criteria</h4>
+<ul>
+<li>Age: 40 - 80 years old</li>
+<li>COPD diagnosis</li>
+<li>Does not have asthma</li>
+<li>10 pack years or more of smoking</li>
+</ul>
+</div>
+<div id="section-study-groups-1" class="section level4 unnumbered">
+<h4>Study Groups</h4>
+<div id="htmlwidget-97fe6a2fb94a8ed446d3" style="width:672px;height:480px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-97fe6a2fb94a8ed446d3">{"x":{"diagram":"digraph {\n\ngraph [layout = \"neato\",\n       outputorder = \"edgesfirst\",\n       bgcolor = \"white\"]\n\nnode [fontname = \"Helvetica\",\n      fontsize = \"10\",\n      shape = \"circle\",\n      fixedsize = \"true\",\n      width = \"0.5\",\n      style = \"filled\",\n      fillcolor = \"aliceblue\",\n      color = \"gray70\",\n      fontcolor = \"gray50\"]\n\nedge [fontname = \"Helvetica\",\n     fontsize = \"8\",\n     len = \"1.5\",\n     color = \"gray80\",\n     arrowsize = \"0.5\"]\n\n  \"1\" [label = \"All \n Participants\", color = \"#330033\", fontcolor = \"white\", shape = \"oval\", fontsize = \"4\", fillcolor = \"#330033\", pos = \"0.5,2!\"] \n  \"2\" [label = \"Placebo\", color = \"#330033\", fontcolor = \"white\", shape = \"oval\", fontsize = \"4\", fillcolor = \"#330033\", pos = \"0,1!\"] \n  \"3\" [label = \"Simvastatin \n Treatment\", color = \"#330033\", fontcolor = \"white\", shape = \"oval\", fontsize = \"4\", fillcolor = \"#330033\", pos = \"1,1!\"] \n\"1\"->\"2\" [color = \"#8cf2f2\"] \n\"1\"->\"3\" [color = \"#8cf2f2\"] \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<head>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+</head>
+<div class="card-deck">
+  <div class="card card-icon">
+    <i class="fas fa-tablets" style="font-size: 2.0em;">  Placebo</i>
+    <div class="card-body">
+      <div class="card-title">Sugar Pill</div>
+      <p class="card-text">The placebo group was given a sugar pill capsule to take once every day for 37 months.</p>
+    </div>
+  </div>
+  <div class="card card-icon">
+    <i class="fas fa-capsules" style="font-size: 2.0em;">
+       Treatment
+    </i>
+
+    <div class="card-body">
+      <div class="card-title">Simvastatin</div>
+      <p class="card-text">The treatment group was given 40 mg of simvastatin to take once every day for 37 months.</p>
+    </div>
+  </div>
+</div>
+</div>
+<div id="section-data-collection-primary-metric-1" class="section level4 unnumbered">
+<h4>Data Collection: Primary Metric</h4>
+
+<div class="card text-white bg-primary mb-3 border-white" style="max-width: 80rem;">
+  <div class="card-header">Rate of COPD Exacerbations</div>
+  <div class="card-body bg-white text-dark">
+    <p class="card-text">The purpose of this study was to investigate the effects of azithromycin treatment on exacerbation rate. The number of COPD exacerbations per year during the 37 months of the study is the primary metric.</p>
+<p class="card-text">Number of Years: 3 years</p>
+  </div>
+</div>
+</div>
+</div>
+<div id="section-clinical-trial-3-optimal" class="section level3 unnumbered">
+<h3>Clinical Trial 3: OPTIMAL</h3>
+<p>Number of Participants: 432</p>
+<p>Type of Study: Clinical Randomized</p>
+<p>Masking: Double (Participant, Investigator)</p>
+<div id="section-criteria-2" class="section level4 unnumbered">
+<h4>Criteria</h4>
+<ul>
+<li>Age: &gt; 35 years old</li>
+<li>COPD diagnosis</li>
+<li>Does not have asthma</li>
+<li>10 pack years or more of smoking</li>
+<li>at least 1 COPD exacerbation in the last year</li>
+</ul>
+</div>
+<div id="section-study-groups-2" class="section level4 unnumbered">
+<h4>Study Groups</h4>
+<div id="htmlwidget-c935a3cd76dd29458c07" style="width:672px;height:480px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-c935a3cd76dd29458c07">{"x":{"diagram":"digraph {\n\ngraph [layout = \"neato\",\n       outputorder = \"edgesfirst\",\n       bgcolor = \"white\"]\n\nnode [fontname = \"Helvetica\",\n      fontsize = \"10\",\n      shape = \"circle\",\n      fixedsize = \"true\",\n      width = \"0.5\",\n      style = \"filled\",\n      fillcolor = \"aliceblue\",\n      color = \"gray70\",\n      fontcolor = \"gray50\"]\n\nedge [fontname = \"Helvetica\",\n     fontsize = \"8\",\n     len = \"1.5\",\n     color = \"gray80\",\n     arrowsize = \"0.5\"]\n\n  \"1\" [label = \"All \n Participants\", color = \"#330033\", fontcolor = \"white\", shape = \"oval\", fontsize = \"4\", fillcolor = \"#330033\", pos = \"1,2!\"] \n  \"2\" [label = \"Placebo \n Inhaler\", color = \"#330033\", fontcolor = \"white\", shape = \"oval\", fontsize = \"4\", fillcolor = \"#330033\", pos = \"0,1!\"] \n  \"3\" [label = \"Salmeteral \n Inhaler\", color = \"#330033\", fontcolor = \"white\", shape = \"oval\", fontsize = \"4\", fillcolor = \"#330033\", pos = \"1,1!\"] \n  \"4\" [label = \"Advair \n Inhaler\", color = \"#330033\", fontcolor = \"white\", shape = \"oval\", fontsize = \"4\", fillcolor = \"#330033\", pos = \"2,1!\"] \n\"1\"->\"2\" [color = \"#8cf2f2\"] \n\"1\"->\"3\" [color = \"#8cf2f2\"] \n\"1\"->\"4\" [color = \"#8cf2f2\"] \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<head>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+</head>
+<div class="card-deck">
+  <div class="card card-icon">
+    <i class="fas fa-tablets" style="font-size: 2.0em;">  Placebo</i>
+    <div class="card-body">
+      <div class="card-title">Sugar Pill</div>
+      <p class="card-text">The placebo group was given 2 puffs/day from a placebo inhaler for 12 months</p>
+    </div>
+  </div>
+  <div class="card card-icon">
+    <i class="fas fa-capsules" style="font-size: 2.0em;">
+       Treatment 1
+    </i>
+
+    <div class="card-body">
+      <div class="card-title">Salmeterol Inhaler</div>
+      <p class="card-text">The treatment group was given 2 puffs/day from a Salmeterol inhaler containing 25 ug/puff of salmeterol for 12 months.</p>
+    </div>
+  </div>
+    <div class="card card-icon">
+    <i class="fas fa-capsules" style="font-size: 2.0em;">
+       Treatment 2
+    </i>
+
+    <div class="card-body">
+      <div class="card-title">Advair</div>
+      <p class="card-text">The treatment group was given 2 puffs/day from an Advair inhaler containing 25 ug/puff of salmeterol and 250 ug/puff of fluticasone for 12 months.</p>
+    </div>
+  </div>
+</div>
+</div>
+<div id="section-data-collection-primary-metric-2" class="section level4 unnumbered">
+<h4>Data Collection: Primary Metric</h4>
+
+<div class="card text-white bg-primary mb-3 border-white" style="max-width: 80rem;">
+  <div class="card-header">Number of COPD Exacerbations</div>
+  <div class="card-body bg-white text-dark">
+    <p class="card-text">The purpose of this study was to investigate the effects of Salmeterol and/or Advair treatment on exacerbation rate. The number of COPD exacerbations during the 12 months of the study is the primary metric.</p>
+<p class="card-text">Number of Years: 3 years</p>
+  </div>
+</div>
+</div>
+</div>
+</div>
+<div id="section-data-collection-combined-trials" class="section level2">
+<h2><span class="header-section-number">2.3</span> Data Collection: Combined Trials</h2>
+<p>For our study, we combined the results from the three trials described above.</p>
+<div id="section-primary-metric" class="section level3 unnumbered">
+<h3>Primary Metric</h3>
+<div class="card text-white bg-primary mb-3 border-white" style="max-width: 80rem;">
+  <div class="card-header">Exacerbation Rate</div>
+  <div class="card-body bg-white text-dark">
+    <p class="card-text">The purpose of this study was determine the exacerbation rate of a patient, defined as the # exacerbations / year. We break this down into severe exacerbation rate and overall exacerbation rate. Additionally, we include the results from the MACRO study to predict exacerbation rate with and without the use of Azithromycin as a treatment.</p>
+  </div>
+</div>
+</div>
+<div id="section-secondary-metrics" class="section level3 unnumbered">
+<h3>Secondary Metrics</h3>
+<head><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+<div class="row">
+  <div class="col-4">
+
+    <div class="list-group" id="list-tab" role="tablist">
+      <a class="list-group-item list-group-item-action active" id="list-exacerbation-list" data-toggle="list" href="#list-exacerbation" role="tab" aria-controls="exacerbation">Exacerbation History</a>
+      <a class="list-group-item list-group-item-action" id="list-fev1-list" data-toggle="list" href="#list-fev1" role="tab" aria-controls="fev1">FEV1 % Predicted</a>
+      <a class="list-group-item list-group-item-action" id="list-smoking-list" data-toggle="list" href="#list-smoking" role="tab" aria-controls="smoking">Smoking Status</a>
+      <a class="list-group-item list-group-item-action" id="list-age-list" data-toggle="list" href="#list-age" role="tab" aria-controls="age">Age (years)</a>
+      <a class="list-group-item list-group-item-action" id="list-gender-list" data-toggle="list" href="#list-gender" role="tab" aria-controls="gender">Gender (male or female)</a>
+      <a class="list-group-item list-group-item-action" id="list-oco-list" data-toggle="list" href="#list-oco" role="tab" aria-controls="oco">Oxygen Therapy</a>
+      <a class="list-group-item list-group-item-action" id="list-sgrq-list" data-toggle="list" href="#list-sgrq" role="tab" aria-controls="sgrq">SGRQ Score</a>
+      <a class="list-group-item list-group-item-action" id="list-bmi-list" data-toggle="list" href="#list-bmi" role="tab" aria-controls="bmi">BMI</a>
+     <a class="list-group-item list-group-item-action" id="list-lama-list" data-toggle="list" href="#list-lama" role="tab" aria-controls="lama">LAMAs</a>
+    <a class="list-group-item list-group-item-action" id="list-laba-list" data-toggle="list" href="#list-laba" role="tab" aria-controls="laba">LABAs</a>
+    <a class="list-group-item list-group-item-action" id="list-ics-list" data-toggle="list" href="#list-ics" role="tab" aria-controls="ics">ICs</a>
+    <a class="list-group-item list-group-item-action" id="list-statins-list" data-toggle="list" href="#list-statins" role="tab" aria-controls="statins">Statins</a>
+    </div>
+  </div>
+  <div class="col-8">
+    <div class="tab-content" id="nav-tabContent">
+      <div class="tab-pane fade show active" id="list-exacerbation" role="tabpanel" aria-labelledby="list-exacerbation-list">
+        Number of exacerbations (severe and mild/moderate) in the last year.
+      </div>
+      <div class="tab-pane fade" id="list-fev1" role="tabpanel" aria-labelledby="list-fev1-list">
+        Prediction % FEV1 Score.
+      </div>
+      <div class="tab-pane fade" id="list-smoking" role="tabpanel" aria-labelledby="list-smoking-list">
+        Whether or not a patient currently smokes. 1 = smoker, 0 = non-smoker
+      </div>
+      <div class="tab-pane fade" id="list-age" role="tabpanel" aria-labelledby="list-age-list">
+        Patient age at the beginning of the study.
+      </div>
+    <div class="tab-pane fade" id="list-gender" role="tabpanel" aria-labelledby="list-gender-list">
+      For the purpose of this study, we only looked at "Male" and "Female" genders.
+    </div>
+    <div class="tab-pane fade" id="list-oco" role="tabpanel" aria-labelledby="list-oco-list">
+      Domiciliary Oxygen Therapy: At-home oxygen therapy, used to treat COPD. This metric measures whether or not a patient uses oxygen therapy, 1 = Yes, 0 = No.
+    </div>
+        <div class="tab-pane fade" id="list-sgrq" role="tabpanel" aria-labelledby="list-sgrq-list">
+          St. George's Respiratory Questionnaire: This questionnaire is to help doctors/patients determine how much COPD is affecting day-to-day life. The score from the questionnaire is correlated to cough, sputum, and wheezing symptoms.
+          <a href="http://www.healthstatus.sgul.ac.uk/SGRQ_download/Original%20English%20version.pdf">
+            Questionnaire Download
+          </a><br>
+          <a href="https://www.thoracic.org/members/assemblies/assemblies/srn/questionaires/sgrq.php">
+            SGRQ Overview
+            </a>
+    </div>
+        <div class="tab-pane fade" id="list-bmi" role="tabpanel" aria-labelledby="list-bmi-list">
+          Body Mass Index: ratio of weight (kg) to height squared (m^2)
+    </div>
+        <div class="tab-pane fade" id="list-lama" role="tabpanel" aria-labelledby="list-lama-list">
+        Long-Acting Muscarinic receptor Antagonists: used for treatment of COPD. This metric asks whether or not a patient has used LAMAs in the past year.
+    </div>
+    <div class="tab-pane fade" id="list-laba" role="tabpanel" aria-labelledby="list-laba-list">
+      Long-Acting β2 Agonists: used for treatment of COPD. This metric asks whether or not a patient has used LABAs in the past year.
+    </div>
+    <div class="tab-pane fade" id="list-ics" role="tabpanel" aria-labelledby="list-ics-list">
+      Inhaled Glucocorticoids: used for treatment of COPD. This metric asks whether or not a patient has used inhaled glucocorticoids in the past year.
+    </div>
+    <div class="tab-pane fade" id="list-statins" role="tabpanel" aria-labelledby="list-statins-list">
+      Statins: generally used to lower cholesteral in blood, but some studies have recently shown they can be effective in COPD treatment. This metric asks whether or not a patient has used statins in the past year.
+    </div>
+    </div>
+  </div>
+</div>
+<br>
+<br>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="section-introduction.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="section-packageinR.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="book_assets/gitbook-2.6.7/js/app.min.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/lunr.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection",
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+},
+"search": true
+});
+});
+</script>
+
+</body>
+
+</html>

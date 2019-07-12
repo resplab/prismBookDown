@@ -1,0 +1,21 @@
+:root {
+  --color-a: #330033; 
+  --color-b: #4cdef5; 
+  --color-c: #ff5992; 
+}
+
+/* Import */
+code span.im {
+  font-weight: bold;
+  color: var(--color-c);
+}
+
+code span.bu {
+  font-weight: bold;
+  color: var(--color-a);
+}
+/* Operator */
+code span.op {
+  font-weight: bold;
+  color: var(--color-b);
+}

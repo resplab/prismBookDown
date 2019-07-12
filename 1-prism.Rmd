@@ -1,0 +1,59 @@
+---
+title: "PRISM: PROGRAMMABLE INTERFACE FOR STATISTICAL & SIMULATION MODELS"
+site: "bookdown::bookdown_site"
+runtime: "shiny"
+output:
+  bookdown::gitbook:
+    lib_dir: "book_assets"
+    delete_merged_file: TRUE
+    table_css: FALSE
+    output_dir: "docs"
+    css: ["pretty-styles.css", "cayman.css", "python.css", "index.html"]
+    js: "js/list-group.js"
+    config:
+      toc:
+        collapse: subsection
+        scroll_highlight: yes
+        before: null
+        after: null
+      toolbar:
+        position: fixed
+      edit : null
+      download: null
+      search: yes
+      fontsettings:
+        theme: white
+        family: sans
+        size: 2
+      sharing:
+        facebook: yes
+        twitter: yes
+        google: no
+        linkedin: no
+        weibo: no
+        instapaper: no
+        vk: no
+        all: ['facebook', 'google', 'twitter', 'linkedin', 'weibo', 'instapaper']
+  bookdown::pdf_book:
+    keep_tex: yes
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = ">"
+)
+```
+
+```{r, echo = FALSE, eval = TRUE}
+themeColors = c("#330033", "#8cf2f2", "#c51672", "#007bff")
+```
+# Introduction {#introduction}
+
+PRISM is a platform that makes decision-analytics and clinical prediction models accessible on the cloud. PRISM enables end-users to interact with the model they are interested in, without worrying about having the required hardware resources, or setting up complex code on their computer.
+
+In its current implementation, PRISM can host models created in R, and can be accessed through Microsoft Excel and R.
+
+[PRISM Introduction](http://resp.core.ubc.ca/research/Specific_Projects/PRISM).
+
+

@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>2 Application Programming Interface (API) | PRISM: PROGRAMMABLE INTERFACE FOR STATISTICAL &amp; SIMULATION MODELS</title>
+  <meta name="description" content="2 Application Programming Interface (API) | PRISM: PROGRAMMABLE INTERFACE FOR STATISTICAL &amp; SIMULATION MODELS" />
+  <meta name="generator" content="bookdown 0.11 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="2 Application Programming Interface (API) | PRISM: PROGRAMMABLE INTERFACE FOR STATISTICAL &amp; SIMULATION MODELS" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="2 Application Programming Interface (API) | PRISM: PROGRAMMABLE INTERFACE FOR STATISTICAL &amp; SIMULATION MODELS" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="section-introduction.html">
+
+<script src="book_assets/jquery-2.2.3/jquery.min.js"></script>
+<link href="book_assets/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="book_assets/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="book_assets/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="book_assets/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="book_assets/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="pretty-styles.css" type="text/css" />
+<link rel="stylesheet" href="cayman.css" type="text/css" />
+<link rel="stylesheet" href="python.css" type="text/css" />
+<link rel="stylesheet" href="index.html" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="section-introduction.html"><a href="section-introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="2" data-path="section-api.html"><a href="section-api.html"><i class="fa fa-check"></i><b>2</b> Application Programming Interface (API)</a><ul>
+<li class="chapter" data-level="" data-path="section-api.html"><a href="section-api.html#section-what-is-an-api"><i class="fa fa-check"></i>What is an API?</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">PRISM: PROGRAMMABLE INTERFACE FOR STATISTICAL &amp; SIMULATION MODELS</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="section-api" class="section level1">
+<h1><span class="header-section-number">2</span> Application Programming Interface (API)</h1>
+<p>This section is geared towards people who are less familiar with APIs, or who want a refresher. If you are comfortable with APIs and don’t need a review, you can skip to the next section.</p>
+<div id="section-what-is-an-api" class="section level2 unnumbered">
+<h2>What is an API?</h2>
+<head>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="js/list-group.js"></script>
+
+</head>
+<div class="card-deck">
+  <div class="card card-icon">
+
+    <div class="card-body">
+      <div class="card-title"><i class="fas fa-laptop" style="font-size: 2.0em;"></i>
+      &nbsp;&nbsp;&nbsp;
+      Client
+      </div>
+      <h6 class="card-subtitle mb-2 text-muted">You are the Client<br></h6>
+      <p class="card-text">
+        Suppose you are at home, on your laptop, and you want to use a cool
+        new piece of software that you found on the internet. Let's say the
+        software is written in the R language. What if you don't have R on
+        your computer?
+        You could install R, but maybe you don't want to. Or what if you
+        actually want to use the software in a different language, like
+        Python? Or maybe you want to use it in several different languages?
+        This is what an API is for.
+      </p>
+    </div>
+  </div>
+  <div class="card card-icon">
+
+    <div class="card-body">
+          <div class="card-title">
+    <i class="fas fa-server" style="font-size: 2.0em;"></i>
+      &nbsp;&nbsp;&nbsp;
+      Server
+      </div>
+<h6 class="card-subtitle mb-2 text-muted">PRISM is on the Server<br></h6>
+      <p class="card-text">
+        Server is a word used a lot in programming, and all it means is
+        computer. In this context, the server is the computer you will
+        be connecting to; it is the computer with the software that
+        you want to use.
+      </p>
+    </div>
+  </div>
+</div>
+<br>
+
+<div class="card-deck" id="api">
+  <div class="card card-icon">
+
+    <div class="card-body">
+          <div class="card-title">
+            <div class="row">
+  <div class="col-5">
+    <i class="fas fa-laptop" style="font-size: 3.0em;"></i>
+  </div>
+  <div class="col-2">
+    <i class="fas fa-arrows-alt-h"></i>
+  </div>
+  <div class="col-5">
+    <i class="fas fa-server" style="font-size: 3.0em;"></i>
+  </div>
+</div>
+      </div>
+<h6 class="card-subtitle mb-2 text-muted">API communicates<br></h6>
+      <p class="card-text">
+        We can use the API to communicate between the Client and the
+        Server. In the example above, you could use the API to use an
+        R software package that lives on a computer (Server) somewhere else,
+        without having to download or use R on your computer.
+      </p>
+    </div>
+  </div>
+</div>
+
+
+<br>
+
+<!-- # Using the Package in R {#packageinR} -->
+<!-- ## Installation -->
+<!-- If you do not have R installed on your computer, please go to [Appendix 1](#appendix1). Once you have R installed, you can install this package in the R console: -->
+<!-- ```{r chunk-label, eval = FALSE, echo = TRUE} -->
+<!-- install.packages("devtools") -->
+<!-- devtools::install_github("resplab/accept") -->
+<!-- ``` -->
+<!-- ## ACCEPT Prediction Functions -->
+<!-- ### Sample Data {-} -->
+<!-- To get started, there is an R data frame with the package of sample patient data. I have printed columns 1-13 and 14-19 separately because there isn't enough space: -->
+<!-- ```{r sample-patients, eval = TRUE, echo = TRUE} -->
+<!-- library(accept) -->
+<!-- samplePatients = accept::samplePatients -->
+<!-- print(samplePatients[,1:13]) -->
+<!-- print(samplePatients[,14:19]) -->
+<!-- ``` -->
+<!-- ```{r, eval=TRUE, echo=FALSE} -->
+<!-- library(htmltools) -->
+<!-- rawHTML <- paste(readLines("predictACCEPT-inputs.html"), collapse="\n") -->
+<!-- HTML(rawHTML) -->
+<!-- ``` -->
+<!-- ### Exacerbation Rate {-} -->
+<!-- To get a prediction for exacerbation rate, you will need to pass in a patient vector: -->
+<!-- ```{r exacerbation-rate, eval = TRUE, echo = TRUE} -->
+<!-- results <- predictACCEPT(samplePatients[1,]) -->
+<!-- print(t(results)) -->
+<!-- ``` -->
+<!-- The **predictACCEPT()** function returns a data frame with the original patient data, along with the predictions for different treatment options. Here is a summary of the results:  -->
+<!-- ```{r, eval=TRUE, echo=FALSE} -->
+<!-- library(htmltools) -->
+<!-- rawHTML <- paste(readLines("predictACCEPT-outputs.html"), collapse="\n") -->
+<!-- HTML(rawHTML) -->
+<!-- ``` -->
+<!-- To visualize the data, there is a graphing function called **plotExacerbations()**, which creates a Plotly bar graph. You have the option of selecting **probability** or **rate** for which prediction you want to see, and either **CI** or **PI** to select the confidence interval or prediction interval respectively. -->
+<!-- ```{r exacerbation-rate-2, eval = TRUE, echo = TRUE} -->
+<!-- plotExacerbations(results, type="probability", interval = "CI") -->
+<!-- ``` -->
+<!-- ```{r exacerbation-rate-3, eval = TRUE, echo = TRUE} -->
+<!-- plotExacerbations(results, type="probability", interval = "PI") -->
+<!-- ``` -->
+<!-- ```{r exacerbation-rate-4, eval = TRUE, echo = TRUE} -->
+<!-- plotExacerbations(results, type="rate", interval = "CI") -->
+<!-- ``` -->
+<!-- ### Probability of N Exacerbations (Poisson) {-} -->
+<!-- We can also calculate the predicted number of exacerbations in a year: -->
+<!-- ```{r n-exacerbations-1, eval = TRUE, echo = TRUE} -->
+<!-- patientResults = predictACCEPT(samplePatients[1,]) -->
+<!-- exacerbationsMatrix = predictCountProb(patientResults, n = 10, shortened = TRUE) -->
+<!-- print(exacerbationsMatrix) -->
+<!-- ``` -->
+<!-- The shortened parameter groups the probabilities from 3-10 exacerbations into one category, "3 or more exacerbations." To see all n exacerbation probabilities: -->
+<!-- ```{r n-exacerbations-2, eval = TRUE, echo = TRUE} -->
+<!-- exacerbationsMatrix = predictCountProb(patientResults, n = 10, shortened = FALSE) -->
+<!-- print(exacerbationsMatrix) -->
+<!-- ``` -->
+<!-- To visualize the matrix as a heatmap, we can use the function **plotHeatMap**: -->
+<!-- ```{r n-exacerbations-3, eval = TRUE, echo = TRUE} -->
+<!-- plotHeatMap(patientResults, shortened = FALSE) -->
+<!-- ``` -->
+
+<!-- # Using the Web Application {#webapp} -->
+<!-- We have created a web application which can be found here: -->
+<!-- ```{r, eval=TRUE, echo=FALSE} -->
+<!-- library(htmltools) -->
+<!-- rawHTML <- paste(readLines("webapp.html"), collapse="\n") -->
+<!-- HTML(rawHTML) -->
+<!-- ``` -->
+
+<!-- # Using the Package as an API (PRISM) -->
+<!-- PRISM (Programmable Interface for Simulation/Statistical Models) is a package which provides a user-friendly API interface in R for clinical prediction and decision analytics models hosted on UBC PRISM cloud. -->
+<!-- For more information, the PRISM package can be found on GitHub at [PRISM on  GitHub](https://github.com/resplab/prism). -->
+<!-- ## R API -->
+<!-- To install PRISM in R, you will need to install it from GitHub. In an R Console: -->
+<!-- ```{r prism-r, eval = FALSE, echo = TRUE} -->
+<!-- devtools::install_github("resplab/prism") -->
+<!-- ``` -->
+<!-- To use PRISM in R: -->
+<!-- ```{r prism-api-r, eval = TRUE, echo = FALSE} -->
+<!-- your_api_key = 123456 -->
+<!-- ``` -->
+<!-- <!-- ```{r prism-accept, eval = TRUE, echo = TRUE} -->
+<p>–&gt;
+<!-- <!-- library(prism) --> –&gt;
+<!-- <!-- connect_to_model("acceptPrism", api_key = your_api_key) --> –&gt;
+<!-- <!-- patient1 <- accept::samplePatients[1,] --> –&gt;
+<!-- <!-- model_run(patient1) --> –&gt;
+<!-- <!-- res <- as.data.frame(model_run(patient1)) --> –&gt;
+<!-- <!-- ``` --> –&gt;</p>
+<!-- ## Shell/Bash API -->
+<!-- ### Linux -->
+<!-- You will need curl installed to use the API. To check if you have curl: -->
+<!-- ```{bash prism-curl, eval = FALSE, echo = TRUE} -->
+<!-- dpkg -l curl -->
+<!-- ``` -->
+<!-- If you do not have curl, you can install it by: -->
+<!-- ```{bash prism-curl-install, eval = FALSE, echo = TRUE} -->
+<!-- sudo apt install curl -->
+<!-- ``` -->
+<!-- <!-- ```{bash prism-linux, eval = FALSE, echo = TRUE} -->
+<p>–&gt;</p>
+<!-- <!-- curl -X POST -H "Content-Type: application/json" -d '{"api_key":["YOUR_API_KEY"],"func":["prism_model_run"],"model_input":[{"ID":"10001","male":1,"age":70,"smoker":1,"FEV1":2.5,"height":1.68,"weight":65}]}' http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json -->
+<p>–&gt;
+<!-- <!-- ``` --> –&gt;</p>
+<!-- <!-- ```{bash prism-linux2, eval = TRUE, echo = FALSE} -->
+<p>–&gt;</p>
+<!-- <!-- curl -X POST -H "Content-Type: application/json" -d '{"api_key":[123456],"func":["prism_model_run"],"model_input":[{"ID":"10001","male":1,"age":70,"smoker":1,"FEV1":2.5,"height":1.68,"weight":65}]}' http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json -->
+<p>–&gt;
+<!-- <!-- ``` --> –&gt;
+<!-- ### Mac OS --></p>
+<!-- You will need curl installed to use the API. To check if you have curl: -->
+<!-- ```{bash prism-curl-mac, eval = FALSE, echo = TRUE} -->
+<!-- brew list curl -->
+<!-- ``` -->
+<!-- If you do not have curl, you can install it using HomeBrew: -->
+<!-- ```{bash prism-curl-install-mac, eval = FALSE, echo = TRUE} -->
+<!-- brew install curl -->
+<!-- ``` -->
+<!-- <!-- ```{bash prism-mac, eval = FALSE, echo = TRUE} -->
+<p>–&gt;</p>
+<!-- <!-- curl -X POST -H "Content-Type: application/json" -d '{"api_key":["YOUR_API_KEY"],"func":["prism_model_run"],"model_input":[{"ID":"10001","male":1,"age":70,"smoker":1,"FEV1":2.5,"height":1.68,"weight":65}]}' http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json -->
+<p>–&gt;
+<!-- <!-- ``` --> –&gt;</p>
+<!-- <!-- ```{bash prism-mac2, eval = TRUE, echo = FALSE} -->
+<p>–&gt;</p>
+<!-- <!-- curl -X POST -H "Content-Type: application/json" -d '{"api_key":[123456],"func":["prism_model_run"], -->
+<p>–&gt;
+<!-- <!-- "model_input":[{"ID":"10001","male":1,"age":70,"smoker":1,"FEV1":2.5,"height":1.68,"weight":65}]}' http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json --> –&gt;
+<!-- <!-- ``` --> –&gt;</p>
+<!-- ### Windows PowerShell -->
+<!-- In PowerShell: -->
+<!-- <!-- ```{bash prism-windows, eval=FALSE, echo = TRUE} -->
+<p>–&gt;
+<!-- <!-- curl -Body '{"api_key":["YOUR_API_KEY"],"func":["prism_model_run"],"model_input":[{"ID":"10001","male":1,"age":70,"smoker":1,"FEV1":2.5,"height":1.68,"weight":65}]}' -Method POST -uri http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json -Headers @{"Content-type"="application/json"} --> –&gt;
+<!-- <!-- ``` --> –&gt;</p>
+<!-- <!-- ```{bash prism-windows2, eval = TRUE, echo = FALSE} -->
+<p>–&gt;</p>
+<!-- <!-- curl -X POST -H "Content-Type: application/json" -d '{"api_key":[123456],"func":["prism_model_run"], -->
+<p>–&gt;
+<!-- <!-- "model_input":[{"ID":"10001","male":1,"age":70,"smoker":1,"FEV1":2.5,"height":1.68,"weight":65}]}' http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json --> –&gt;
+<!-- <!-- ``` --> –&gt;</p>
+<!-- ## Python API -->
+<!-- For this, we are assuming the use of Python 3. -->
+<!-- ```{r eval = TRUE, echo = FALSE} -->
+<!-- pythonEngine = as.character(Sys.which("python3")) -->
+<!-- if(pythonEngine == "") { -->
+<!--   print("Error: Please install Python 3") -->
+<!-- } -->
+<!-- ``` -->
+<!-- To get started, you will need to import the **json** and **requests** libraries. To install, open a terminal: -->
+<!-- ```{bash prism-python, eval = FALSE, echo = TRUE, engine.path = pythonEngine} -->
+<!-- pip3 install requests -->
+<!-- ``` -->
+<!-- We will start with the GET request. If everything is working, this should return 200 as a response. -->
+<!-- <!-- ```{python prism-python-get, eval = TRUE, echo = TRUE, engine.path = pythonEngine} -->
+<p>–&gt;
+<!-- <!-- import json --> –&gt;
+<!-- <!-- import requests --> –&gt;
+<!-- <!-- response = requests.get("http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json") --> –&gt;
+<!-- <!-- print(response) --> –&gt;
+<!-- <!-- ``` --> –&gt;</p>
+<!-- For the POST request, we will send some patient data to the API, and should get a prediction back from the API. -->
+<!-- <!-- ```{python prism-python2, eval = FALSE, echo = TRUE, engine.path = pythonEngine} -->
+<p>–&gt;
+<!-- <!-- api_key = 'YOUR_API_KEY' --> –&gt;
+<!-- <!-- patientInput = [{ --> –&gt;
+<!-- <!-- "ID":"10001", --> –&gt;
+<!-- <!-- "male":1, --> –&gt;
+<!-- <!-- "age":70, --> –&gt;
+<!-- <!-- "smoker":1, --> –&gt;
+<!-- <!-- "FEV1":2.5, --> –&gt;
+<!-- <!-- "height":1.68, --> –&gt;
+<!-- <!-- "weight":65 --> –&gt;
+<!-- <!-- }] --> –&gt;
+<!-- <!-- response = requests.post("http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json",  --> –&gt;
+<!-- <!--   json = {"api_key":[api_key], --> –&gt;
+<!-- <!--   "func": ["prism_model_run"], --> –&gt;
+<!-- <!--   "model_input": patientInput}) --> –&gt;
+<!-- <!-- print(response) --> –&gt;
+<!-- <!-- results = json.loads(response.text) --> –&gt;
+<!-- <!-- print(results) --> –&gt;
+<!-- <!-- ``` --> –&gt;</p>
+<!-- <!-- ```{python prism-python3, eval = TRUE, echo = FALSE, engine.path = pythonEngine} -->
+<p>–&gt;
+<!-- <!-- response = requests.post("http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json", json = {"api_key":[123456],"func":["prism_model_run"],"model_input":[{"ID":"10001","male":1,"age":70,"smoker":1,"FEV1":2.5,"height":1.68,"weight":65}]}) --> –&gt;
+<!-- <!-- print(response) --> –&gt;
+<!-- <!-- results = json.loads(response.text) --> –&gt;
+<!-- <!-- print(results) --> –&gt;
+<!-- <!-- ``` --> –&gt;</p>
+<!-- We will put the results in a dictionary: -->
+<!-- <!-- ```{python prism-python4, eval = TRUE, echo = TRUE, engine.path = pythonEngine} -->
+<p>–&gt;
+<!-- <!-- resultsDict = json.loads(results[0]) --> –&gt;
+<!-- <!-- print(resultsDict) --> –&gt;
+<!-- <!-- columnNames = list(resultsDict.keys()) --> –&gt;
+<!-- <!-- print(columnNames) --> –&gt;
+<!-- <!-- ``` --> –&gt;</p>
+<!-- To visualize the results using the package PrettyTable: -->
+<!-- <!-- ```{python prism-python5, eval = TRUE, echo = TRUE, engine.path = pythonEngine} -->
+<p>–&gt;
+<!-- <!-- from prettytable import PrettyTable --> –&gt;
+<!-- <!-- table = PrettyTable() --> –&gt;
+<!-- <!-- table = PrettyTable() --> –&gt;
+<!-- <!-- table.align["Year"] = "l" # Left align year --> –&gt;
+<!-- <!-- table.padding_width = 1 # One space between column edges and contents (default) --> –&gt;
+<!-- <!-- print(columnNames) --> –&gt;
+<!-- <!-- for col in columnNames: --> –&gt;
+<!-- <!--     table.add_column(col, resultsDict[col]) --> –&gt;
+<!-- <!-- print(table) --> –&gt;
+<!-- <!-- ``` --> –&gt;</p>
+<!-- ## Javascript API -->
+<!-- To use the PRISM API in Javascript, you will need to use the XMLHttpRequest module. We will start by sending a GET request: -->
+<!-- <!-- ```{js, eval=FALSE, echo=TRUE} -->
+<p>–&gt;
+<!-- <!-- request = new XMLHttpRequest(); --> –&gt;
+<!-- <!-- request.open('GET', 'http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json'); --> –&gt;
+<!-- <!-- request.send(); --> –&gt;
+<!-- <!-- ``` --> –&gt;</p>
+<!-- The **onreadystatechange** is an XMLHttpRequest event which updates when the ready state changes. The ready state can be either 1, 2, 3, or 4. -->
+<!-- ```{r javascript1, eval = TRUE, echo = FALSE} -->
+<!-- dev.off() -->
+<!-- readyState = c(0, 1, 2, 3, 4) -->
+<!-- values = c("Unsent", "Opened: open() has been called", -->
+<!--            "Headers Received: send() has been called and headers are available", -->
+<!--            "Loading: downloading; responseText holds partial data", -->
+<!--            "Done: the operation is complete") -->
+<!-- metadata = data.frame("readyState"=readyState, Description = values) -->
+<!-- names(metadata) = c("Ready State", "Description") -->
+<!-- ``` -->
+<!-- <!-- ```{r javascript2, eval = TRUE, echo = FALSE} -->
+<p>–&gt;
+<!-- <!-- knitr::kable( --> –&gt;
+<!-- <!--   metadata, booktabs = TRUE --> –&gt;
+<!-- <!-- ) --> –&gt;
+<!-- <!-- ``` --> –&gt;</p>
+<!-- <!-- ```{js, eval=FALSE, echo=TRUE} -->
+<p>–&gt;
+<!-- <!-- request.onreadystatechange = function() { --> –&gt;
+<!-- <!--             if(request.readyState === 4) { // --> –&gt;
+<!-- <!--                 if(request.status === 200) { --> –&gt;
+<!-- <!--                     console.log(request.responseText); --> –&gt;
+<!-- <!--                 } else { --> –&gt;
+<!-- <!--                       console.log(request.status); --> –&gt;
+<!-- <!--                 } --> –&gt;
+<!-- <!--             } --> –&gt;
+<!-- <!--         } --> –&gt;
+<!-- <!-- ``` --> –&gt;</p>
+<!-- To get a prediction, we can send a POST request. We will first create an example patient using json: -->
+<!-- <!-- ```{js, eval=FALSE} -->
+<p>–&gt;
+<!-- <!-- let patient = JSON.stringify({ --> –&gt;
+<!-- <!--   api_key: 123456, --> –&gt;
+<!-- <!--   func: ["prism_model_run"], --> –&gt;
+<!-- <!--   model_input: [{ --> –&gt;
+<!-- <!--     ID: 10001, --> –&gt;
+<!-- <!--     male: 1, --> –&gt;
+<!-- <!--     age: 70, --> –&gt;
+<!-- <!--     smoker: 1, --> –&gt;
+<!-- <!--     FEV1: 2.5, --> –&gt;
+<!-- <!--     height: 1.68, --> –&gt;
+<!-- <!--     weight: 65 --> –&gt;
+<!-- <!--   }] --> –&gt;
+<!-- <!-- }); --> –&gt;
+<!-- <!-- ``` --> –&gt;</p>
+<!-- We need to set the request header to json, and then send our patient json to the PRISM server using the **request.send()** function. -->
+<!-- <!-- ```{js, eval=FALSE} -->
+<p>–&gt;
+<!-- <!-- request.open('POST', 'http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json'); --> –&gt;
+<!-- <!-- request.setRequestHeader('Content-Type', 'application/json'); --> –&gt;
+<!-- <!-- request.send(patient); // Send request --> –&gt;
+<!-- <!-- let results = request.response; --> –&gt;
+<!-- <!-- ``` --> –&gt;</p>
+
+<!-- # Appendix 1: Installing R {#appendix1} -->
+<!-- This is a guide to installing R, geared mainly at beginner audiences. All the information below can be found at https://www.r-project.org/; I've just simplified it a bit. -->
+<!-- ## Step 1: Mirrors -->
+<!-- When you go the the R home page, you will see a link to [download R](https://cran.r-project.org/mirrors.html), which will take you to a list of mirrors. They are organized by country, so click on one that is close to your location. Since our group is based out of Vancouver, I will select one of the mirrors in Canada: [SFU Mirror](https://mirror.its.sfu.ca/mirror/CRAN/). -->
+<!-- Once you have clicked on the closest mirror, you will be asked to choose what type of computer you have. -->
+<!-- ## Mac OS X -->
+<!-- If you are using a Mac (Apple) computer, click on the link for Mac OS X. You will be redirected to a page that says "R for Mac OS X." To install R, you want to click on one of the files ending in ".pkg". If your operating system is fairly up-to-date, scroll to "Latest Release" and click on the file that looks like "R-3.X.Y.pkg," with X and Y being numbers for the latest release. R should begin downloading, and your Mac package manager will pop up with the rest of the instructions. -->
+<!-- If your operating system is older, you might want to scroll down to "Legacy Releases," and download one of those ".pkg" files instead. It should tell you on the page what version your computer should use. -->
+<!-- ## Windows -->
+<!-- If you are using Windows, click on the link for Windows. You will be redirected to a page that says "R for Windows." To install R, click on the link "base," and on the next page, "Download R 3.X.Y for Windows," where X and Y are the version numbers for the latest release. R should begin downloading. -->
+
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="section-introduction.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="book_assets/gitbook-2.6.7/js/app.min.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/lunr.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection",
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+},
+"search": true
+});
+});
+</script>
+
+</body>
+
+</html>

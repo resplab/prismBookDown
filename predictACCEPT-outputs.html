@@ -1,0 +1,133 @@
+<head><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="js/list-group.js"></script>
+<div class="row">
+<div class="col-3">
+    <div class="list-group predict-output" id="list-tab" role="tablist">
+      <a class="list-group-item list-group-item-action active" id="list-az-list"
+      data-toggle="list" href="#list-az" role="tab" aria-controls="az">Azithromycin</a>
+      <a class="list-group-item list-group-item-action" id="list-no-treatment-list"
+      data-toggle="list" href="#list-no-treatment" role="tab" aria-controls="no-treatment">No Treatment</a>
+    </div>
+  </div>
+  <div class="col-3">
+      <div class="list-group" id="list-tab" role="tablist">
+        <a class="list-group-item list-group-item-action active" id="list-overall-list"
+        data-toggle="list" href="#list-overall" role="tab" aria-controls="overall">Overall</a>
+        <a class="list-group-item list-group-item-action" id="list-severe-list"
+        data-toggle="list" href="#list-severe" role="tab" aria-controls="severe">Severe</a>
+      </div>
+    </div>
+<div class="col-3">
+    <div class="list-group" id="list-tab" role="tablist">
+      <a class="list-group-item list-group-item-action active" id="list-probability-list"
+      data-toggle="list" href="#list-probability" role="tab" aria-controls="probability">Probability</a>
+      <a class="list-group-item list-group-item-action" id="list-rate-list"
+      data-toggle="list" href="#list-rate" role="tab" aria-controls="rate">Rate</a>
+    </div>
+  </div>
+  <div class="col-3">
+    <div class="list-group" id="list-tab" role="tablist">
+      <a class="list-group-item list-group-item-action active" id="list-ci-list"
+      data-toggle="list" href="#list-ci" role="tab" aria-controls="ci">Confidence Interval</a>
+      <a class="list-group-item list-group-item-action" id="list-pi-list"
+      data-toggle="list" href="#list-pi" role="tab" aria-controls="pi">Prediction Interval</a>
+    </div>
+  </div>
+  </div>
+
+  <div class="row">
+  <div class="col-3">
+    <div class="tab-content" id="nav-tabContent">
+      <div class="tab-pane fade show active" id="list-az" role="tabpanel"
+      aria-labelledby="list-az-list">
+      <div class="card basic">
+        <div class="card-body basic">
+          <h6 class="card-subtitle mb-2 text-muted">
+      azithromycin_predicted_</h6>
+      <p class="card-text">Prediction if the patient is treated with 250 mg / day of azithromycin</p>
+  </div></div>
+    </div>
+      <div class="tab-pane fade" id="list-no-treatment" role="tabpanel"
+      aria-labelledby="list-no-treatment-list">
+      <div class="card basic">
+        <div class="card-body basic">
+          <h6 class="card-subtitle mb-2 text-muted">
+      predicted_</h6>
+      <p class="card-text">Prediction if patient is not treated with azithromycin</p>
+  </div></div>
+    </div>
+    </div>
+    </div>
+      <div class="col-3">
+    <div class="tab-content" id="nav-tabContent">
+      <div class="tab-pane fade show active" id="list-overall" role="tabpanel"
+      aria-labelledby="list-overall-list">
+      <div class="card basic">
+        <div class="card-body basic">
+          <h6 class="card-subtitle mb-2 text-muted">
+      exac_</h6>
+      <p class="card-text">All exacerbations (mild, moderate, severe)</p>
+  </div></div>
+    </div>
+      <div class="tab-pane fade" id="list-severe" role="tabpanel"
+      aria-labelledby="list-severe-list">
+      <div class="card basic">
+        <div class="card-body basic">
+          <h6 class="card-subtitle mb-2 text-muted">
+      severe_exac_</h6>
+      <p class="card-text">Severe exacerbations only</p>
+  </div></div>
+
+    </div>
+    </div>
+    </div>
+    <div class="col-3">
+  <div class="tab-content" id="nav-tabContent">
+    <div class="tab-pane fade show active" id="list-probability" role="tabpanel"
+    aria-labelledby="list-probability-list">
+    <div class="card basic">
+      <div class="card-body basic">
+        <h6 class="card-subtitle mb-2 text-muted">
+    probability</h6>
+    <p class="card-text">Probability of at least one exacerbation next year</p>
+</div></div>
+  </div>
+    <div class="tab-pane fade" id="list-rate" role="tabpanel"
+    aria-labelledby="list-rate-list">
+    <div class="card basic">
+          <div class="card-body basic">
+            <h6 class="card-subtitle mb-2 text-muted">
+        rate</h6>
+        <p class="card-text">Number of exacerbations / year</p>
+    </div></div>
+
+  </div>
+  </div>
+  </div>
+          <div class="col-3">
+    <div class="tab-content" id="nav-tabContent">
+      <div class="tab-pane fade show active" id="list-ci" role="tabpanel"
+      aria-labelledby="list-ci-list">
+      <div class="card basic">
+        <div class="card-body basic">
+          <h6 class="card-subtitle mb-2 text-muted">_upper_CI <br>
+            _lower_CI</h6>
+            <p class="card-text">95 % confidence interval</p>
+    </div></div>
+  </div>
+      <div class="tab-pane fade" id="list-pi" role="tabpanel"
+      aria-labelledby="list-pi-list">
+      <div class="card basic">
+        <div class="card-body basic">
+          <h6 class="card-subtitle mb-2 text-muted">_upper_PI <br>
+            _lower_PI</h6>
+            <a href="https://en.wikipedia.org/wiki/Prediction_interval">Prediction Interval</a>
+    </div></div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <br>
