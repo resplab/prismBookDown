@@ -21,6 +21,16 @@ REST is a simple language. It isn't like English, or French, or Mandarin. It onl
 
 The 4 words are: **GET**, **POST**, **PUT**, and **DELETE**. Simple, right? It turns out, the difficulty comes in defining the words. The official definitions are fairly broad and rather vague, when in practice the use of the words depend on: a) context and b) general rules of thumb. A bit like English after all!
 
+### GET {-}
+
+**GET**
+
+
+```{r, eval=TRUE, echo=FALSE}
+library(htmltools)
+rawHTML <- paste(readLines("code-chunk.html"), collapse="\n")
+HTML(rawHTML)
+```
 
 ## Diving in {-}
 
@@ -31,4 +41,3 @@ library(htmltools)
 rawHTML <- paste(readLines("link-buttons.html"), collapse="\n")
 HTML(rawHTML)
 ```
-
