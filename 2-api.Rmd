@@ -23,14 +23,134 @@ The 4 words are: **GET**, **POST**, **PUT**, and **DELETE**. Simple, right? It t
 
 ### GET {-}
 
-**GET**
+When using an API, you have 2 options: you may send some data, and receive something back, or you can just receive something back. **GET** is the function where you just receive data. For this tutorial, we are going to use the Google Books API, which I chose because it has good documentation and doesn't require you to get an API key.
 
+Google Books is a huge database of books. The database lives on a computer somewhere else, called the Server. You, at home on your computer (Client), would like to see if you can find a book using Google's software. Specifically, you want to find the book "Introduction to Quantum Mechanics" by David J. Griffiths. How will you find it?
+
+You will use a **GET** request. First, you need to know how to write the query. Here are a couple of rules:
+
+- space = "+"
+- use "?q=" to start the query
+- use "intitle:" to search for a word in the title
+- use "inauthor:" to search for a word in the author name
+- separate everything else with "+"
+
+Okay, let's get started:
+
+"?q=" to start the query <br>
+"intitle:Introduction+intitle:to+intitle:Quantum+intitle:Mechanics" to search for our title <br>
+"inauthor:David+inauthor:Griffiths" to search for our author
+
+Putting them all together: 
+
+"?q=intitle:Introduction+intitle:to+intitle:Quantum+intitle:Mechanics+inauthor:David+inauthor:Griffiths"
+
+Now that we have made our query, we are ready to make our **GET** request. Below is the code you will need to do this. In the top right corner, you can select the language which you prefer to use.
 
 ```{r, eval=TRUE, echo=FALSE}
 library(htmltools)
 rawHTML <- paste(readLines("code-chunk.html"), collapse="\n")
 HTML(rawHTML)
 ```
+
+If you are doing the Bash option, the results should print out automatically. For the other languages, we can print the response:
+
+```{r, eval=TRUE, echo=FALSE}
+library(htmltools)
+rawHTML <- paste(readLines("code-chunk-get-2.html"), collapse="\n")
+HTML(rawHTML)
+```
+
+In printing the results, the status code should be "200," and the printed text should be something like this:
+
+```
+{
+ "kind": "books#volumes",
+ "totalItems": 1,
+ "items": [
+  {
+   "kind": "books#volume",
+   "id": "0h-nDAAAQBAJ",
+   "etag": "OTURZeInoRk",
+   "selfLink": "https://www.googleapis.com/books/v1/volumes/0h-nDAAAQBAJ",
+   "volumeInfo": {
+    "title": "Introduction to Quantum Mechanics",
+    "authors": [
+     "David Griffiths"
+    ],
+    "publisher": "Cambridge University Press",
+    "publishedDate": "2016-08-31",
+    "description": "This best-selling textbook teaches students how to do quantum mechanics and provides an insightful discussion of what it actually means.",
+    "industryIdentifiers": [
+     {
+      "type": "ISBN_13",
+      "identifier": "9781107179868"
+     },
+     {
+      "type": "ISBN_10",
+      "identifier": "1107179866"
+     }
+    ],
+    "readingModes": {
+     "text": false,
+     "image": true
+    },
+    "pageCount": 465,
+    "printType": "BOOK",
+    "categories": [
+     "Science"
+    ],
+    "averageRating": 4.0,
+    "ratingsCount": 4,
+    "maturityRating": "NOT_MATURE",
+    "allowAnonLogging": false,
+    "contentVersion": "preview-1.0.0",
+    "panelizationSummary": {
+     "containsEpubBubbles": false,
+     "containsImageBubbles": false
+    },
+    "imageLinks": {
+     "smallThumbnail": "http://books.google.com/books/content?id=0h-nDAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+     "thumbnail": "http://books.google.com/books/content?id=0h-nDAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    },
+    "language": "en",
+    "previewLink": "http://books.google.ca/books?id=0h-nDAAAQBAJ&printsec=frontcover&dq=intitle:Introduction+intitle:to+intitle:Quantum+intitle:Mechanics+inauthor:David+inauthor:Griffiths&hl=&cd=1&source=gbs_api",
+    "infoLink": "http://books.google.ca/books?id=0h-nDAAAQBAJ&dq=intitle:Introduction+intitle:to+intitle:Quantum+intitle:Mechanics+inauthor:David+inauthor:Griffiths&hl=&source=gbs_api",
+    "canonicalVolumeLink": "https://books.google.com/books/about/Introduction_to_Quantum_Mechanics.html?hl=&id=0h-nDAAAQBAJ"
+   },
+   "saleInfo": {
+    "country": "CA",
+    "saleability": "NOT_FOR_SALE",
+    "isEbook": false
+   },
+   "accessInfo": {
+    "country": "CA",
+    "viewability": "PARTIAL",
+    "embeddable": true,
+    "publicDomain": false,
+    "textToSpeechPermission": "ALLOWED",
+    "epub": {
+     "isAvailable": false
+    },
+    "pdf": {
+     "isAvailable": false
+    },
+    "webReaderLink": "http://play.google.com/books/reader?id=0h-nDAAAQBAJ&hl=&printsec=frontcover&source=gbs_api",
+    "accessViewStatus": "SAMPLE",
+    "quoteSharingAllowed": false
+   },
+   "searchInfo": {
+    "textSnippet": "This bestselling textbook teaches students how to do quantum mechanics and provides an insightful discussion of what it actually means."
+   }
+  }
+ ]
+}
+```
+
+Congrats! You have completed your first **GET** request!
+
+### POST
+
 
 ## Diving in {-}
 

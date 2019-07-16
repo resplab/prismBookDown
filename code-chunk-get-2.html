@@ -1,0 +1,39 @@
+
+<div class="code-chunk">
+
+<div class="row">
+  <div class="col-sm-11 no-gutters code-lang-col">
+  <div class="btn-group float-right">
+  <button type="button" class="btn btn-primary dropdown-toggle code-lang" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Language
+  </button>
+  <div class="dropdown-menu">
+    <a class="dropdown-item" value = "js" href="#js">Javascript</a>
+    <a class="dropdown-item" value = "r" href="#r">R</a>
+    <a class="dropdown-item" value = "python" href="#python">Python</a>
+  </div>
+</div>
+</div>
+<div class="col-sm-1 no-gutters copy-col">
+  <a href="#" class="btn btn-primary active copy-button float-left js-copy" role="button" aria-pressed="true">Copy</a>
+</div>
+</div>
+    <code class="code js active">
+      <span class="hljs-keyword">console.</span>log(<span class="syntax-variable">request</span>.status()); <br>
+      <span class="hljs-keyword">console.</span>log(<span class="syntax-variable">request</span>.response());
+    </code>
+    <code class="code r">
+      <span class="hljs-keyword">print</span>(response$status) <br>
+      rawUnicode = response$content <br>
+      text = <span class="hljs-function">rawToChar</span>(rawUnicode) <br>
+      results = <span class="hljs-function">fromJSON</span>(text) <br>
+      <span class="hljs-keyword">print</span>(results)
+    </code>
+    <code class="code python">
+      <span class="hljs-keyword">print(response.status_code)</span> <br>
+      text = response.text <br>
+      results = json.loads(text) <br>
+      <span class="hljs-keyword">print</span>(results)
+    </code>
+</div>
+<br>

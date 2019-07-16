@@ -3,6 +3,7 @@
   --color-b: #8cf2f2; /* cyan */
   --color-c: #c51672; /* magenta */
   --color-d: #007bff; /* primary blue */
+  --code-grey: #e4e4e4; /* grey */
 }
 
 
@@ -392,7 +393,7 @@ code, pre {
 
 code {
   padding: 0 3px;
-  background-color: #f2f8fc;
+  background-color: var(--code-grey);
   border: solid 1px #dbe7f3;
 }
 
@@ -400,14 +401,14 @@ pre {
   padding: 20px;
   overflow: auto;
   text-shadow: none;
-  background: #fff;
+  background: var(--code-grey) !important;
   border: solid 1px #f2f2f2;
   font-size: 0.9em;
 }
 pre code {
   padding: 0;
   color: #2879d0;
-  background-color: #fff;
+  background-color: var(--code-grey) !important;
   border: none;
 }
 

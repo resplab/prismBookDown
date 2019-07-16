@@ -68,6 +68,7 @@
 <li class="chapter" data-level="" data-path="section-api.html"><a href="section-api.html#section-what-is-an-api"><i class="fa fa-check"></i>What is an API?</a></li>
 <li class="chapter" data-level="" data-path="section-api.html"><a href="section-api.html#section-rest"><i class="fa fa-check"></i>REST</a><ul>
 <li class="chapter" data-level="" data-path="section-api.html"><a href="section-api.html#section-get"><i class="fa fa-check"></i>GET</a></li>
+<li class="chapter" data-level="2.0.1" data-path="section-api.html"><a href="section-api.html#section-post"><i class="fa fa-check"></i><b>2.0.1</b> POST</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="section-api.html"><a href="section-api.html#section-diving-in"><i class="fa fa-check"></i>Diving in</a></li>
 </ul></li>
@@ -189,26 +190,203 @@
 <p>The 4 words are: <strong>GET</strong>, <strong>POST</strong>, <strong>PUT</strong>, and <strong>DELETE</strong>. Simple, right? It turns out, the difficulty comes in defining the words. The official definitions are fairly broad and rather vague, when in practice the use of the words depend on: a) context and b) general rules of thumb. A bit like English after all!</p>
 <div id="section-get" class="section level3 unnumbered">
 <h3>GET</h3>
-<p><strong>GET</strong></p>
+<p>When using an API, you have 2 options: you may send some data, and receive something back, or you can just receive something back. <strong>GET</strong> is the function where you just receive data. For this tutorial, we are going to use the Google Books API, which I chose because it has good documentation and doesn’t require you to get an API key.</p>
+<p>Google Books is a huge database of books. The database lives on a computer somewhere else, called the Server. You, at home on your computer (Client), would like to see if you can find a book using Google’s software. Specifically, you want to find the book “Introduction to Quantum Mechanics” by David J. Griffiths. How will you find it?</p>
+<p>You will use a <strong>GET</strong> request. First, you need to know how to write the query. Here are a couple of rules:</p>
+<ul>
+<li>space = “+”</li>
+<li>use “?q=” to start the query</li>
+<li>use “intitle:” to search for a word in the title</li>
+<li>use “inauthor:” to search for a word in the author name</li>
+<li>separate everything else with “+”</li>
+</ul>
+<p>Okay, let’s get started:</p>
+<p>“?q=” to start the query <br> “intitle:Introduction+intitle:to+intitle:Quantum+intitle:Mechanics” to search for our title <br> “inauthor:David+inauthor:Griffiths” to search for our author</p>
+<p>Putting them all together:</p>
+<p>“?q=intitle:Introduction+intitle:to+intitle:Quantum+intitle:Mechanics+inauthor:David+inauthor:Griffiths”</p>
+<p>Now that we have made our query, we are ready to make our <strong>GET</strong> request. Below is the code you will need to do this. In the top right corner, you can select the language which you prefer to use.</p>
 <head>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
 <script src="js/list-group.js"></script>
+<script src="js/code-chunk.js"></script>
 
 </head>
-<span class="btn-primary" title="" data-original-title="Copy to clipboard">Copy</span>
-<div class="highlight">
-  <pre><code class="language-html" data-lang="html">
-    <a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Primary link</a>
-</code></pre></div>
+<div class="code-chunk">
+
+<div class="row">
+  <div class="col-sm-11 no-gutters code-lang-col">
+  <div class="btn-group float-right">
+  <button type="button" class="btn btn-primary dropdown-toggle code-lang" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Language
+  </button>
+  <div class="dropdown-menu">
+    <a class="dropdown-item" value = "bash" href="#bash">Bash</a>
+    <a class="dropdown-item" value = "js" href="#js">Javascript</a>
+    <a class="dropdown-item" value = "r" href="#r">R</a>
+    <a class="dropdown-item" value = "python" href="#python">Python</a>
+  </div>
+</div>
+</div>
+<div class="col-sm-1 no-gutters copy-col">
+  <a href="#" class="btn btn-primary active copy-button float-left js-copy" role="button" aria-pressed="true">Copy</a>
+</div>
+</div>
+    <code class="code bash">
+      curl -X GET https://www.googleapis.com/books/v1/volumes?q=intitle:Introduction+intitle:to+intitle:Quantum+intitle:Mechanics+inauthor:David+inauthor:Griffiths </code>
+    <code class="code js active">
+      request = new <span class="syntax-variable">XMLHttpRequest()</span>; <br>
+      <span class="syntax-variable">request</span>.open(<span class="hljs-string">'GET'</span>, <span class="hljs-string">'https://www.googleapis.com/books/v1/volumes?q=intitle:Introduction+intitle:to+intitle:Quantum+intitle:Mechanics+inauthor:David+inauthor:Griffiths'</span>); <br>
+      <span class="syntax-variable">request</span>.send();
+    </code>
+    <code class="code r">
+      <span class="hljs-keyword">library</span>(httr) <br>
+      <span class="hljs-keyword">library</span>(jsonlite) <br>
+      response = GET(url=<span class="hljs-string">'https://www.googleapis.com/books/v1/volumes?q=intitle:Introduction+intitle:to+intitle:Quantum+intitle:Mechanics+inauthor:David+inauthor:Griffiths'</span>)
+    </code>
+    <code class="code python">
+      <span class="hljs-keyword">import</span> json <br>
+      <span class="hljs-keyword">import</span> requests <br>
+response = requests.get(<span class="hljs-string">'https://www.googleapis.com/books/v1/volumes?q=intitle:Introduction+intitle:to+intitle:Quantum+intitle:Mechanics+inauthor:David+inauthor:Griffiths'</span>)
+    </code>
+</div>
+<p>If you are doing the Bash option, the results should print out automatically. For the other languages, we can print the response:</p>
+
+<div class="code-chunk">
+
+<div class="row">
+  <div class="col-sm-11 no-gutters code-lang-col">
+  <div class="btn-group float-right">
+  <button type="button" class="btn btn-primary dropdown-toggle code-lang" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Language
+  </button>
+  <div class="dropdown-menu">
+    <a class="dropdown-item" value = "js" href="#js">Javascript</a>
+    <a class="dropdown-item" value = "r" href="#r">R</a>
+    <a class="dropdown-item" value = "python" href="#python">Python</a>
+  </div>
+</div>
+</div>
+<div class="col-sm-1 no-gutters copy-col">
+  <a href="#" class="btn btn-primary active copy-button float-left js-copy" role="button" aria-pressed="true">Copy</a>
+</div>
+</div>
+    <code class="code js active">
+      <span class="hljs-keyword">console.</span>log(<span class="syntax-variable">request</span>.status()); <br>
+      <span class="hljs-keyword">console.</span>log(<span class="syntax-variable">request</span>.response());
+    </code>
+    <code class="code r">
+      <span class="hljs-keyword">print</span>(response$status) <br>
+      rawUnicode = response$content <br>
+      text = <span class="hljs-function">rawToChar</span>(rawUnicode) <br>
+      results = <span class="hljs-function">fromJSON</span>(text) <br>
+      <span class="hljs-keyword">print</span>(results)
+    </code>
+    <code class="code python">
+      <span class="hljs-keyword">print(response.status_code)</span> <br>
+      text = response.text <br>
+      results = json.loads(text) <br>
+      <span class="hljs-keyword">print</span>(results)
+    </code>
+</div>
+<br>
+<p>In printing the results, the status code should be “200,” and the printed text should be something like this:</p>
+<pre><code>{
+ &quot;kind&quot;: &quot;books#volumes&quot;,
+ &quot;totalItems&quot;: 1,
+ &quot;items&quot;: [
+  {
+   &quot;kind&quot;: &quot;books#volume&quot;,
+   &quot;id&quot;: &quot;0h-nDAAAQBAJ&quot;,
+   &quot;etag&quot;: &quot;OTURZeInoRk&quot;,
+   &quot;selfLink&quot;: &quot;https://www.googleapis.com/books/v1/volumes/0h-nDAAAQBAJ&quot;,
+   &quot;volumeInfo&quot;: {
+    &quot;title&quot;: &quot;Introduction to Quantum Mechanics&quot;,
+    &quot;authors&quot;: [
+     &quot;David Griffiths&quot;
+    ],
+    &quot;publisher&quot;: &quot;Cambridge University Press&quot;,
+    &quot;publishedDate&quot;: &quot;2016-08-31&quot;,
+    &quot;description&quot;: &quot;This best-selling textbook teaches students how to do quantum mechanics and provides an insightful discussion of what it actually means.&quot;,
+    &quot;industryIdentifiers&quot;: [
+     {
+      &quot;type&quot;: &quot;ISBN_13&quot;,
+      &quot;identifier&quot;: &quot;9781107179868&quot;
+     },
+     {
+      &quot;type&quot;: &quot;ISBN_10&quot;,
+      &quot;identifier&quot;: &quot;1107179866&quot;
+     }
+    ],
+    &quot;readingModes&quot;: {
+     &quot;text&quot;: false,
+     &quot;image&quot;: true
+    },
+    &quot;pageCount&quot;: 465,
+    &quot;printType&quot;: &quot;BOOK&quot;,
+    &quot;categories&quot;: [
+     &quot;Science&quot;
+    ],
+    &quot;averageRating&quot;: 4.0,
+    &quot;ratingsCount&quot;: 4,
+    &quot;maturityRating&quot;: &quot;NOT_MATURE&quot;,
+    &quot;allowAnonLogging&quot;: false,
+    &quot;contentVersion&quot;: &quot;preview-1.0.0&quot;,
+    &quot;panelizationSummary&quot;: {
+     &quot;containsEpubBubbles&quot;: false,
+     &quot;containsImageBubbles&quot;: false
+    },
+    &quot;imageLinks&quot;: {
+     &quot;smallThumbnail&quot;: &quot;http://books.google.com/books/content?id=0h-nDAAAQBAJ&amp;printsec=frontcover&amp;img=1&amp;zoom=5&amp;edge=curl&amp;source=gbs_api&quot;,
+     &quot;thumbnail&quot;: &quot;http://books.google.com/books/content?id=0h-nDAAAQBAJ&amp;printsec=frontcover&amp;img=1&amp;zoom=1&amp;edge=curl&amp;source=gbs_api&quot;
+    },
+    &quot;language&quot;: &quot;en&quot;,
+    &quot;previewLink&quot;: &quot;http://books.google.ca/books?id=0h-nDAAAQBAJ&amp;printsec=frontcover&amp;dq=intitle:Introduction+intitle:to+intitle:Quantum+intitle:Mechanics+inauthor:David+inauthor:Griffiths&amp;hl=&amp;cd=1&amp;source=gbs_api&quot;,
+    &quot;infoLink&quot;: &quot;http://books.google.ca/books?id=0h-nDAAAQBAJ&amp;dq=intitle:Introduction+intitle:to+intitle:Quantum+intitle:Mechanics+inauthor:David+inauthor:Griffiths&amp;hl=&amp;source=gbs_api&quot;,
+    &quot;canonicalVolumeLink&quot;: &quot;https://books.google.com/books/about/Introduction_to_Quantum_Mechanics.html?hl=&amp;id=0h-nDAAAQBAJ&quot;
+   },
+   &quot;saleInfo&quot;: {
+    &quot;country&quot;: &quot;CA&quot;,
+    &quot;saleability&quot;: &quot;NOT_FOR_SALE&quot;,
+    &quot;isEbook&quot;: false
+   },
+   &quot;accessInfo&quot;: {
+    &quot;country&quot;: &quot;CA&quot;,
+    &quot;viewability&quot;: &quot;PARTIAL&quot;,
+    &quot;embeddable&quot;: true,
+    &quot;publicDomain&quot;: false,
+    &quot;textToSpeechPermission&quot;: &quot;ALLOWED&quot;,
+    &quot;epub&quot;: {
+     &quot;isAvailable&quot;: false
+    },
+    &quot;pdf&quot;: {
+     &quot;isAvailable&quot;: false
+    },
+    &quot;webReaderLink&quot;: &quot;http://play.google.com/books/reader?id=0h-nDAAAQBAJ&amp;hl=&amp;printsec=frontcover&amp;source=gbs_api&quot;,
+    &quot;accessViewStatus&quot;: &quot;SAMPLE&quot;,
+    &quot;quoteSharingAllowed&quot;: false
+   },
+   &quot;searchInfo&quot;: {
+    &quot;textSnippet&quot;: &quot;This bestselling textbook teaches students how to do quantum mechanics and provides an insightful discussion of what it actually means.&quot;
+   }
+  }
+ ]
+}</code></pre>
+<p>Congrats! You have completed your first <strong>GET</strong> request!</p>
+</div>
+<div id="section-post" class="section level3">
+<h3><span class="header-section-number">2.0.1</span> POST</h3>
 </div>
 </div>
 <div id="section-diving-in" class="section level2 unnumbered">
 <h2>Diving in</h2>
-<p>I have found it is often easiest to learn by example, so I’m going to walk through an example of how to use our PRISM API. If you don’t have much programming experience, or if you want to use Excel, I would recommend doing the <a href="section-using-prism.html#section-api-in-excel">API in Excel</a>. Otherwise, you can choose your favourite programming language to get started:</p>
+<p>I have found it is often easiest to learn by example, so I’m going to walk through an example of how to use our PRISM API. If you don’t have much programming experience, or if you want to use Excel, I would recommend doing the <a href="#api-in-excel">API in Excel</a>. Otherwise, you can choose your favourite programming language to get started:</p>
 <head>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">

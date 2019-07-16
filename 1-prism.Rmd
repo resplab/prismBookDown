@@ -9,7 +9,7 @@ output:
     table_css: FALSE
     output_dir: "docs"
     css: ["pretty-styles.css", "cayman.css", "python.css", "index.html"]
-    js: "js/list-group.js"
+    js: ["js/list-group.js", "js/code-chunk.js"]
     config:
       toc:
         collapse: subsection
