@@ -68,7 +68,8 @@
 <li class="chapter" data-level="" data-path="section-api.html"><a href="section-api.html#section-what-is-an-api"><i class="fa fa-check"></i>What is an API?</a></li>
 <li class="chapter" data-level="" data-path="section-api.html"><a href="section-api.html#section-rest"><i class="fa fa-check"></i>REST</a><ul>
 <li class="chapter" data-level="" data-path="section-api.html"><a href="section-api.html#section-get"><i class="fa fa-check"></i>GET</a></li>
-<li class="chapter" data-level="2.0.1" data-path="section-api.html"><a href="section-api.html#section-post"><i class="fa fa-check"></i><b>2.0.1</b> POST</a></li>
+<li class="chapter" data-level="" data-path="section-api.html"><a href="section-api.html#section-post"><i class="fa fa-check"></i>POST</a></li>
+<li class="chapter" data-level="" data-path="section-api.html"><a href="section-api.html#section-put"><i class="fa fa-check"></i>PUT</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="section-api.html"><a href="section-api.html#section-diving-in"><i class="fa fa-check"></i>Diving in</a></li>
 </ul></li>
@@ -380,8 +381,160 @@ response = requests.get(<span class="hljs-string">'https://www.googleapis.com/bo
 }</code></pre>
 <p>Congrats! You have completed your first <strong>GET</strong> request!</p>
 </div>
-<div id="section-post" class="section level3">
-<h3><span class="header-section-number">2.0.1</span> POST</h3>
+<div id="section-post" class="section level3 unnumbered">
+<h3>POST</h3>
+<p>The <strong>POST</strong> call is a bit more complicated than the <strong>GET</strong> call. The primary difference is that for a <strong>POST</strong> call, you send data AND receive data. You probably have made a post on Facebook or Twitter or Instagram; those are examples of <strong>POST</strong> calls. Say you want to tweet “hello” on Twitter. You would send this data with a <strong>POST</strong> call to the Twitter API. The Twitter API would then add your new post, and will return a JSON object that looks something like this:</p>
+<pre><code>{
+  &quot;created_at&quot;: &quot;Wed Oct 10 20:19:24 +0000 2018&quot;,
+  &quot;id&quot;: 1050118621198921700,
+  &quot;id_str&quot;: &quot;1050118621198921728&quot;,
+  &quot;text&quot;: &quot;To make room for more expression, we will now count all emojis as equal—including those with gender
+
+
+ 
+
+and skin t… https://t.co/MkGjXf9aXm&quot;,
+  &quot;source&quot;: &quot;&lt;a href=&quot;http://twitter.com&quot; rel=&quot;nofollow&quot;&gt;Twitter Web Client&lt;/a&gt;&quot;,
+  &quot;truncated&quot;: true,
+  &quot;in_reply_to_status_id&quot;: null,
+  &quot;in_reply_to_status_id_str&quot;: null,
+  &quot;in_reply_to_user_id&quot;: null,
+  &quot;in_reply_to_user_id_str&quot;: null,
+  &quot;in_reply_to_screen_name&quot;: null,
+  &quot;user&quot;: {
+    &quot;id&quot;: 6253282,
+    &quot;id_str&quot;: &quot;6253282&quot;,
+    &quot;name&quot;: &quot;Twitter API&quot;,
+    &quot;screen_name&quot;: &quot;TwitterAPI&quot;,
+    &quot;location&quot;: &quot;San Francisco, CA&quot;,
+    &quot;url&quot;: &quot;https://developer.twitter.com&quot;,
+    &quot;description&quot;: &quot;The Real Twitter API. Tweets about API changes, service issues and our Developer Platform. Don&#39;t get an answer? It&#39;s on my website.&quot;,
+    &quot;translator_type&quot;: &quot;null&quot;,
+    &quot;derived&quot;: {
+      &quot;locations&quot;: [
+        {
+          &quot;country&quot;: &quot;United States&quot;,
+          &quot;country_code&quot;: &quot;US&quot;,
+          &quot;locality&quot;: &quot;San Francisco&quot;,
+          &quot;region&quot;: &quot;California&quot;,
+          &quot;sub_region&quot;: &quot;San Francisco County&quot;,
+          &quot;full_name&quot;: &quot;San Francisco, California, United States&quot;,
+          &quot;geo&quot;: {
+            &quot;coordinates&quot;: [
+              -122.41942,
+              37.77493
+            ],
+            &quot;type&quot;: &quot;point&quot;
+          }
+        }
+      ]
+    },
+    &quot;protected&quot;: false,
+    &quot;verified&quot;: true,
+    &quot;followers_count&quot;: 6172196,
+    &quot;friends_count&quot;: 12,
+    &quot;listed_count&quot;: 13003,
+    &quot;favourites_count&quot;: 31,
+    &quot;statuses_count&quot;: 3650,
+    &quot;created_at&quot;: &quot;Wed May 23 06:01:13 +0000 2007&quot;,
+    &quot;utc_offset&quot;: null,
+    &quot;time_zone&quot;: null,
+    &quot;geo_enabled&quot;: false,
+    &quot;lang&quot;: &quot;en&quot;,
+    &quot;contributors_enabled&quot;: false,
+    &quot;is_translator&quot;: null,
+    &quot;profile_background_color&quot;: &quot;null&quot;,
+    &quot;profile_background_image_url&quot;: &quot;null&quot;,
+    &quot;profile_background_image_url_https&quot;: &quot;null&quot;,
+    &quot;profile_background_tile&quot;: null,
+    &quot;profile_link_color&quot;: &quot;null&quot;,
+    &quot;profile_sidebar_border_color&quot;: &quot;null&quot;,
+    &quot;profile_sidebar_fill_color&quot;: &quot;null&quot;,
+    &quot;profile_text_color&quot;: &quot;null&quot;,
+    &quot;profile_use_background_image&quot;: null,
+    &quot;profile_image_url&quot;: &quot;null&quot;,
+    &quot;profile_image_url_https&quot;: &quot;https://pbs.twimg.com/profile_images/942858479592554497/BbazLO9L_normal.jpg&quot;,
+    &quot;profile_banner_url&quot;: &quot;https://pbs.twimg.com/profile_banners/6253282/1497491515&quot;,
+    &quot;default_profile&quot;: false,
+    &quot;default_profile_image&quot;: false,
+    &quot;following&quot;: null,
+    &quot;follow_request_sent&quot;: null,
+    &quot;notifications&quot;: null
+  },
+  &quot;geo&quot;: null,
+  &quot;coordinates&quot;: null,
+  &quot;place&quot;: null,
+  &quot;contributors&quot;: null,
+  &quot;is_quote_status&quot;: false,
+  &quot;extended_tweet&quot;: {
+    &quot;full_text&quot;: &quot;To make room for more expression, we will now count all emojis as equal—including those with gender
+
+
+ 
+
+and skin tone modifiers 👍🏻👍🏽👍🏿. This is now reflected in Twitter-Text, our Open Source library. nnUsing Twitter-Text? See the forum post for detail: https://t.co/Nx1XZmRCXA&quot;,
+    &quot;display_text_range&quot;: [
+      0,
+      277
+    ],
+    &quot;entities&quot;: {
+      &quot;hashtags&quot;: [],
+      &quot;urls&quot;: [
+        {
+          &quot;url&quot;: &quot;https://t.co/Nx1XZmRCXA&quot;,
+          &quot;expanded_url&quot;: &quot;https://twittercommunity.com/t/new-update-to-the-twitter-text-library-emoji-character-count/114607&quot;,
+          &quot;display_url&quot;: &quot;twittercommunity.com/t/new-update-t…&quot;,
+          &quot;unwound&quot;: {
+            &quot;url&quot;: &quot;https://twittercommunity.com/t/new-update-to-the-twitter-text-library-emoji-character-count/114607&quot;,
+            &quot;status&quot;: 200,
+            &quot;title&quot;: &quot;New update to the Twitter-Text library: Emoji character count&quot;,
+            &quot;description&quot;: &quot;Over the years, we have made several updates to the way that people can communicate on Twitter. One of the more notable changes made last year was to increase the number of characters per Tweet from 140 to 280 characters. Today, we continue to expand people’s ability to express themselves by announcing a change to the way that we count emojis. Due to the differences in the way written text and emojis are encoded, many emojis (including emojis where you can apply gender and skin tone) have count...&quot;
+          },
+          &quot;indices&quot;: [
+            254,
+            277
+          ]
+        }
+      ],
+      &quot;user_mentions&quot;: [],
+      &quot;symbols&quot;: []
+    }
+  },
+  &quot;quote_count&quot;: 0,
+  &quot;reply_count&quot;: 0,
+  &quot;retweet_count&quot;: 0,
+  &quot;favorite_count&quot;: 0,
+  &quot;entities&quot;: {
+    &quot;hashtags&quot;: [],
+    &quot;urls&quot;: [
+      {
+        &quot;url&quot;: &quot;https://t.co/MkGjXf9aXm&quot;,
+        &quot;expanded_url&quot;: &quot;https://twitter.com/i/web/status/1050118621198921728&quot;,
+        &quot;display_url&quot;: &quot;twitter.com/i/web/status/1…&quot;,
+        &quot;indices&quot;: [
+          117,
+          140
+        ]
+      }
+    ],
+    &quot;user_mentions&quot;: [],
+    &quot;symbols&quot;: []
+  },
+  &quot;favorited&quot;: false,
+  &quot;retweeted&quot;: false,
+  &quot;possibly_sensitive&quot;: false,
+  &quot;filter_level&quot;: &quot;low&quot;,
+  &quot;lang&quot;: &quot;en&quot;,
+}
+}</code></pre>
+<p>Now, for the purpose of this tutorial, we won’t use the Twitter API or the Google Books API, because they require an authentication token to complete the <strong>POST</strong> requests. Basically, if you want to <strong>POST</strong> a tweet, Twitter needs to know that it is you asking to post on your account, and not someone else. However, getting an authentication token can take a bit of time, as you have to set up a developer account etc.</p>
+<p>In data science, sometimes a <strong>POST</strong> request looks a bit different than the Twitter <strong>POST</strong> request. For example, let’s say there is a machine learning algorithm which is able to tell you if a picture is a Cat or a Dog. This algorithm is on a Server somewhere else, and you want to use the API to check if your photo is a Cat or a Dog. This would also be an example of a <strong>POST</strong> request. You would send the data, which would be the picture, using a <strong>POST</strong> call. The API would communicate with the Server, and the algorithm would calculate if the picture was a Cat or a Dog. Then the algorithm would send back data, say a JSON file with the text “image: Cat”. Now you know that your image is a Cat!</p>
+</div>
+<div id="section-put" class="section level3 unnumbered">
+<h3>PUT</h3>
+<p>The <strong>PUT</strong> request is similar to <strong>POST</strong> in that you can send and receive data. However, the <strong>PUT</strong> request is used less often. The reason for this is what computer scientists and mathematicians call “idempotency.” An action is <strong>idempotent</strong> if repeating the action results in the same end result. Still kind of complicated, right?</p>
+<p>Let’s do an example. The <strong>POST</strong> request is not idempotent. If you make a post on Twitter today, saying, “I love tacos!”, and then later on you make another post that says “I love tacos!”, both of those posts will stay on Twitter. The second post won’t erase the first post [even though people already know you love tacos]. You can post “I love tacos!” as many times as you want, and Twitter will just keep adding it to your status.</p>
+<p>On the other hand, the <strong>PUT</strong> request is idempotent.</p>
 </div>
 </div>
 <div id="section-diving-in" class="section level2 unnumbered">
