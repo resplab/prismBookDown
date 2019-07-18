@@ -1,94 +1,53 @@
 
 # Using the PRISM API {#using-prism}
 
-## Using the PRISM API in Excel {#api-in-excel}
+If you don't have much programming experience, or if you want to use Excel, I would recommend doing the [API in Excel](#api-in-excel). Otherwise, you can choose your favourite programming language to get started:
 
-## Using the PRISM API in R {#api-in-R}
-
-## Using the PRISM API in Python {#api-in-python}
-
-## Using the PRISM API in Bash/Shell {#api-in-bash}
-
-## Using the PRISM API in Javascript {#api-in-js}
-
-<!-- ## Installation -->
-
-<!-- If you do not have R installed on your computer, please go to [Appendix 1](#appendix1). Once you have R installed, you can install this package in the R console: -->
-
-<!-- ```{r chunk-label, eval = FALSE, echo = TRUE} -->
-<!-- install.packages("devtools") -->
-<!-- devtools::install_github("resplab/accept") -->
-<!-- ``` -->
-
-<!-- ## ACCEPT Prediction Functions -->
-
-<!-- ### Sample Data {-} -->
-
-<!-- To get started, there is an R data frame with the package of sample patient data. I have printed columns 1-13 and 14-19 separately because there isn't enough space: -->
-
-<!-- ```{r sample-patients, eval = TRUE, echo = TRUE} -->
-<!-- library(accept) -->
-<!-- samplePatients = accept::samplePatients -->
-<!-- print(samplePatients[,1:13]) -->
-<!-- print(samplePatients[,14:19]) -->
-<!-- ``` -->
-
-<!-- ```{r, eval=TRUE, echo=FALSE} -->
+<!-- ```{r links, eval=TRUE, echo=FALSE} -->
 <!-- library(htmltools) -->
-<!-- rawHTML <- paste(readLines("predictACCEPT-inputs.html"), collapse="\n") -->
+<!-- rawHTML <- paste(readLines("link-buttons.html"), collapse="\n") -->
 <!-- HTML(rawHTML) -->
 <!-- ``` -->
 
-<!-- ### Exacerbation Rate {-} -->
+## PRISM API in Excel {#api-in-excel}
 
-<!-- To get a prediction for exacerbation rate, you will need to pass in a patient vector: -->
+## PRISM API in R/Python/Bash/Javascript {#api-in-R}
 
-<!-- ```{r exacerbation-rate, eval = TRUE, echo = TRUE} -->
-<!-- results <- predictACCEPT(samplePatients[1,]) -->
-<!-- print(t(results)) -->
-<!-- ``` -->
+To get started, you will need to install a few packages:
 
-<!-- The **predictACCEPT()** function returns a data frame with the original patient data, along with the predictions for different treatment options. Here is a summary of the results:  -->
+```{r, eval=TRUE, echo=FALSE}
+library(htmltools)
+rawHTML <- paste(readLines("install.html"), collapse="\n")
+HTML(rawHTML)
+```
 
-<!-- ```{r, eval=TRUE, echo=FALSE} -->
-<!-- library(htmltools) -->
-<!-- rawHTML <- paste(readLines("predictACCEPT-outputs.html"), collapse="\n") -->
-<!-- HTML(rawHTML) -->
-<!-- ``` -->
+The next step is to get an API key. For now, we will be giving out API keys on a case-by-case basis, so please email either:
 
-<!-- To visualize the data, there is a graphing function called **plotExacerbations()**, which creates a Plotly bar graph. You have the option of selecting **probability** or **rate** for which prediction you want to see, and either **CI** or **PI** to select the confidence interval or prediction interval respectively. -->
+Amin Adibi: amin.adibi@ubc.ca 
 
-<!-- ```{r exacerbation-rate-2, eval = TRUE, echo = TRUE} -->
-<!-- plotExacerbations(results, type="probability", interval = "CI") -->
-<!-- ``` -->
+Mohsen Sadatsafavi: mohsen.sadatsafavi@ubc.ca
 
-<!-- ```{r exacerbation-rate-3, eval = TRUE, echo = TRUE} -->
-<!-- plotExacerbations(results, type="probability", interval = "PI") -->
-<!-- ``` -->
+For the rest of this tutorial, I will be using one of the packages, **accept**, as the example. For a complete list of models, go to:
 
-<!-- ```{r exacerbation-rate-4, eval = TRUE, echo = TRUE} -->
-<!-- plotExacerbations(results, type="rate", interval = "CI") -->
-<!-- ``` -->
+[PRISM Model Repository](http://resp.core.ubc.ca/ipress/prism)
 
-<!-- ### Probability of N Exacerbations (Poisson) {-} -->
+### GET {-}
 
-<!-- We can also calculate the predicted number of exacerbations in a year: -->
+```{r, eval=TRUE, echo=FALSE}
+library(htmltools)
+rawHTML <- paste(readLines("get-prism.html"), collapse="\n")
+HTML(rawHTML)
+```
 
-<!-- ```{r n-exacerbations-1, eval = TRUE, echo = TRUE} -->
-<!-- patientResults = predictACCEPT(samplePatients[1,]) -->
-<!-- exacerbationsMatrix = predictCountProb(patientResults, n = 10, shortened = TRUE) -->
-<!-- print(exacerbationsMatrix) -->
-<!-- ``` -->
+### POST {-}
 
-<!-- The shortened parameter groups the probabilities from 3-10 exacerbations into one category, "3 or more exacerbations." To see all n exacerbation probabilities: -->
+```{r, eval=TRUE, echo=FALSE}
+library(htmltools)
+rawHTML <- paste(readLines("post-prism.html"), collapse="\n")
+HTML(rawHTML)
+```
 
-<!-- ```{r n-exacerbations-2, eval = TRUE, echo = TRUE} -->
-<!-- exacerbationsMatrix = predictCountProb(patientResults, n = 10, shortened = FALSE) -->
-<!-- print(exacerbationsMatrix) -->
-<!-- ``` -->
 
-<!-- To visualize the matrix as a heatmap, we can use the function **plotHeatMap**: -->
 
-<!-- ```{r n-exacerbations-3, eval = TRUE, echo = TRUE} -->
-<!-- plotHeatMap(patientResults, shortened = FALSE) -->
-<!-- ``` -->
+
+

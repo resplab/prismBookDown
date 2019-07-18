@@ -1,0 +1,50 @@
+
+<div class="code-chunk">
+
+<div class="row">
+  <div class="col-sm-11 no-gutters code-lang-col">
+  <div class="btn-group float-right">
+  <button type="button" class="btn btn-primary dropdown-toggle code-lang" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Language
+  </button>
+  <div class="dropdown-menu">
+    <a class="dropdown-item" value = "mac" href="#mac">Shell (MAC)</a>
+    <a class="dropdown-item" value = "linux" href="#linux">Shell (Linux)</a>
+    <a class="dropdown-item" value = "windows" href="#windows">Shell (Windows)</a>
+    <a class="dropdown-item" value = "js" href="#js">Javascript</a>
+    <a class="dropdown-item" value = "r" href="#r">R</a>
+    <a class="dropdown-item" value = "python" href="#python">Python</a>
+  </div>
+</div>
+</div>
+<div class="col-sm-1 no-gutters copy-col">
+  <a href="#" class="btn btn-primary active copy-button float-left js-copy" role="button" aria-pressed="true">Copy</a>
+</div>
+</div>
+    <code class="code mac">
+      curl -X GET http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/samplePatients/json </code>
+      <code class="code linux">
+      curl -X GET http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/samplePatients/json
+      </code>
+        <code class="code windows">
+          
+        </code>
+    <code class="code js">
+      request = new XMLHttpRequest(); <br>
+      request.open('GET', 'http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/samplePatients/json'       ); <br>
+      request.send();
+    </code>
+    <code class="code r active">
+      library(prism) <br>
+      <span class="hljs-function">connect_to_model</span>('MODEL_NAME', api_key = YOUR_API_KEY) <br>
+      patient1 = accept::samplePatients[1,] <br>
+      model_run(patient1) <br>
+      res = as.data.frame(model_run(patient1))
+    </code>
+    <code class="code python">
+      import json <br>
+      import requests <br>
+    response = requests.get("http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/samplePatients/json")
+    </code>
+</div>
+<br>

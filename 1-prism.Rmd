@@ -56,4 +56,8 @@ In its current implementation, PRISM can host models created in R, and can be ac
 
 [PRISM Introduction](http://resp.core.ubc.ca/research/Specific_Projects/PRISM).
 
+[PRISM on GitHub](https://github.com/resplab/prism).
+
+
+
 

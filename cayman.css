@@ -527,6 +527,17 @@ code span.dt {
   display: unset;
 }
 
+/* Long Quotes */
+
+.book .book-body .page-wrapper .page-inner section.normal pre {
+    word-wrap: normal;
+    margin: 0 0 1.275em;
+    padding: .85em 1em;
+    background: #f7f7f7;
+    overflow: scroll;
+    height: 400px;
+}
+
 
 
 

@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>2 Application Programming Interface (API) | PRISM: PROGRAMMABLE INTERFACE FOR STATISTICAL &amp; SIMULATION MODELS</title>
   <meta name="description" content="2 Application Programming Interface (API) | PRISM: PROGRAMMABLE INTERFACE FOR STATISTICAL &amp; SIMULATION MODELS" />
-  <meta name="generator" content="bookdown 0.11 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.12 and GitBook 2.6.7" />
 
   <meta property="og:title" content="2 Application Programming Interface (API) | PRISM: PROGRAMMABLE INTERFACE FOR STATISTICAL &amp; SIMULATION MODELS" />
   <meta property="og:type" content="book" />
@@ -70,15 +70,16 @@
 <li class="chapter" data-level="" data-path="section-api.html"><a href="section-api.html#section-get"><i class="fa fa-check"></i>GET</a></li>
 <li class="chapter" data-level="" data-path="section-api.html"><a href="section-api.html#section-post"><i class="fa fa-check"></i>POST</a></li>
 <li class="chapter" data-level="" data-path="section-api.html"><a href="section-api.html#section-put"><i class="fa fa-check"></i>PUT</a></li>
+<li class="chapter" data-level="" data-path="section-api.html"><a href="section-api.html#section-delete"><i class="fa fa-check"></i>DELETE</a></li>
+<li class="chapter" data-level="" data-path="section-api.html"><a href="section-api.html#section-summary"><i class="fa fa-check"></i>Summary</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="section-api.html"><a href="section-api.html#section-diving-in"><i class="fa fa-check"></i>Diving in</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="section-using-prism.html"><a href="section-using-prism.html"><i class="fa fa-check"></i><b>3</b> Using the PRISM API</a><ul>
-<li class="chapter" data-level="3.1" data-path="section-using-prism.html"><a href="section-using-prism.html#section-api-in-excel"><i class="fa fa-check"></i><b>3.1</b> Using the PRISM API in Excel</a></li>
-<li class="chapter" data-level="3.2" data-path="section-using-prism.html"><a href="section-using-prism.html#section-api-in-R"><i class="fa fa-check"></i><b>3.2</b> Using the PRISM API in R</a></li>
-<li class="chapter" data-level="3.3" data-path="section-using-prism.html"><a href="section-using-prism.html#section-api-in-python"><i class="fa fa-check"></i><b>3.3</b> Using the PRISM API in Python</a></li>
-<li class="chapter" data-level="3.4" data-path="section-using-prism.html"><a href="section-using-prism.html#section-api-in-bash"><i class="fa fa-check"></i><b>3.4</b> Using the PRISM API in Bash/Shell</a></li>
-<li class="chapter" data-level="3.5" data-path="section-using-prism.html"><a href="section-using-prism.html#section-api-in-js"><i class="fa fa-check"></i><b>3.5</b> Using the PRISM API in Javascript</a></li>
+<li class="chapter" data-level="3.1" data-path="section-using-prism.html"><a href="section-using-prism.html#section-api-in-excel"><i class="fa fa-check"></i><b>3.1</b> PRISM API in Excel</a></li>
+<li class="chapter" data-level="3.2" data-path="section-using-prism.html"><a href="section-using-prism.html#section-api-in-R"><i class="fa fa-check"></i><b>3.2</b> PRISM API in R/Python/Bash/Javascript</a><ul>
+<li class="chapter" data-level="" data-path="section-using-prism.html"><a href="section-using-prism.html#section-get-1"><i class="fa fa-check"></i>GET</a></li>
+<li class="chapter" data-level="" data-path="section-using-prism.html"><a href="section-using-prism.html#section-post-1"><i class="fa fa-check"></i>POST</a></li>
+</ul></li>
 </ul></li>
 </ul>
 
@@ -202,7 +203,9 @@
 <li>separate everything else with “+”</li>
 </ul>
 <p>Okay, let’s get started:</p>
-<p>“?q=” to start the query <br> “intitle:Introduction+intitle:to+intitle:Quantum+intitle:Mechanics” to search for our title <br> “inauthor:David+inauthor:Griffiths” to search for our author</p>
+<p>“?q=” to start the query <br>
+“intitle:Introduction+intitle:to+intitle:Quantum+intitle:Mechanics” to search for our title <br>
+“inauthor:David+inauthor:Griffiths” to search for our author</p>
 <p>Putting them all together:</p>
 <p>“?q=intitle:Introduction+intitle:to+intitle:Quantum+intitle:Mechanics+inauthor:David+inauthor:Griffiths”</p>
 <p>Now that we have made our query, we are ready to make our <strong>GET</strong> request. Below is the code you will need to do this. In the top right corner, you can select the language which you prefer to use.</p>
@@ -212,13 +215,11 @@
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<link rel="stylesheet"
-      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/default.min.css">
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
+
 <script src="js/list-group.js"></script>
 <script src="js/code-chunk.js"></script>
-
 </head>
+
 <div class="code-chunk">
 
 <div class="row">
@@ -257,6 +258,7 @@
 response = requests.get(<span class="hljs-string">'https://www.googleapis.com/books/v1/volumes?q=intitle:Introduction+intitle:to+intitle:Quantum+intitle:Mechanics+inauthor:David+inauthor:Griffiths'</span>)
     </code>
 </div>
+
 <p>If you are doing the Bash option, the results should print out automatically. For the other languages, we can print the response:</p>
 
 <div class="code-chunk">
@@ -389,10 +391,6 @@ response = requests.get(<span class="hljs-string">'https://www.googleapis.com/bo
   &quot;id&quot;: 1050118621198921700,
   &quot;id_str&quot;: &quot;1050118621198921728&quot;,
   &quot;text&quot;: &quot;To make room for more expression, we will now count all emojis as equal—including those with gender
-
-
- 
-
 and skin t… https://t.co/MkGjXf9aXm&quot;,
   &quot;source&quot;: &quot;&lt;a href=&quot;http://twitter.com&quot; rel=&quot;nofollow&quot;&gt;Twitter Web Client&lt;/a&gt;&quot;,
   &quot;truncated&quot;: true,
@@ -470,9 +468,9 @@ and skin t… https://t.co/MkGjXf9aXm&quot;,
     &quot;full_text&quot;: &quot;To make room for more expression, we will now count all emojis as equal—including those with gender
 
 
- 
 
-and skin tone modifiers 👍🏻👍🏽👍🏿. This is now reflected in Twitter-Text, our Open Source library. nnUsing Twitter-Text? See the forum post for detail: https://t.co/Nx1XZmRCXA&quot;,
+
+and skin tone modifiers. This is now reflected in Twitter-Text, our Open Source library. nnUsing Twitter-Text? See the forum post for detail: https://t.co/Nx1XZmRCXA&quot;,
     &quot;display_text_range&quot;: [
       0,
       277
@@ -534,12 +532,46 @@ and skin tone modifiers 👍🏻👍🏽👍🏿. This is now reflected in Twitt
 <h3>PUT</h3>
 <p>The <strong>PUT</strong> request is similar to <strong>POST</strong> in that you can send and receive data. However, the <strong>PUT</strong> request is used less often. The reason for this is what computer scientists and mathematicians call “idempotency.” An action is <strong>idempotent</strong> if repeating the action results in the same end result. Still kind of complicated, right?</p>
 <p>Let’s do an example. The <strong>POST</strong> request is not idempotent. If you make a post on Twitter today, saying, “I love tacos!”, and then later on you make another post that says “I love tacos!”, both of those posts will stay on Twitter. The second post won’t erase the first post [even though people already know you love tacos]. You can post “I love tacos!” as many times as you want, and Twitter will just keep adding it to your status.</p>
-<p>On the other hand, the <strong>PUT</strong> request is idempotent.</p>
+<p>On the other hand, the <strong>PUT</strong> request is idempotent. <strong>PUT</strong> is less often used because it means finding and overriding a specific resource. For example, say you have an online library, where a book is a resource. You would probably want to have a <strong>GET</strong> request, so people could get a book and read it. You might have a <strong>POST</strong> request, where people could add a new book to the library. A <strong>PUT</strong> request would be finding a book and replacing it with a newer version. So maybe you want to find the textbook “Introduction to Quantum Mechanics 2,” and replace it with the latest version, “Introduction to Quantum Mechanics 3.” You could use a <strong>PUT</strong> request for this. As you may have figured out, the <strong>PUT</strong> request can potentially delete items. Probably, you don’t want just any person being able to replace books in the library. So, you might have a few “librarians” who are able to make <strong>PUT</strong> requests.</p>
 </div>
+<div id="section-delete" class="section level3 unnumbered">
+<h3>DELETE</h3>
+<p><strong>DELETE</strong> is the last <strong>REST</strong> call, and it is fairly self-explanatory. In keeping with the online library, this would be deleting a book altogether. Similar to the <strong>PUT</strong> request, this generally is a call that only certain users have access to.</p>
+<p>Another example of the <strong>DELETE</strong> request would be in Facebook. Maybe you made a post 5 years ago that was fairly embarassing. Maybe it was “I love tacos!” You could use a <strong>DELETE</strong> request to delete this post.</p>
 </div>
-<div id="section-diving-in" class="section level2 unnumbered">
-<h2>Diving in</h2>
-<p>I have found it is often easiest to learn by example, so I’m going to walk through an example of how to use our PRISM API. If you don’t have much programming experience, or if you want to use Excel, I would recommend doing the <a href="#api-in-excel">API in Excel</a>. Otherwise, you can choose your favourite programming language to get started:</p>
+<div id="section-summary" class="section level3 unnumbered">
+<h3>Summary</h3>
+<p>In <strong>REST</strong> jargon, we call data on the Server a <strong>resource</strong>. So in Google Books, the resource is a book. On Twitter, a resource might be a tweet. I wanted to point out here that a Server can have more than one resource, and can therefore have more than one <strong>GET</strong>/<strong>POST</strong>/<strong>PUT</strong>/<strong>DELETE</strong> calls. On the flip side, an API does not need to have all four calls. As you will see, often the only calls are <strong>GET</strong> and <strong>POST</strong>. In our API (PRISM), which you will read more about later, we only have <strong>POST</strong> calls at the moment.</p>
+<p>I have taken a table from the Twitter API documentation to give you an example:</p>
+
+<table cellpadding="1" cellspacing="0" border="1">
+<tbody><tr><td
+        style="text-align: left;"><b>Tweets</b></td>
+<td><b>Retweets</b></td>
+<td><b>Likes (formerly favorites)</b></td>
+</tr><tr><td style="text-align: left;"><ul>
+<li>POST statuses/update</li>
+<li>POST statuses/destroy/:id</li>
+<li>GET statuses/show/:id</li>
+<li>GET statuses/oembed</li>
+<li>GET statuses/lookup</li>
+</ul>
+</td>
+<td><ul>
+<li>POST statuses/retweet/:id</li>
+<li>POST statuses/unretweet/:id</li>
+<li>GET statuses/retweets/:id</li>
+<li>GET statuses/retweets_of_me</li>
+<li>GET statuses/retweeters/ids</li>
+</ul>
+</td>
+<td><ul>
+<li>POST favorites/create/:id</li>
+<li>POST favorites/destroy/:id</li>
+<li>GET favorites/list</li>
+</ul>
+</td>
+</tr></tbody></table>
 <head>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -565,6 +597,7 @@ and skin tone modifiers 👍🏻👍🏽👍🏿. This is now reflected in Twitt
 </button>
 </div>
 
+</div>
 </div>
 </div>
             </section>
