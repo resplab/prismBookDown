@@ -1,26 +1,6 @@
-
-<div class="code-chunk">
-
-<div class="row">
-  <div class="col-sm-11 no-gutters code-lang-col">
-  <div class="btn-group float-right">
-  <button type="button" class="btn btn-primary dropdown-toggle code-lang" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Language
-  </button>
-  <div class="dropdown-menu">
-    <a class="dropdown-item" value = "mac" href="#mac">Shell (MAC)</a>
-    <a class="dropdown-item" value = "linux" href="#linux">Shell (Linux)</a>
-    <a class="dropdown-item" value = "windows" href="#windows">Shell (Windows)</a>
-    <a class="dropdown-item" value = "js" href="#js">Javascript</a>
-    <a class="dropdown-item" value = "r" href="#r">R</a>
-    <a class="dropdown-item" value = "python" href="#python">Python</a>
-  </div>
-</div>
-</div>
-<div class="col-sm-1 no-gutters copy-col">
-  <a href="#" class="btn btn-primary active copy-button float-left js-copy" role="button" aria-pressed="true">Copy</a>
-</div>
-</div>
+<code-chunk>
+  <div slot="code">
+    <div class="code-chunk">
     <code class="code mac">
       curl -X POST -H "Content-Type: application/json" -d '{"api_key":[YOUR_API_KEY],"func":["prism_model_run"],
 "model_input":[{"ID":"10001","male":1,"age":70,"smoker":1,"FEV1":2.5,"height":1.68,"weight":65}]}' http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json </code>
@@ -77,4 +57,11 @@ results = json.loads(response.text)
 print(results)
     </code>
 </div>
-<br>
+</div>
+</code-chunk>
+
+
+
+
+
+
