@@ -50,6 +50,7 @@
 <link rel="stylesheet" href="pretty-styles.css" type="text/css" />
 <link rel="stylesheet" href="cayman.css" type="text/css" />
 <link rel="stylesheet" href="python.css" type="text/css" />
+<link rel="stylesheet" href="shadow.css" type="text/css" />
 <link rel="stylesheet" href="index.html" type="text/css" />
 </head>
 
@@ -279,6 +280,7 @@ response = requests.get(<span class="hljs-string">'https://www.googleapis.com/bo
 <div class="col-sm-1 no-gutters copy-col">
   <a href="#" class="btn btn-primary active copy-button float-left js-copy" role="button" aria-pressed="true">Copy</a>
 </div>
+
 </div>
     <code class="code js active">
       <span class="hljs-keyword">console.</span>log(<span class="syntax-variable">request</span>.status()); <br>
@@ -543,7 +545,7 @@ and skin tone modifiers. This is now reflected in Twitter-Text, our Open Source 
 <h3>Summary</h3>
 <p>In <strong>REST</strong> jargon, we call data on the Server a <strong>resource</strong>. So in Google Books, the resource is a book. On Twitter, a resource might be a tweet. I wanted to point out here that a Server can have more than one resource, and can therefore have more than one <strong>GET</strong>/<strong>POST</strong>/<strong>PUT</strong>/<strong>DELETE</strong> calls. On the flip side, an API does not need to have all four calls. As you will see, often the only calls are <strong>GET</strong> and <strong>POST</strong>. In our API (PRISM), which you will read more about later, we only have <strong>POST</strong> calls at the moment.</p>
 <p>I have taken a table from the Twitter API documentation to give you an example:</p>
-
+<div>
 <table cellpadding="1" cellspacing="0" border="1">
 <tbody><tr><td
         style="text-align: left;"><b>Tweets</b></td>
@@ -571,7 +573,7 @@ and skin tone modifiers. This is now reflected in Twitter-Text, our Open Source 
 <li>GET favorites/list</li>
 </ul>
 </td>
-</tr></tbody></table>
+</tr></tbody></table></div>
 <head>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -595,6 +597,7 @@ and skin tone modifiers. This is now reflected in Twitter-Text, our Open Source 
 <button type="button" class="btn btn-primary btn-lg btn-block">
   <a href="./section-using-prism.html#section-api-in-js">API in Javascript</a>
 </button>
+</div>
 </div>
 
 </div>

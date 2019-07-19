@@ -54,7 +54,7 @@ $(document).ready(function() {
   // Grab any text in the attribute 'data-copy' and pass it to the
   // copy function
   $('.js-copy').click(function() {
-    var text = $(this).parent().parent().siblings('.code').not("code[style='display: none;']").text();
+    var text = $(this).parent().parent().parent().parent().siblings().find('.code').not("code[style='display: none;']").text();
     var el = $(this);
     copyToClipboard(text, el);
   });

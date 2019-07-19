@@ -8,8 +8,8 @@ output:
     delete_merged_file: TRUE
     table_css: FALSE
     output_dir: "docs"
-    css: ["pretty-styles.css", "cayman.css", "python.css", "index.html"]
-    js: ["js/list-group.js", "js/code-chunk.js"]
+    css: ["pretty-styles.css", "cayman.css", "python.css","shadow.css",  "index.html"]
+    js: ["js/list-group.js", "js/code-chunk.js", "js/code-chunk-components.js"]
     config:
       toc:
         collapse: subsection
