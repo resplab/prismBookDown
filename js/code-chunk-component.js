@@ -10,8 +10,8 @@ customElements.define('code-chunk', class extends HTMLElement {
                 `
     }
       connectedCallback() {
-        this.innerHTML = `<div slot="language">        
-                <div class="code-chunk">
+        this.innerHTML = `<div slot="language">
+                <div class="code-chunk-bar">
                 <div class="row">
   <div class="col-sm-11 no-gutters code-lang-col">
   <div class="btn-group float-right">
@@ -30,7 +30,7 @@ customElements.define('code-chunk', class extends HTMLElement {
   </div>
   <div class="col-sm-1 no-gutters copy-col">
   <a href="#" class="btn btn-primary active copy-button float-left js-copy" role="button" aria-pressed="true">Copy</a>
-  
+
   </div></div></div>
             </div>`
       }

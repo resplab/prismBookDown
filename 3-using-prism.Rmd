@@ -11,6 +11,33 @@ If you don't have much programming experience, or if you want to use Excel, I wo
 
 ## PRISM API in Excel {#api-in-excel}
 
+One of the primary goals of PRISM is making prediction models accessible to a wide range of audiences, including those with less programming experience. The Excel API is targetted towards users who are less familiar with programming, or users who are familiar with programming and would like an easy way to extract the data quickly. 
+
+For this tutorial, I am going to be using the **accept** model (ACute COPD Exacerbation Prediction Tool). To use the model, you will need to have a spreadsheet program on your computer. Excel is recommended, but Numbers (Mac) will also work. 
+
+Before getting started, I recommend that you read the [ACCEPT Manual](https://resplab.github.io/acceptManual/section-introduction.html), specifically Section 2 (The Study) and Section 3 (Using the Package in R).
+
+### Downloading the Spreadsheet {-}
+
+To get started, you will need to go to: 
+
+[PRISM Model Repository](http://resp.core.ubc.ca/ipress/prism). 
+
+In the row that has the **ACCEPT** model, go to the column labelled **Excel Interface** and click on the link **ACCEPT Excel (PC)**. This will download the Excel Interface for the **ACCEPT** model. 
+
+### Setting the Inputs {-}
+
+Once you have downloaded the Excel Interface, you can open it in Excel (Numbers). You will notice there are three sheets, labelled **Model**, **Settings**, and **Under the Hood**. Click on the **Model** tab. 
+
+You will notice several tables. The top two tables are input tables, which means that these are values you can change. For each package, we will provide details on what values are allowed. For example, **Gender** can be either **Male** or **Female**. Each package will have a User Guide, and you can find the acceptable inputs under the section **Using the Package as an API - Excel API**.
+
+For this tutorial, go ahead and change **Gender** from **Male** to **Female**. 
+
+### Running the Model {-}
+
+To run the model, you need to connect to the model first. There is a button at the top of the page which says **Connect to Model**. Click on that button. On the bottom left of the Excel window, you should see the text "Connecting to model..."
+
+
 ## PRISM API in R/Python/Bash/Javascript {#api-in-R}
 
 To get started, you will need to install a few packages:

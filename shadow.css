@@ -51,6 +51,17 @@
   background-color: var(--code-grey) !important;
   padding: 15px;
   border-radius: .25rem;
+  overflow: scroll;
+  height: 200px;
+}
+
+.code-chunk-bar {
+  background-color: var(--code-grey) !important;
+  padding-bottom: 0px;
+  padding-top: 15px;
+  padding-right: 15px;
+  padding-left: 15px;
+  border-radius: .25rem;
 }
 
 .copy-button {
@@ -125,3 +136,5 @@ a:active, a:focus, .code-chunk a:hover {
 .code.active {
   display: unset;
 }
+
+

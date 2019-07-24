@@ -27,7 +27,7 @@
 });
 request.open('POST', 'http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json');
 request.setRequestHeader('Content-Type', 'application/json');
-request.send(patient); 
+request.send(patient);
 let results = request.response;
     </code>
     <code class="code r active">
@@ -38,7 +38,7 @@ let results = request.response;
       res = as.data.frame(model_run(patient1))
     </code>
     <code class="code python">
-      api_key = 'YOUR_API_KEY'
+      api_key = 'YOUR_API_KEY' <br>
 patientInput = [{
 "ID":"10001",
 "male":1,
@@ -47,13 +47,13 @@ patientInput = [{
 "FEV1":2.5,
 "height":1.68,
 "weight":65
-}]
+}] <br>
 response = requests.post("http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json",
   json = {"api_key":[api_key],
   "func": ["prism_model_run"],
-  "model_input": patientInput})
-print(response)
-results = json.loads(response.text)
+  "model_input": patientInput}) <br>
+print(response) <br>
+results = json.loads(response.text) <br>
 print(results)
     </code>
 </div>

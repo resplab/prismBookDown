@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>3 Using the PRISM API | PRISM: PROGRAMMABLE INTERFACE FOR STATISTICAL &amp; SIMULATION MODELS</title>
   <meta name="description" content="3 Using the PRISM API | PRISM: PROGRAMMABLE INTERFACE FOR STATISTICAL &amp; SIMULATION MODELS" />
-  <meta name="generator" content="bookdown 0.12 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.11 and GitBook 2.6.7" />
 
   <meta property="og:title" content="3 Using the PRISM API | PRISM: PROGRAMMABLE INTERFACE FOR STATISTICAL &amp; SIMULATION MODELS" />
   <meta property="og:type" content="book" />
@@ -76,7 +76,11 @@
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="section-using-prism.html"><a href="section-using-prism.html"><i class="fa fa-check"></i><b>3</b> Using the PRISM API</a><ul>
-<li class="chapter" data-level="3.1" data-path="section-using-prism.html"><a href="section-using-prism.html#section-api-in-excel"><i class="fa fa-check"></i><b>3.1</b> PRISM API in Excel</a></li>
+<li class="chapter" data-level="3.1" data-path="section-using-prism.html"><a href="section-using-prism.html#section-api-in-excel"><i class="fa fa-check"></i><b>3.1</b> PRISM API in Excel</a><ul>
+<li class="chapter" data-level="" data-path="section-using-prism.html"><a href="section-using-prism.html#section-downloading-the-spreadsheet"><i class="fa fa-check"></i>Downloading the Spreadsheet</a></li>
+<li class="chapter" data-level="" data-path="section-using-prism.html"><a href="section-using-prism.html#section-setting-the-inputs"><i class="fa fa-check"></i>Setting the Inputs</a></li>
+<li class="chapter" data-level="" data-path="section-using-prism.html"><a href="section-using-prism.html#section-running-the-model"><i class="fa fa-check"></i>Running the Model</a></li>
+</ul></li>
 <li class="chapter" data-level="3.2" data-path="section-using-prism.html"><a href="section-using-prism.html#section-api-in-R"><i class="fa fa-check"></i><b>3.2</b> PRISM API in R/Python/Bash/Javascript</a><ul>
 <li class="chapter" data-level="" data-path="section-using-prism.html"><a href="section-using-prism.html#section-get-1"><i class="fa fa-check"></i>GET</a></li>
 <li class="chapter" data-level="" data-path="section-using-prism.html"><a href="section-using-prism.html#section-post-1"><i class="fa fa-check"></i>POST</a></li>
@@ -101,7 +105,7 @@
             <section class="normal" id="section-">
 <div id="section-using-prism" class="section level1">
 <h1><span class="header-section-number">3</span> Using the PRISM API</h1>
-<p>If you don’t have much programming experience, or if you want to use Excel, I would recommend doing the <a href="section-using-prism.html#section-api-in-excel">API in Excel</a>. Otherwise, you can choose your favourite programming language to get started:</p>
+<p>If you don’t have much programming experience, or if you want to use Excel, I would recommend doing the <a href="#api-in-excel">API in Excel</a>. Otherwise, you can choose your favourite programming language to get started:</p>
 <!-- ```{r links, eval=TRUE, echo=FALSE} -->
 <!-- library(htmltools) -->
 <!-- rawHTML <- paste(readLines("link-buttons.html"), collapse="\n") -->
@@ -109,6 +113,25 @@
 <!-- ``` -->
 <div id="section-api-in-excel" class="section level2">
 <h2><span class="header-section-number">3.1</span> PRISM API in Excel</h2>
+<p>One of the primary goals of PRISM is making prediction models accessible to a wide range of audiences, including those with less programming experience. The Excel API is targetted towards users who are less familiar with programming, or users who are familiar with programming and would like an easy way to extract the data quickly.</p>
+<p>For this tutorial, I am going to be using the <strong>accept</strong> model (ACute COPD Exacerbation Prediction Tool). To use the model, you will need to have a spreadsheet program on your computer. Excel is recommended, but Numbers (Mac) will also work.</p>
+<p>Before getting started, I recommend that you read the <a href="https://resplab.github.io/acceptManual/section-introduction.html">ACCEPT Manual</a>, specifically Section 2 (The Study) and Section 3 (Using the Package in R).</p>
+<div id="section-downloading-the-spreadsheet" class="section level3 unnumbered">
+<h3>Downloading the Spreadsheet</h3>
+<p>To get started, you will need to go to:</p>
+<p><a href="http://resp.core.ubc.ca/ipress/prism">PRISM Model Repository</a>.</p>
+<p>In the row that has the <strong>ACCEPT</strong> model, go to the column labelled <strong>Excel Interface</strong> and click on the link <strong>ACCEPT Excel (PC)</strong>. This will download the Excel Interface for the <strong>ACCEPT</strong> model.</p>
+</div>
+<div id="section-setting-the-inputs" class="section level3 unnumbered">
+<h3>Setting the Inputs</h3>
+<p>Once you have downloaded the Excel Interface, you can open it in Excel (Numbers). You will notice there are three sheets, labelled <strong>Model</strong>, <strong>Settings</strong>, and <strong>Under the Hood</strong>. Click on the <strong>Model</strong> tab.</p>
+<p>You will notice several tables. The top two tables are input tables, which means that these are values you can change. For each package, we will provide details on what values are allowed. For example, <strong>Gender</strong> can be either <strong>Male</strong> or <strong>Female</strong>. Each package will have a User Guide, and you can find the acceptable inputs under the section <strong>Using the Package as an API - Excel API</strong>.</p>
+<p>For this tutorial, go ahead and change <strong>Gender</strong> from <strong>Male</strong> to <strong>Female</strong>.</p>
+</div>
+<div id="section-running-the-model" class="section level3 unnumbered">
+<h3>Running the Model</h3>
+<p>To run the model, you need to connect to the model first. There is a button at the top of the page which says <strong>Connect to Model</strong>. Click on that button. On the bottom left of the Excel window, you should see the text “Connecting to model…”.</p>
+</div>
 </div>
 <div id="section-api-in-R" class="section level2">
 <h2><span class="header-section-number">3.2</span> PRISM API in R/Python/Bash/Javascript</h2>
@@ -145,8 +168,8 @@
 <script src="js/list-group.js"></script>
 <script src="js/code-chunk.js"></script>
 <p>The next step is to get an API key. For now, we will be giving out API keys on a case-by-case basis, so please email either:</p>
-<p>Amin Adibi: <a href="mailto:amin.adibi@ubc.ca" class="email">amin.adibi@ubc.ca</a></p>
-<p>Mohsen Sadatsafavi: <a href="mailto:mohsen.sadatsafavi@ubc.ca" class="email">mohsen.sadatsafavi@ubc.ca</a></p>
+<p>Amin Adibi: <a href="mailto:amin.adibi@ubc.ca">amin.adibi@ubc.ca</a></p>
+<p>Mohsen Sadatsafavi: <a href="mailto:mohsen.sadatsafavi@ubc.ca">mohsen.sadatsafavi@ubc.ca</a></p>
 <p>For the rest of this tutorial, I will be using one of the packages, <strong>accept</strong>, as the example. For a complete list of models, go to:</p>
 <p><a href="http://resp.core.ubc.ca/ipress/prism">PRISM Model Repository</a></p>
 <div id="section-get-1" class="section level3 unnumbered">
@@ -213,7 +236,7 @@
 });
 request.open('POST', 'http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json');
 request.setRequestHeader('Content-Type', 'application/json');
-request.send(patient); 
+request.send(patient);
 let results = request.response;
     </code>
     <code class="code r active">
@@ -224,7 +247,7 @@ let results = request.response;
       res = as.data.frame(model_run(patient1))
     </code>
     <code class="code python">
-      api_key = 'YOUR_API_KEY'
+      api_key = 'YOUR_API_KEY' <br>
 patientInput = [{
 "ID":"10001",
 "male":1,
@@ -233,18 +256,19 @@ patientInput = [{
 "FEV1":2.5,
 "height":1.68,
 "weight":65
-}]
+}] <br>
 response = requests.post("http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json",
   json = {"api_key":[api_key],
   "func": ["prism_model_run"],
-  "model_input": patientInput})
-print(response)
-results = json.loads(response.text)
+  "model_input": patientInput}) <br>
+print(response) <br>
+results = json.loads(response.text) <br>
 print(results)
     </code>
 </div>
 </div>
 </code-chunk>
+
 
 
 
