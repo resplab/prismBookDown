@@ -1,6 +1,7 @@
 $(document).ready(function(){
   $('.dropdown-menu a.dropdown-item').on("click", function(e){
             var optionValue = $(this).attr("value");
+            $(this).parent().siblings().dropdown("toggle");
             if(optionValue){
                 $(".code").not("." + optionValue).hide();
                 $("." + optionValue).show();

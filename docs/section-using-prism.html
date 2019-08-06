@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>3 Using the PRISM API | PRISM: PROGRAMMABLE INTERFACE FOR STATISTICAL &amp; SIMULATION MODELS</title>
   <meta name="description" content="3 Using the PRISM API | PRISM: PROGRAMMABLE INTERFACE FOR STATISTICAL &amp; SIMULATION MODELS" />
-  <meta name="generator" content="bookdown 0.11 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.12 and GitBook 2.6.7" />
 
   <meta property="og:title" content="3 Using the PRISM API | PRISM: PROGRAMMABLE INTERFACE FOR STATISTICAL &amp; SIMULATION MODELS" />
   <meta property="og:type" content="book" />
@@ -105,12 +105,7 @@
             <section class="normal" id="section-">
 <div id="section-using-prism" class="section level1">
 <h1><span class="header-section-number">3</span> Using the PRISM API</h1>
-<p>If you don’t have much programming experience, or if you want to use Excel, I would recommend doing the <a href="#api-in-excel">API in Excel</a>. Otherwise, you can choose your favourite programming language to get started:</p>
-<!-- ```{r links, eval=TRUE, echo=FALSE} -->
-<!-- library(htmltools) -->
-<!-- rawHTML <- paste(readLines("link-buttons.html"), collapse="\n") -->
-<!-- HTML(rawHTML) -->
-<!-- ``` -->
+<p>If you don’t have much programming experience, or if you want to use Excel, I would recommend doing the <a href="#api-in-excel">API in Excel</a>. Otherwise, you can choose your favourite programming language to get started: <a href="#api-in-R">API in R/Python/Javascript/Bash</a></p>
 <div id="section-api-in-excel" class="section level2">
 <h2><span class="header-section-number">3.1</span> PRISM API in Excel</h2>
 <p>One of the primary goals of PRISM is making prediction models accessible to a wide range of audiences, including those with less programming experience. The Excel API is targetted towards users who are less familiar with programming, or users who are familiar with programming and would like an easy way to extract the data quickly.</p>
@@ -124,13 +119,19 @@
 </div>
 <div id="section-setting-the-inputs" class="section level3 unnumbered">
 <h3>Setting the Inputs</h3>
-<p>Once you have downloaded the Excel Interface, you can open it in Excel (Numbers). You will notice there are three sheets, labelled <strong>Model</strong>, <strong>Settings</strong>, and <strong>Under the Hood</strong>. Click on the <strong>Model</strong> tab.</p>
+<p>Once you have downloaded the Excel Interface, you can open it in Excel. You will notice there are two sheets, labelled <strong>Model</strong> and <strong>Settings</strong>. Click on the <strong>Model</strong> tab.</p>
 <p>You will notice several tables. The top two tables are input tables, which means that these are values you can change. For each package, we will provide details on what values are allowed. For example, <strong>Gender</strong> can be either <strong>Male</strong> or <strong>Female</strong>. Each package will have a User Guide, and you can find the acceptable inputs under the section <strong>Using the Package as an API - Excel API</strong>.</p>
 <p>For this tutorial, go ahead and change <strong>Gender</strong> from <strong>Male</strong> to <strong>Female</strong>.</p>
 </div>
 <div id="section-running-the-model" class="section level3 unnumbered">
 <h3>Running the Model</h3>
-<p>To run the model, you need to connect to the model first. There is a button at the top of the page which says <strong>Connect to Model</strong>. Click on that button. On the bottom left of the Excel window, you should see the text “Connecting to model…”.</p>
+<p>To run the model, you need to connect to the model first.</p>
+<ol style="list-style-type: decimal">
+<li>Click on the <strong>Model</strong> sheet.</li>
+<li>There is a button at the top of the page which says <strong>Connect to Model</strong>. Click on that button. On the bottom left of the Excel window, you should see the text “Connecting to model…”</li>
+<li>Click on the <strong>Run</strong> button.</li>
+<li>Click on the <strong>Disconnect from Model</strong> button once it has finished running.</li>
+</ol>
 </div>
 </div>
 <div id="section-api-in-R" class="section level2">
