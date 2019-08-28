@@ -105,7 +105,7 @@
             <section class="normal" id="section-">
 <div id="section-using-prism" class="section level1">
 <h1><span class="header-section-number">3</span> Using the PRISM API</h1>
-<p>If you don’t have much programming experience, or if you want to use Excel, I would recommend doing the <a href="#api-in-excel">API in Excel</a>. Otherwise, you can choose your favourite programming language to get started: <a href="#api-in-R">API in R/Python/Javascript/Bash</a></p>
+<p>If you don’t have much programming experience, or if you want to use Excel, I would recommend doing the <a href="section-using-prism.html#section-api-in-excel">API in Excel</a>. Otherwise, you can choose your favourite programming language to get started: <a href="section-using-prism.html#section-api-in-R">API in R/Python/Javascript/Bash</a></p>
 <div id="section-api-in-excel" class="section level2">
 <h2><span class="header-section-number">3.1</span> PRISM API in Excel</h2>
 <p>One of the primary goals of PRISM is making prediction models accessible to a wide range of audiences, including those with less programming experience. The Excel API is targetted towards users who are less familiar with programming, or users who are familiar with programming and would like an easy way to extract the data quickly.</p>
@@ -150,16 +150,16 @@
       <code class="code linux">
       sudo apt install curl</code>
         <code class="code windows">
-          
+          <br>
         </code>
     <code class="code js">
     </code>
     <code class="code r active">
-      install.packages("devtools") <br>
-      devtools::install_github("resplab/prism")
+      install.packages("devtools") <br><br>
+      devtools::install_github("resplab/prism")<br>
     </code>
     <code class="code python">
-      pip3 install requests
+      pip3 install requests<br>
     </code></div>
   </div>
 </code-chunk>
@@ -169,8 +169,8 @@
 <script src="js/list-group.js"></script>
 <script src="js/code-chunk.js"></script>
 <p>The next step is to get an API key. For now, we will be giving out API keys on a case-by-case basis, so please email either:</p>
-<p>Amin Adibi: <a href="mailto:amin.adibi@ubc.ca">amin.adibi@ubc.ca</a></p>
-<p>Mohsen Sadatsafavi: <a href="mailto:mohsen.sadatsafavi@ubc.ca">mohsen.sadatsafavi@ubc.ca</a></p>
+<p>Amin Adibi: <a href="mailto:amin.adibi@ubc.ca" class="email">amin.adibi@ubc.ca</a></p>
+<p>Mohsen Sadatsafavi: <a href="mailto:mohsen.sadatsafavi@ubc.ca" class="email">mohsen.sadatsafavi@ubc.ca</a></p>
 <p>For the rest of this tutorial, I will be using one of the packages, <strong>accept</strong>, as the example. For a complete list of models, go to:</p>
 <p><a href="http://resp.core.ubc.ca/ipress/prism">PRISM Model Repository</a></p>
 <div id="section-get-1" class="section level3 unnumbered">
@@ -181,27 +181,27 @@
     <code class="code mac">
       curl -X GET http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/samplePatients/json </code>
       <code class="code linux">
-      curl -X GET http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/samplePatients/json
+      curl -X GET http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/samplePatients/json<br>
       </code>
         <code class="code windows">
-          
+          <br>
         </code>
     <code class="code js">
-      request = new XMLHttpRequest(); <br>
-      request.open('GET', 'http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/samplePatients/json'       ); <br>
-      request.send();
+      request = new XMLHttpRequest(); <br><br>
+      request.open('GET', 'http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/samplePatients/json'       ); <br><br>
+      request.send();<br>
     </code>
     <code class="code r active">
-      library(prism) <br>
-      <span class="hljs-function">connect_to_model</span>('MODEL_NAME', api_key = YOUR_API_KEY) <br>
-      patient1 = accept::samplePatients[1,] <br>
-      model_run(patient1) <br>
-      res = as.data.frame(model_run(patient1))
+      library(prism) <br><br>
+      <span class="hljs-function">connect_to_model</span>('MODEL_NAME', api_key = YOUR_API_KEY) <br><br>
+      patient1 = accept::samplePatients[1,] <br><br>
+      model_run(patient1) <br><br>
+      res = as.data.frame(model_run(patient1))<br>
     </code>
     <code class="code python">
-      import json <br>
-      import requests <br>
-    response = requests.get("http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/samplePatients/json")
+      import json <br><br>
+      import requests <br><br>
+    response = requests.get("http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/samplePatients/json")<br>
     </code>
 </div></div></code-chunk>
 <br>
@@ -212,138 +212,83 @@
   <div slot="code">
     <div class="code-chunk">
     <code class="code mac">
-      curl -X POST -H "Content-Type: application/json" -d '{"api_key":[YOUR_API_KEY],"func":["prism_model_run"],
+      curl -X POST -H "Content-Type: application/json" -d '{"api_key":[YOUR_API_KEY],"func":["prism_model_run"],<br>
 "model_input":[{"ID":"10001","male":1,"age":70,"smoker":1,"FEV1":2.5,"height":1.68,"weight":65}]}' http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json </code>
       <code class="code linux">
-      curl -X POST -H "Content-Type: application/json" -d '{"api_key":[YOUR_API_KEY],"func":["prism_model_run"],
-"model_input":[{"ID":"10001","male":1,"age":70,"smoker":1,"FEV1":2.5,"height":1.68,"weight":65}]}' http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json
+      curl -X POST -H "Content-Type: application/json" -d '{"api_key":[YOUR_API_KEY],"func":["prism_model_run"],<br>
+"model_input":[{"ID":"10001","male":1,"age":70,"smoker":1,"FEV1":2.5,"height":1.68,"weight":65}]}' http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json<br>
       </code>
         <code class="code windows">
-          curl -Body '{"api_key":["YOUR_API_KEY"],"func":["prism_model_run"],"model_input":[{"ID":"10001","male":1,"age":70,"smoker":1,"FEV1":2.5,"height":1.68,"weight":65}]}' -Method POST -uri http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json -Headers @{"Content-type"="application/json"}
+          curl -Body '{"api_key":["YOUR_API_KEY"],"func":["prism_model_run"],"model_input":[{"ID":"10001","male":1,"age":70,"smoker":1,"FEV1":2.5,"height":1.68,"weight":65}]}' -Method POST -uri http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json -Headers @{"Content-type"="application/json"}<br>
         </code>
     <code class="code js">
-      let patient = JSON.stringify({
-  api_key: 123456,
-  func: ["prism_model_run"],
-  model_input: [{
-    ID: 10001,
-    male: 1,
-    age: 70,
-    smoker: 1,
-    FEV1: 2.5,
-    height: 1.68,
-    weight: 65
-  }]
-});
-request.open('POST', 'http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json');
-request.setRequestHeader('Content-Type', 'application/json');
-request.send(patient);
-let results = request.response;
+      let patient = JSON.stringify({<br>
+  api_key: 123456,<br>
+  func: ["prism_model_run"],<br>
+  model_input: [{<br>
+    ID: 10001,<br>
+    male: 1,<br>
+    age: 70,<br>
+    smoker: 1,<br>
+    FEV1: 2.5,<br>
+    height: 1.68,<br>
+    weight: 65<br>
+  }]<br>
+});<br>
+request.open('POST', 'http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json');<br>
+request.setRequestHeader('Content-Type', 'application/json');<br>
+request.send(patient);<br>
+let results = request.response;<br>
     </code>
     <code class="code r active">
-      library(prism) <br>
-      <span class="hljs-function">connect_to_model</span>('MODEL_NAME', api_key = YOUR_API_KEY) <br>
-      patient1 = accept::samplePatients[1,] <br>
-      model_run(patient1) <br>
-      res = as.data.frame(model_run(patient1))
+      library(prism) <br><br>
+      <span class="hljs-function">connect_to_model</span>('MODEL_NAME', api_key = YOUR_API_KEY) <br><br>
+      patient1 = accept::samplePatients[1,] <br><br>
+      model_run(patient1) <br><br>
+      res = as.data.frame(model_run(patient1))<br>
     </code>
     <code class="code python">
-      api_key = 'YOUR_API_KEY' <br>
-patientInput = [{
-"ID":"10001",
-"male":1,
-"age":70,
-"smoker":1,
-"FEV1":2.5,
-"height":1.68,
-"weight":65
-}] <br>
-response = requests.post("http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json",
-  json = {"api_key":[api_key],
-  "func": ["prism_model_run"],
-  "model_input": patientInput}) <br>
-print(response) <br>
-results = json.loads(response.text) <br>
-print(results)
+      api_key = 'YOUR_API_KEY' <br><br>
+patientInput = [{<br>
+"ID":"10001",<br>
+"male":1,<br>
+"age":70,<br>
+"smoker":1,<br>
+"FEV1":2.5,<br>
+"height":1.68,<br>
+"weight":65<br>
+}] <br><br>
+response = requests.post("http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json",<br>
+  json = {"api_key":[api_key],<br>
+  "func": ["prism_model_run"],<br>
+  "model_input": patientInput}) <br><br>
+print(response) <br><br>
+results = json.loads(response.text) <br><br>
+print(results)<br>
     </code>
 </div>
 </div>
 </code-chunk>
+<link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/default.min.css">
+<link rel="stylesheet"
+            href="highlightjs/styles/default.css">
+<script src="js/highlight.pack.js"></script>
+  <script>
+    /*
+Applies highlighting to all <pre><code>..</code></pre> blocks on a page.
+*/
+hljs.configure({useBR: true});
+$("code-chunk code").each(function (i, e) {
+    hljs.highlightBlock(e);
+});
+/*hljs.initHighlightingOnLoad();*/
+  </script>
 
 
 
 
 
-
-
-
-<!-- # Using the Web Application {#webapp} -->
-<!-- We have created a web application which can be found here: -->
-<!-- ```{r, eval=TRUE, echo=FALSE} -->
-<!-- library(htmltools) -->
-<!-- rawHTML <- paste(readLines("webapp.html"), collapse="\n") -->
-<!-- HTML(rawHTML) -->
-<!-- ``` -->
-
-<!-- For the POST request, we will send some patient data to the API, and should get a prediction back from the API. -->
-<!-- We will put the results in a dictionary: -->
-<!-- ```{python prism-python4, eval = TRUE, echo = TRUE, engine.path = pythonEngine} -->
-<!-- resultsDict = json.loads(results[0]) -->
-<!-- print(resultsDict) -->
-<!-- columnNames = list(resultsDict.keys()) -->
-<!-- print(columnNames) -->
-<!-- ``` -->
-<!-- To visualize the results using the package PrettyTable: -->
-<!-- ```{python prism-python5, eval = TRUE, echo = TRUE, engine.path = pythonEngine} -->
-<!-- from prettytable import PrettyTable -->
-<!-- table = PrettyTable() -->
-<!-- table = PrettyTable() -->
-<!-- table.align["Year"] = "l" # Left align year -->
-<!-- table.padding_width = 1 # One space between column edges and contents (default) -->
-<!-- print(columnNames) -->
-<!-- for col in columnNames: -->
-<!--     table.add_column(col, resultsDict[col]) -->
-<!-- print(table) -->
-<!-- ``` -->
-<!-- The **onreadystatechange** is an XMLHttpRequest event which updates when the ready state changes. The ready state can be either 1, 2, 3, or 4. -->
-<!-- ```{r javascript1, eval = TRUE, echo = FALSE} -->
-<!-- dev.off() -->
-<!-- readyState = c(0, 1, 2, 3, 4) -->
-<!-- values = c("Unsent", "Opened: open() has been called", -->
-<!--            "Headers Received: send() has been called and headers are available", -->
-<!--            "Loading: downloading; responseText holds partial data", -->
-<!--            "Done: the operation is complete") -->
-<!-- metadata = data.frame("readyState"=readyState, Description = values) -->
-<!-- names(metadata) = c("Ready State", "Description") -->
-<!-- ``` -->
-<!-- ```{r javascript2, eval = TRUE, echo = FALSE} -->
-<!-- knitr::kable( -->
-<!--   metadata, booktabs = TRUE -->
-<!-- ) -->
-<!-- ``` -->
-<!-- ```{js, eval=FALSE, echo=TRUE} -->
-<!-- request.onreadystatechange = function() { -->
-<!--             if(request.readyState === 4) { // -->
-<!--                 if(request.status === 200) { -->
-<!--                     console.log(request.responseText); -->
-<!--                 } else { -->
-<!--                        console.log(request.status); -->
-<!--                 } -->
-<!--             } -->
-<!--         } -->
-<!-- ``` -->
-<!-- We need to set the request header to json, and then send our patient json to the PRISM server using the **request.send()** function. -->
-
-<!-- # Appendix 1: Installing R {#appendix1} -->
-<!-- This is a guide to installing R, geared mainly at beginner audiences. All the information below can be found at https://www.r-project.org/; I've just simplified it a bit. -->
-<!-- ## Step 1: Mirrors -->
-<!-- When you go the the R home page, you will see a link to [download R](https://cran.r-project.org/mirrors.html), which will take you to a list of mirrors. They are organized by country, so click on one that is close to your location. Since our group is based out of Vancouver, I will select one of the mirrors in Canada: [SFU Mirror](https://mirror.its.sfu.ca/mirror/CRAN/). -->
-<!-- Once you have clicked on the closest mirror, you will be asked to choose what type of computer you have. -->
-<!-- ## Mac OS X -->
-<!-- If you are using a Mac (Apple) computer, click on the link for Mac OS X. You will be redirected to a page that says "R for Mac OS X." To install R, you want to click on one of the files ending in ".pkg". If your operating system is fairly up-to-date, scroll to "Latest Release" and click on the file that looks like "R-3.X.Y.pkg," with X and Y being numbers for the latest release. R should begin downloading, and your Mac package manager will pop up with the rest of the instructions. -->
-<!-- If your operating system is older, you might want to scroll down to "Legacy Releases," and download one of those ".pkg" files instead. It should tell you on the page what version your computer should use. -->
-<!-- ## Windows -->
-<!-- If you are using Windows, click on the link for Windows. You will be redirected to a page that says "R for Windows." To install R, click on the link "base," and on the next page, "Download R 3.X.Y for Windows," where X and Y are the version numbers for the latest release. R should begin downloading. -->
 
 
 </div>

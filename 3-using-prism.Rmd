@@ -6,33 +6,33 @@ If you don't have much programming experience, or if you want to use Excel, I wo
 
 ## PRISM API in Excel {#api-in-excel}
 
-One of the primary goals of PRISM is making prediction models accessible to a wide range of audiences, including those with less programming experience. The Excel API is targetted towards users who are less familiar with programming, or users who are familiar with programming and would like an easy way to extract the data quickly. 
+One of the primary goals of PRISM is making prediction models accessible to a wide range of audiences, including those with less programming experience. The Excel API is targetted towards users who are less familiar with programming, or users who are familiar with programming and would like an easy way to extract the data quickly.
 
-For this tutorial, I am going to be using the **accept** model (ACute COPD Exacerbation Prediction Tool). To use the model, you will need to have a spreadsheet program on your computer. Excel is recommended, but Numbers (Mac) will also work. 
+For this tutorial, I am going to be using the **accept** model (ACute COPD Exacerbation Prediction Tool). To use the model, you will need to have a spreadsheet program on your computer. Excel is recommended, but Numbers (Mac) will also work.
 
 Before getting started, I recommend that you read the [ACCEPT Manual](https://resplab.github.io/acceptManual/section-introduction.html), specifically Section 2 (The Study) and Section 3 (Using the Package in R).
 
 ### Downloading the Spreadsheet {-}
 
-To get started, you will need to go to: 
+To get started, you will need to go to:
 
-[PRISM Model Repository](http://resp.core.ubc.ca/ipress/prism). 
+[PRISM Model Repository](http://resp.core.ubc.ca/ipress/prism).
 
-In the row that has the **ACCEPT** model, go to the column labelled **Excel Interface** and click on the link **ACCEPT Excel (PC)**. This will download the Excel Interface for the **ACCEPT** model. 
+In the row that has the **ACCEPT** model, go to the column labelled **Excel Interface** and click on the link **ACCEPT Excel (PC)**. This will download the Excel Interface for the **ACCEPT** model.
 
 ### Setting the Inputs {-}
 
-Once you have downloaded the Excel Interface, you can open it in Excel. You will notice there are two sheets, labelled **Model** and **Settings**. Click on the **Model** tab. 
+Once you have downloaded the Excel Interface, you can open it in Excel. You will notice there are two sheets, labelled **Model** and **Settings**. Click on the **Model** tab.
 
 You will notice several tables. The top two tables are input tables, which means that these are values you can change. For each package, we will provide details on what values are allowed. For example, **Gender** can be either **Male** or **Female**. Each package will have a User Guide, and you can find the acceptable inputs under the section **Using the Package as an API - Excel API**.
 
-For this tutorial, go ahead and change **Gender** from **Male** to **Female**. 
+For this tutorial, go ahead and change **Gender** from **Male** to **Female**.
 
 ### Running the Model {-}
 
-To run the model, you need to connect to the model first. 
+To run the model, you need to connect to the model first.
 
-1. Click on the **Model** sheet. 
+1. Click on the **Model** sheet.
 2. There is a button at the top of the page which says **Connect to Model**. Click on that button. On the bottom left of the Excel window, you should see the text "Connecting to model..."
 3. Click on the **Run** button.
 4. Click on the **Disconnect from Model** button once it has finished running.
@@ -43,14 +43,13 @@ To run the model, you need to connect to the model first.
 To get started, you will need to install a few packages:
 
 ```{r, eval=TRUE, echo=FALSE}
-library(htmltools)
-rawHTML <- paste(readLines("install.html"), collapse="\n")
-HTML(rawHTML)
+source("R/addHTML.R")
+addHTML("install.html", section = 3, codeChunk = TRUE)
 ```
 
 The next step is to get an API key. For now, we will be giving out API keys on a case-by-case basis, so please email either:
 
-Amin Adibi: amin.adibi@ubc.ca 
+Amin Adibi: amin.adibi@ubc.ca
 
 Mohsen Sadatsafavi: mohsen.sadatsafavi@ubc.ca
 
@@ -61,20 +60,11 @@ For the rest of this tutorial, I will be using one of the packages, **accept**, 
 ### GET {-}
 
 ```{r, eval=TRUE, echo=FALSE}
-library(htmltools)
-rawHTML <- paste(readLines("get-prism.html"), collapse="\n")
-HTML(rawHTML)
+addHTML("get-prism.html", section = 3, codeChunk = TRUE)
 ```
 
 ### POST {-}
 
 ```{r, eval=TRUE, echo=FALSE}
-library(htmltools)
-rawHTML <- paste(readLines("post-prism.html"), collapse="\n")
-HTML(rawHTML)
+addHTML("post-prism.html", section = 3, codeChunk = TRUE)
 ```
-
-
-
-
-

@@ -6,9 +6,8 @@ This section is geared towards people who are less familiar with APIs, or who wa
 ## What is an API? {-}
 
 ```{r api-graphic, eval=TRUE, echo=FALSE}
-library(htmltools)
-rawHTML <- paste(readLines("user-server-api.html"), collapse="\n")
-HTML(rawHTML)
+source("R/addHTML.R")
+addHTML("user-server-api.html", section = 2, codeChunk = FALSE)
 ```
 
 ## REST {-}
@@ -48,17 +47,13 @@ Putting them all together:
 Now that we have made our query, we are ready to make our **GET** request. Below is the code you will need to do this. In the top right corner, you can select the language which you prefer to use.
 
 ```{r get-example, eval=TRUE, echo=FALSE}
-library(htmltools)
-rawHTML <- paste(readLines("code-chunk.html"), collapse="\n")
-HTML(rawHTML)
+addHTML("code-chunk.html", section = 2, codeChunk = TRUE)
 ```
 
 If you are doing the Bash option, the results should print out automatically. For the other languages, we can print the response:
 
 ```{r get-example-2, eval=TRUE, echo=FALSE}
-library(htmltools)
-rawHTML <- paste(readLines("code-chunk-get-2.html"), collapse="\n")
-HTML(rawHTML)
+addHTML("code-chunk-get-2.html", section = 2, codeChunk = TRUE)
 ```
 
 In printing the results, the status code should be "200," and the printed text should be something like this:
@@ -320,14 +315,9 @@ In **REST** jargon, we call data on the Server a **resource**. So in Google Book
 I have taken a table from the Twitter API documentation to give you an example:
 
 ```{r twitter, eval=TRUE, echo=FALSE}
-library(htmltools)
-rawHTML <- paste(readLines("twitter-post.html"), collapse="\n")
-HTML(rawHTML)
+addHTML("twitter-post.html", section = 2, codeChunk = FALSE)
 ```
 
 ```{r, eval=TRUE, echo=FALSE}
-library(htmltools)
-rawHTML <- paste(readLines("link-buttons.html"), collapse="\n")
-HTML(rawHTML)
+addHTML("link-buttons.html", section = 2, codeChunk = FALSE)
 ```
-

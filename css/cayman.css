@@ -426,6 +426,11 @@ code span.dt {
     border-color: #007bff;
 }
 
+.book .book-body .page-wrapper .page-inner section.normal a:active, .book .book-body .page-wrapper .page-inner section.normal .btn a:focus, .book .book-body .page-wrapper .page-inner section.normal .btn a:hover {
+    outline: 0;
+    text-decoration: none;
+}
+
 .book .book-body .page-wrapper .page-inner .btn-group .btn,
 .book .book-body .page-wrapper .page-inner .btn {
     display: inline-block;
@@ -437,7 +442,6 @@ code span.dt {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    background-color: transparent;
     border: 1px solid transparent;
     padding: .375rem .75rem;
     font-size: 1.5rem;
@@ -537,6 +541,34 @@ code span.dt {
     overflow: scroll;
     height: 400px;
 }
+
+/* Highlight JS */
+
+.book .book-body .page-wrapper .page-inner section.normal code-chunk pre .hljs,
+.book .book-body .page-wrapper .page-inner section.normal code-chunk code .hljs {
+    display: block;
+    background: var(--code-grey);
+    color: #4d4d4c;
+    padding: 0em;
+}
+
+code-chunk pre {
+    padding: 0px !important;
+    overflow: auto;
+    text-shadow: none;
+    background: var(--code-grey) !important;
+    border: solid 1px #f2f2f2;
+    font-size: 1em;
+    max-height: unset !important;
+    max-width: none !important;
+}
+
+/* BookDown R Code Chunks (Built In) */
+
+.book .book-body .page-wrapper .page-inner section.normal pre.sourceCode {
+  overflow: auto !important;
+}
+
 
 
 

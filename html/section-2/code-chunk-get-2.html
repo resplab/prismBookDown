@@ -19,5 +19,21 @@
       results = json.loads(text) <br>
       <span class="hljs-keyword">print</span>(results)
     </code>
-</div></div></code-chunk>
+</div></div>
+</code-chunk>
+<link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/default.min.css">
+<link rel="stylesheet"
+            href="highlightjs/styles/default.css">
+<script src="js/highlight.pack.js"></script>
+  <script>
+    /*
+Applies highlighting to all <pre><code>..</code></pre> blocks on a page.
+*/
+hljs.configure({useBR: true});
+$("code-chunk code").each(function (i, e) {
+    hljs.highlightBlock(e);
+});
+/*hljs.initHighlightingOnLoad();*/
+  </script>
 

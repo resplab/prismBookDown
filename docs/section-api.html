@@ -208,7 +208,9 @@
 <li>separate everything else with “+”</li>
 </ul>
 <p>Okay, let’s get started:</p>
-<p>“?q=” to start the query <br> “intitle:Introduction+intitle:to+intitle:Quantum+intitle:Mechanics” to search for our title <br> “inauthor:David+inauthor:Griffiths” to search for our author</p>
+<p>“?q=” to start the query <br>
+“intitle:Introduction+intitle:to+intitle:Quantum+intitle:Mechanics” to search for our title <br>
+“inauthor:David+inauthor:Griffiths” to search for our author</p>
 <p>Putting them all together:</p>
 <p>“?q=intitle:Introduction+intitle:to+intitle:Quantum+intitle:Mechanics+inauthor:David+inauthor:Griffiths”</p>
 <p>Now that we have made our query, we are ready to make our <strong>GET</strong> request. Below is the code you will need to do this. In the top right corner, you can select the language which you prefer to use.</p>
@@ -224,19 +226,19 @@
     <code class="code linux">
       curl -X GET https://www.googleapis.com/books/v1/volumes?q=intitle:Introduction+intitle:to+intitle:Quantum+intitle:Mechanics+inauthor:David+inauthor:Griffiths </code>
     <code class="code js active">
-      request = new <span class="syntax-variable">XMLHttpRequest()</span>; <br>
-      <span class="syntax-variable">request</span>.open(<span class="hljs-string">'GET'</span>, <span class="hljs-string">'https://www.googleapis.com/books/v1/volumes?q=intitle:Introduction+intitle:to+intitle:Quantum+intitle:Mechanics+inauthor:David+inauthor:Griffiths'</span>); <br>
-      <span class="syntax-variable">request</span>.send();
+      request = new <span class="syntax-variable">XMLHttpRequest()</span>; <br><br>
+      <span class="syntax-variable">request</span>.open(<span class="hljs-string">'GET'</span>, <span class="hljs-string">'https://www.googleapis.com/books/v1/volumes?q=intitle:Introduction+intitle:to+intitle:Quantum+intitle:Mechanics+inauthor:David+inauthor:Griffiths'</span>); <br><br>
+      <span class="syntax-variable">request</span>.send();<br>
     </code>
     <code class="code r">
-      <span class="hljs-keyword">library</span>(httr) <br>
-      <span class="hljs-keyword">library</span>(jsonlite) <br>
-      response = GET(url=<span class="hljs-string">'https://www.googleapis.com/books/v1/volumes?q=intitle:Introduction+intitle:to+intitle:Quantum+intitle:Mechanics+inauthor:David+inauthor:Griffiths'</span>)
+      <span class="hljs-keyword">library</span>(httr) <br><br>
+      <span class="hljs-keyword">library</span>(jsonlite) <br><br>
+      response = GET(url=<span class="hljs-string">'https://www.googleapis.com/books/v1/volumes?q=intitle:Introduction+intitle:to+intitle:Quantum+intitle:Mechanics+inauthor:David+inauthor:Griffiths'</span>)<br>
     </code>
     <code class="code python">
-      <span class="hljs-keyword">import</span> json <br>
-      <span class="hljs-keyword">import</span> requests <br>
-response = requests.get(<span class="hljs-string">'https://www.googleapis.com/books/v1/volumes?q=intitle:Introduction+intitle:to+intitle:Quantum+intitle:Mechanics+inauthor:David+inauthor:Griffiths'</span>)
+      <span class="hljs-keyword">import</span> json <br><br>
+      <span class="hljs-keyword">import</span> requests <br><br>
+response = requests.get(<span class="hljs-string">'https://www.googleapis.com/books/v1/volumes?q=intitle:Introduction+intitle:to+intitle:Quantum+intitle:Mechanics+inauthor:David+inauthor:Griffiths'</span>)<br>
     </code>
 </div></div>
 </code-chunk>
@@ -253,23 +255,39 @@ response = requests.get(<span class="hljs-string">'https://www.googleapis.com/bo
   <div slot="code">
     <div class="code-chunk">
     <code class="code js active">
-      <span class="hljs-keyword">console.</span>log(<span class="syntax-variable">request</span>.status()); <br>
-      <span class="hljs-keyword">console.</span>log(<span class="syntax-variable">request</span>.response());
+      <span class="hljs-keyword">console.</span>log(<span class="syntax-variable">request</span>.status()); <br><br>
+      <span class="hljs-keyword">console.</span>log(<span class="syntax-variable">request</span>.response());<br>
     </code>
     <code class="code r">
-      <span class="hljs-keyword">print</span>(response$status) <br>
-      rawUnicode = response$content <br>
-      text = <span class="hljs-function">rawToChar</span>(rawUnicode) <br>
-      results = <span class="hljs-function">fromJSON</span>(text) <br>
-      <span class="hljs-keyword">print</span>(results)
+      <span class="hljs-keyword">print</span>(response$status) <br><br>
+      rawUnicode = response$content <br><br>
+      text = <span class="hljs-function">rawToChar</span>(rawUnicode) <br><br>
+      results = <span class="hljs-function">fromJSON</span>(text) <br><br>
+      <span class="hljs-keyword">print</span>(results)<br>
     </code>
     <code class="code python">
-      <span class="hljs-keyword">print(response.status_code)</span> <br>
-      text = response.text <br>
-      results = json.loads(text) <br>
-      <span class="hljs-keyword">print</span>(results)
+      <span class="hljs-keyword">print(response.status_code)</span> <br><br>
+      text = response.text <br><br>
+      results = json.loads(text) <br><br>
+      <span class="hljs-keyword">print</span>(results)<br>
     </code>
-</div></div></code-chunk>
+</div></div>
+</code-chunk>
+<link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/default.min.css">
+<link rel="stylesheet"
+            href="highlightjs/styles/default.css">
+<script src="js/highlight.pack.js"></script>
+  <script>
+    /*
+Applies highlighting to all <pre><code>..</code></pre> blocks on a page.
+*/
+hljs.configure({useBR: true});
+$("code-chunk code").each(function (i, e) {
+    hljs.highlightBlock(e);
+});
+/*hljs.initHighlightingOnLoad();*/
+  </script>
 
 <p>In printing the results, the status code should be “200,” and the printed text should be something like this:</p>
 <pre><code>{
